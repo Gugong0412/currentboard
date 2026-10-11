@@ -1,0 +1,28 @@
+1. DDI
+2. 전원별로 다름
+
+- VDDI_DIG : 1.24V / 1-3mA
+- VDDIO1V2 : 1.2V / 전류 측정은 필요없고 보드에서 전원 생성만 필요, max 20mA under
+- VDDI : 1.8V / 500uA ~ 1.5mA
+- 1.8V_SYS : 전류 측정은 필요없고 보드에서 전원 생성만 필요, max 50mA under
+- VCI : 3.0V / 200uA under
+
+아래 전원들은 별도 pmic에서 생성할거고 해당 pmic은 내가 공급 예정임(footprint 포함)
+pmic은 VBAT 3.8V, Enable control pin(1.8V GPIO), VDDI_B(1.8V)가 필요하고 이건 보드에서 생성 필요
+
+- AVDDH1 : 3V ~ 9V / 전류 range가 큼 max 10mA
+- AVDDH2 : 3V ~ 9V / 전류 range가 큼 max 20mA
+- VGH : 5V ~ 10V / 1mA under
+- VGL : -3V ~ -11V / 1mA under
+
+* 특이사항 : 위 전원들은 DDI 120Hz 기준으로 average current 작성되었음. 1Hz도 측정 필요하고 1Hz의 경우 blank 구간이 길기 때문에 blank에서는 일부 전원이 off 혹은 power saving state여서 매우 낮은 전류로 바뀜
+
+3. 2번에서 설명한듯 
+4. 평균 전류는 필수, 전류 파형은 볼 수 있으면 좋음. 보통 DMM에서 0.02PLC로 설정해놓고 average 값을 사용했음
+5. PC usb 로 로깅, python이 좋을 듯(별도 UI는 필요)
+6.
+- 목표 정확도 : 99.5% 이상
+- 예산 : 100만원 정도
+- 채널 수 : ?
+- MCU는 STM 계열 전류는 INA계열이지만 AI가 최적화 가능
+- 보드는 schematic 그린 후에 PCB 업체에 넘겨서 제작 예정이라 직접 납땜 필요 x

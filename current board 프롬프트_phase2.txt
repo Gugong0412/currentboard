@@ -1,0 +1,77 @@
+# Phase 2-1: 전원부 + 측정 아날로그부 상세 회로 설계 (KiCad 기준)
+
+## 배경
+Phase 1(Rev.A/Rev.B)에서 아키텍처가 승인되었다. 이번 단계는 사용자가 KiCad(8.x 이상)에서 그대로 회로도를 그릴 수 있는 수준의 상세 설계다.
+범위: 전원 입력~모든 레귤레이터, 7개 측정 채널(션트+INA228), VGL 절연 도메인, moscato 연결 블록.
+범위 외(Phase 2-2): MCU 주변, USB 절연, 레벨시프터, DUT 헤더 핀맵, 최종 BOM 통합.
+규칙: 모든 부품값은 계산 근거 제시. 데이터시트 권장회로를 따를 경우 해당 항목(Figure/Section) 명시. 미확인은 "확인 필요". 수치 창작 금지.
+KiCad 파일(.kicad_sch 등)을 직접 생성하지 말고, 아래 형식의 설계표로 제공하라. 회로도 완성 후 KiCad 넷리스트를 이 설계표와 자동 대조할 예정이므로 넷 이름·RefDes·핀번호는 표 간에 완전히 일관되어야 한다.
+
+## Phase 1 확정 사항 (재논의 금지)
+- 입력 12V 단일 (12V/2A 어댑터, DC 잭)
+- 5.0V_AUX: 12V → TPS62130ARGTR (default-on)
+- VBAT 3.8V/1A: 12V → TPS62130ARGTR (MCU GPIO EN)
+- 3.3V_CTRL: 5V_AUX → TPS7A9001DSKR (default-on)
+- Logic 측정 레일 (3.3V_CTRL → TPS7A9001DSKR → 션트 → DUT), 후단 FB remote sense:
+  VDDI_DIG 1.24V/20Ω, VDDI 1.8V/20Ω, VCI 3.0V/100Ω
+- Logic 비측정: VDDIO1V2 1.2V/20mA, 공용 1.8V/100mA (1.8V_SYS + moscato VDDI_B + moscato 1.8V) 각 TPS7A9001DSKR, 개별 GPIO EN
+- Analog 측정 (moscato 출력 → 션트 → DUT): AVDDH1 20Ω, AVDDH2 3Ω(3.01Ω 후보), VGH 20Ω
+- VGL: 20Ω, 소스측 기준 플로팅. 5V_AUX → RFM-0505S → TPS7A1633DGNR → 3.3V_F, I2C 절연 ISO1641DWR
+- 측정 IC: INA228AIDGSR ×7, ADCRANGE=0, MODE=Ah(shunt-only continuous), VBUS 핀은 션트 전단 연결
+- 션트: 0.1%, 25ppm/°C 이하 (RT1206BRD0720RL / RT1206BRD07100RL / 3.01Ω 후보), Kelvin 연결
+- 분압: Rbottom 150kΩ 기준 (Vref 0.8V)
+- I2C 주소: I2C1 0x40~0x45 (DIG, VDDI, VCI, AVDDH1, AVDDH2, VGH), I2C2(절연) VGL 0x40
+
+## 리더 변경 지시 (이번에 반영)
+L1. [펄스 검출] VDDI_DIG INA228은 CNVR ALERT + I2C 폴링 대신 INA228의 shunt over-limit(SOVL) 리밋 + ALERT 핀(비래치, transparent 모드)으로 펄스를 하드웨어 검출한다. MCU는 ALERT 양쪽 에지를 타이머 입력캡처로 기록한다.
+ - 데이터시트에서 SOVL/SUVL 레지스터, ALATCH, SLOWALERT, ALERT 극성 설정, 비교 시점(변환마다/평균 후)을 확인하고 설정값을 제시하라.
+ - 임계값 예: tare 포함 100µA 상당 shunt 전압. 히스테리시스가 없다면 대안(SOVL/SUVL 조합 또는 펌웨어 디바운스)을 제시하라.
+ - 이 방식이 불가능한 사유가 데이터시트에 있으면 근거와 함께 보고하라.
+ - 나머지 6채널 ALERT 핀 처리 방침(미사용 시 처리 또는 진단용) 제시.
+L2. [FB 선택 점퍼] Logic 측정 3채널에 0Ω 패드(또는 KiCad 솔더 점퍼 심볼)로 "션트 후단 FB(기본) ↔ 션트 전단 로컬 FB" 선택 구조를 넣어라. 두 경우의 분압 연결과 tare 영향, 미사용 경로의 누설이 측정에 들어가지 않는 배치를 설명하라.
+L3. [TPS7A90 저부하] 최소 부하 요구 여부와 저부하/무부하 동작 관련 데이터시트 기재사항을 확인하라. 정확도 보증 조건 문제는 시제품 실측으로 닫으므로 P1로 분류.
+L4. [열 배치] 열원(벅 2개, 3.3V_CTRL LDO, RFM)과 정밀부(션트, INA228, 분압저항)의 배치 원칙, 이격, 동박/비아 처리 가이드를 레이아웃 노트에 포함하라. 목표: 측정 중 션트/INA 주변 온도 변화 ≤5°C.
+
+## KiCad 작성 규칙
+K1. 계층 시트 구조: 아래 블록을 시트로 구성하라. 측정 채널처럼 반복되는 블록은 동일 하위 시트를 여러 번 인스턴스하는 구조(KiCad 반복 계층 시트)를 쓸지, 개별 시트로 할지 추천하고 이유를 제시하라. 시트별 hierarchical pin / global label 목록을 제공하라.
+K2. RefDes 규칙: 시트별 번호대 할당 (예: B1 입력 1xx, B2 2xx …). 예: R201, C203, U200. 모든 표에서 동일 RefDes 사용.
+K3. 넷 이름 규칙: 대문자+언더스코어. 블록 간 넷은 global label, 시트 내부 넷도 의미 있는 이름 부여(측정 경로 중요 넷은 반드시 이름 부여: 예 VDDI_DIG_SRC, VDDI_DIG_DUT, VDDI_DIG_FB, VGL_SRC, VGL_DUT, GND_F).
+K4. 각 부품에 대해:
+ - KiCad 기본 라이브러리 심볼 ID (예: Device:R, Regulator_Switching:xxx). 기본 라이브러리에 없으면 "커스텀 심볼 필요"로 표시하고 핀 번호/이름/전기적 타입 표 제공.
+ - KiCad 기본 라이브러리 풋프린트 ID (예: Resistor_SMD:R_1206_3216Metric, Package_SO:xxx). 없거나 확신이 없으면 "확인 필요" 또는 "커스텀 풋프린트 필요"와 패키지 도면 참조(데이터시트 항목).
+ - 심볼 필드: Value, Footprint, MPN(제조사 품번), Manufacturer, Tolerance/Rating. BOM 자동 출력에 쓰인다.
+K5. 션트 저항 Kelvin: KiCad에서 4단자 표현 방법(net tie 심볼 사용 또는 4핀 커스텀 심볼/풋프린트)을 추천하고, 선택 방식의 심볼·풋프린트 정의를 제시하라. 넷리스트상 FORCE/SENSE 넷이 구분되어야 한다.
+K6. 접지: GND(시스템)와 GND_F(VGL 플로팅)를 별개 넷으로. 아날로그/디지털 GND 분할 여부와 결합점 표현 방식(net tie 등) 제시.
+K7. moscato: 커스텀 placeholder 심볼 "MOSCATO_PLACEHOLDER"로 정의. 핀: VBAT, VDD1V8, VDDI_B, EN, GND, AVDDH1, AVDDH2, VGH, VGL (핀 번호는 임시, 실제 핀맵은 사용자가 교체). 풋프린트는 사용자 제공 예정이므로 필드에 "USER_PROVIDED"로 표기. moscato 필수 외부 수동소자는 미정이므로 넣지 말고 연결 넷과 테스트포인트만 정의.
+K8. ERC 대비: 전원 플래그(PWR_FLAG) 필요 위치, 미연결 핀(no-connect) 목록, 핀 전기적 타입 충돌 예상 지점을 제시하라.
+
+## 블록별 요청 산출물
+각 블록마다 (1) 부품표, (2) 핀-넷 연결표, (3) 설계 계산, (4) 레이아웃 노트를 작성하라.
+- 부품표 형식: RefDes / 기능 / Value / MPN / KiCad 심볼 ID / KiCad 풋프린트 ID / 정격(전압·전력·공차) / 비고
+- 핀-넷 연결표 형식: RefDes / 핀번호 / 핀이름 / 넷이름 (부품의 모든 핀을 빠짐없이, 미연결 핀은 NC로 표기)
+
+블록 목록:
+B1. 전원 입력: DC 잭, 역극성 보호, TVS/서지, 퓨즈 또는 eFuse, 입력 벌크. 12V/2A 어댑터 기준.
+B2. 5V_AUX 벅 (TPS62130A): FB 저항, 인덕터, 입출력 C, 소프트스타트, PG 처리, 보상 관련 핀.
+B3. VBAT 3.8V/1A 벅 (TPS62130A): 동일 + EN(MCU GPIO, 기본 OFF pull-down), 출력 방전 경로.
+B4. 3.3V_CTRL LDO (TPS7A90): 부품값, NR/SS, PG.
+B5. Logic 측정 LDO ×3: 정확한 E96 분압 조합(Rtop/Rbottom)과 결과 전압 오차, 션트 Kelvin 연결, L2 점퍼, EN pull-down, FB 바이어스 영향.
+B6. Logic 비측정 LDO ×2: 부품값, EN.
+B7. 측정 채널 ×6 (양전압): INA228 주변회로(VS 디커플링, 입력 필터 유무와 근거 — 필터 저항은 bias 전류에 의한 gain 오차를 계산해 제시, A0/A1 주소 스트랩, ALERT 처리, VBUS 연결), 션트 Kelvin.
+B8. VGL 절연 도메인: RFM-0505S 입출력 C, 최소부하 처리, TPS7A16 주변, INA228(GND_F 기준), ISO1641 양측 pull-up/디커플링, GND_F 정의와 VBUS 연결(시스템 GND).
+B9. moscato 연결 블록: K7 placeholder. VBAT, 공용 1.8V, VDDI_B, EN(1.8V), GND, 출력 4개(AVDDH1/AVDDH2/VGH/VGL_SRC) 넷 정의. 출력에서 션트까지의 연결과 각 출력 넷의 테스트포인트.
+B10. 테스트포인트: 각 레일 전단/후단, GND, GND_F, 주요 신호. KiCad TestPoint 심볼/풋프린트 ID 포함.
+
+## 공통 산출물
+1. 계층 시트 구조도 + 시트별 hierarchical pin/global label 목록 (K1)
+2. 전체 넷 목록 (넷 이름 / 연결 RefDes.핀 전체 / 비고) — 넷리스트 자동 대조용이므로 누락 없이
+3. 커스텀 심볼/풋프린트 필요 목록과 정의 (K4, K5, K7)
+4. 블록도 갱신본 (mermaid)
+5. 레이아웃 노트 종합 (L4 포함, 션트 Kelvin, 절연 영역 creepage, 접지 분할/결합점)
+6. 이번 단계 BOM 부분합 (RefDes 묶음 / MPN / 수량 / 단가)
+7. Phase 2-2로 넘길 인터페이스 목록: MCU가 제어/감시해야 하는 신호 전체 (EN, PG, ALERT, I2C 등) — global label 이름, 방향, 전압 레벨
+8. ERC 대비 목록 (K8)
+9. 리스크/질문 목록
+
+## 출력 분량 관리
+결과가 길어 잘릴 수 있으면 B1~B6(전원부)과 B7~B10(측정부)+공통 산출물로 나누어 두 번에 출력하고, 첫 출력 끝에 "계속"이라고 표시하라. 표의 행을 생략("…동일" 등)하지 마라.

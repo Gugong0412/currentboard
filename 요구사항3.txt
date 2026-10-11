@@ -1,0 +1,27 @@
+2-1. 전원별 active/blank 구간 전류 정리해줄게. 120Hz 1frame 기준 active 구간이 97%정도됨
+- VDDI_DIG : 1.24V / 1-3mA(active), off(blank)
+- VDDI : 1.8V / 500uA ~ 1.5mA(active), 200-500uA(blank)
+- VCI : 3.0V / 200uA under(active, blank 동일)
+
+- AVDDH1 : 3V ~ 9V / 전류 바꿀게 1mA 정도(active, blank 동일)
+- AVDDH2 : 3V ~ 9V / 전류 range가 큼 max 20mA, 보통 5-10mA(active), 수백uA(blank)
+- VGH : 5V ~ 10V / 1mA under(active, blank 유사)
+- VGL : -3V ~ -11V / 1mA under(active, blank 유사)
+
+2-3. 음전압을 그럼 DDI로 제대로 인가는 가능한거임? 어떤 구조인지 잘 모르겠지만 상관없다면 진행 가능
+
+3-2. VCI는 active, blank 동일해서 상관없을듯
+
+3-3. 5V/12V로 하고 USB는 MCU 통신 전용
+
+3-7. pin 없애도 될듯
+
+2. Moscato 전원 LDO 공유 가능
+
+3. 남은 확인 사항
+1. VCI는 active, blank 동일해서 무의미
+2. 허용됨
+3. 공유 가능
+4. 1A라고 하는게 좋을듯 여유있게
+5. keysight 34465A
+6. DDI 구동 AP는 따로 있고 보드는 전원만 넣어주면됨. 전원은 우선은 헤더핀으로 연결함

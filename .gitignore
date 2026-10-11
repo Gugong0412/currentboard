@@ -1,0 +1,26 @@
+# KiCad 백업·캐시·잠금 파일
+*-backups/
+*.kicad_prl
+*.lck
+~*.lck
+fp-info-cache
+*.bak
+*.bck
+*-bak
+_autosave-*
+\#auto_saved_files\#
+
+# 제작 출력물 (필요할 때 다시 생성)
+gerber/
+*.gbr
+*.drl
+
+# 대조 스크립트 실행 결과
+netcheck/report.csv
+
+# OS / Python
+.DS_Store
+Thumbs.db
+desktop.ini
+__pycache__/
+*.pyc

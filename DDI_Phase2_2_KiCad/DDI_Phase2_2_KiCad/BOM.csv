@@ -1,0 +1,252 @@
+﻿RefDes,Sheet,Value,MPN,Manufacturer,Population,RequestedFootprint,Rating,Note
+J100,B1,12V INPUT,PJ-102AH,Same Sky,FIT,Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal,24V/5A 후보; mating plug 및 제조사 도면 확인,center-positive; 3번은 NC. 제품/심볼 switch mapping 최종 대조
+D100,B1,18V BIDIR,SMBJ18CA,Littelfuse,FIT,Diode_SMD:D_SMB,"VRWM18V, Vclamp29.2V@정격pulse,600W pulse; 연속전력 아님",양방향으로 역12V에서 순방향 쇼트 방지; 접속 단자는 극성 없음
+U100,B1,TPS26600PWPR,TPS26600PWPR,Texas Instruments,FIT,Project:TPS26600_PWP16 (커스텀 풋프린트 필요),4.2~60V; current limit 설정 약1.49A; PWP 패드17은 프로젝트 번호,"RTN≠GND: 내부 역극성 보호 기준. SHDN 내부2~3.4V bias로 default-on, 입력NC는 의도적."
+R100,B1,110k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V","F1: R100/R101/R102=110k/4.99k/10k; 0.1%, <=25ppm/C. Leakage and reference corners included in report."
+R101,B1,4.99k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V","F1: R100/R101/R102=110k/4.99k/10k; 0.1%, <=25ppm/C. Leakage and reference corners included in report."
+R102,B1,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V","F1: R100/R101/R102=110k/4.99k/10k; 0.1%, <=25ppm/C. Leakage and reference corners included in report."
+R103,B1,8.06k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R104,B1,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C100,B1,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,TVS와eFuse 바로 옆; 입력 역전 시 비극성
+C101,B1,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V X7R ±10%,
+C102,B1,47u,확인 필요: 35V low-ESR,Panasonic 후보,FIT,Capacitor_SMD:CP_Elec_6.3x7.7 (확인 필요),35V ≥47µF ±20%; ripple/ESR 확인,
+C103,B1,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+U200,B2,TPS62130ARGTR,TPS62130ARGTR,Texas Instruments,FIT,Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias,데이터시트 운용범위 적용,
+L200,B2,2.2uH,XFL4020-222MEC,Coilcraft,FIT,Project:XFL4020 (커스텀 풋프린트 필요),±20%; current/Isat·DCR 공식선정표 대조,TI Table9-2 계열 추천. 실제 MEC 권장 land pattern 적용
+R200,B2,523k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R201,B2,2k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R202,B2,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R203,B2,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C200,B2,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,50V X7R ±10%,2개 병렬 합산 유효≥10µF 목표
+C201,B2,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,50V X7R ±10%,
+C202,B2,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,AVIN pin10 바로 옆
+C203,B2,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,2개 병렬 합산 유효22~44µF 목표
+C204,B2,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C205,B2,3.3n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+U300,B3,TPS62130ARGTR,TPS62130ARGTR,Texas Instruments,FIT,Package_DFN_QFN:VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias,데이터시트 운용범위 적용,
+L300,B3,2.2uH,XFL4020-222MEC,Coilcraft,FIT,Project:XFL4020 (커스텀 풋프린트 필요),±20%; current/Isat·DCR 공식선정표 대조,TI Table9-2 계열 추천. 실제 MEC 권장 land pattern 적용
+R300,B3,374k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R301,B3,1k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R302,B3,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R303,B3,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R304,B3,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R305,B3,1k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V","3.8mA,14.44mW; moscato 저장전하와 역급전 검증"
+C300,B3,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,50V X7R ±10%,2개 병렬 합산 유효≥10µF 목표
+C301,B3,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,50V X7R ±10%,
+C302,B3,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,AVIN pin10 바로 옆
+C303,B3,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,2개 병렬 합산 유효22~44µF 목표
+C304,B3,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C305,B3,3.3n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+U400,B4,TPS7A9001DSKR,TPS7A9001DSKR,Texas Instruments,FIT,Package_DFN_QFN:Texas_S-PDSO-N10_EP1.2x2mm,데이터시트 운용범위 적용,
+R400,B4,464k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R401,B4,4.75k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R402,B4,150k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R404,B4,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C400,B4,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,입력2개 병렬; 유효합≥10µF
+C401,B4,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C402,B4,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+C403,B4,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,션트 전단 로컬 OUT; 유효합≥10µF
+C404,B4,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C405,B4,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V X7R ±10%,
+C406,B4,100p,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,기본 미실장; loop 시험 없이 실장 금지
+U500,B5_DIG,TPS7A9001DSKR,TPS7A9001DSKR,Texas Instruments,FIT,Package_DFN_QFN:Texas_S-PDSO-N10_EP1.2x2mm,데이터시트 운용범위 적용,
+R500,B5_DIG,82.5k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R502,B5_DIG,150k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R503,B5_DIG,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R504,B5_DIG,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R505,B5_DIG,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",R506와 동시실장 금지
+R506,B5_DIG,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,DNP,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",R505 제거 후 실장; 전원OFF 상태에서 변경
+R507,B5_DIG,20R,RT1206BRD0720RL,YAGEO,FIT,Project:R_1206_KELVIN4 (커스텀 풋프린트 필요),"0.1%, ≤25ppm/°C, 0.25W 요구; 발주 원문 확인","물리2단자/논리4핀; footprint net-tie groups 1,3 및2,4. 저항 1↔2는 단락 아님."
+C500,B5_DIG,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±20%; 3.3V DC·온도·공차 포함 유효≥5µF 요구,F2: 입력 10µF 한 개 + 100nF 유지. DS §7.1.3 권장 명목값은 50% derating 반영. 실제 부품 곡선 확인 필요.
+C502,B5_DIG,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+C503,B5_DIG,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,션트 전단 로컬 OUT; 유효합≥10µF
+C504,B5_DIG,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C505,B5_DIG,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V X7R ±10%,
+C506,B5_DIG,100p,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,기본 미실장; loop 시험 없이 실장 금지
+U520,B5_VDDI,TPS7A9001DSKR,TPS7A9001DSKR,Texas Instruments,FIT,Package_DFN_QFN:Texas_S-PDSO-N10_EP1.2x2mm,데이터시트 운용범위 적용,
+R520,B5_VDDI,187k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R521,B5_VDDI,499R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R522,B5_VDDI,150k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R523,B5_VDDI,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R524,B5_VDDI,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R525,B5_VDDI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",R526와 동시실장 금지
+R526,B5_VDDI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,DNP,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",R525 제거 후 실장; 전원OFF 상태에서 변경
+R527,B5_VDDI,20R,RT1206BRD0720RL,YAGEO,FIT,Project:R_1206_KELVIN4 (커스텀 풋프린트 필요),"0.1%, ≤25ppm/°C, 0.25W 요구; 발주 원문 확인","물리2단자/논리4핀; footprint net-tie groups 1,3 및2,4. 저항 1↔2는 단락 아님."
+C520,B5_VDDI,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±20%; 3.3V DC·온도·공차 포함 유효≥5µF 요구,F2: 입력 10µF 한 개 + 100nF 유지. DS §7.1.3 권장 명목값은 50% derating 반영. 실제 부품 곡선 확인 필요.
+C522,B5_VDDI,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+C523,B5_VDDI,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,션트 전단 로컬 OUT; 유효합≥10µF
+C524,B5_VDDI,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C525,B5_VDDI,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V X7R ±10%,
+C526,B5_VDDI,100p,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,기본 미실장; loop 시험 없이 실장 금지
+U540,B5_VCI,TPS7A9001DSKR,TPS7A9001DSKR,Texas Instruments,FIT,Package_DFN_QFN:Texas_S-PDSO-N10_EP1.2x2mm,데이터시트 운용범위 적용,
+R540,B5_VCI,412k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R541,B5_VCI,499R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R542,B5_VCI,150k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R543,B5_VCI,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R544,B5_VCI,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R545,B5_VCI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",R546와 동시실장 금지
+R546,B5_VCI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,DNP,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",R545 제거 후 실장; 전원OFF 상태에서 변경
+R547,B5_VCI,100R,RT1206BRD07100RL,YAGEO,FIT,Project:R_1206_KELVIN4 (커스텀 풋프린트 필요),"0.1%, ≤25ppm/°C, 0.25W 요구; 발주 원문 확인","물리2단자/논리4핀; footprint net-tie groups 1,3 및2,4. 저항 1↔2는 단락 아님."
+C540,B5_VCI,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±20%; 3.3V DC·온도·공차 포함 유효≥5µF 요구,F2: 입력 10µF 한 개 + 100nF 유지. DS §7.1.3 권장 명목값은 50% derating 반영. 실제 부품 곡선 확인 필요.
+C542,B5_VCI,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+C543,B5_VCI,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,션트 전단 로컬 OUT; 유효합≥10µF
+C544,B5_VCI,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C545,B5_VCI,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V X7R ±10%,
+C546,B5_VCI,100p,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,기본 미실장; loop 시험 없이 실장 금지
+U600,B6_IO,TPS7A9001DSKR,TPS7A9001DSKR,Texas Instruments,FIT,Package_DFN_QFN:Texas_S-PDSO-N10_EP1.2x2mm,데이터시트 운용범위 적용,
+R600,B6_IO,75k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R602,B6_IO,150k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R603,B6_IO,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R604,B6_IO,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C600,B6_IO,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±20%; 3.3V DC·온도·공차 포함 유효≥5µF 요구,F2: 입력 10µF 한 개 + 100nF 유지. DS §7.1.3 권장 명목값은 50% derating 반영. 실제 부품 곡선 확인 필요.
+C602,B6_IO,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+C603,B6_IO,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,션트 전단 로컬 OUT; 유효합≥10µF
+C604,B6_IO,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C605,B6_IO,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V X7R ±10%,
+C606,B6_IO,100p,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,기본 미실장; loop 시험 없이 실장 금지
+U620,B6_SYS,TPS7A9001DSKR,TPS7A9001DSKR,Texas Instruments,FIT,Package_DFN_QFN:Texas_S-PDSO-N10_EP1.2x2mm,데이터시트 운용범위 적용,
+R620,B6_SYS,187k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R621,B6_SYS,499R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R622,B6_SYS,150k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"0.1%, ≤25ppm/°C, ≥0.1W, ≥25V",
+R623,B6_SYS,100k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R624,B6_SYS,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C620,B6_SYS,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±20%; 3.3V DC·온도·공차 포함 유효≥5µF 요구,F2: 입력 10µF 한 개 + 100nF 유지. DS §7.1.3 권장 명목값은 50% derating 반영. 실제 부품 곡선 확인 필요.
+C622,B6_SYS,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+C623,B6_SYS,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,션트 전단 로컬 OUT; 유효합≥10µF
+C624,B6_SYS,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,
+C625,B6_SYS,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,25V X7R ±10%,
+C626,B6_SYS,100p,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,기본 미실장; loop 시험 없이 실장 금지
+U700,B7_VDDI_DIG,INA228AIDGSR,INA228AIDGSR,Texas Instruments,FIT,Package_SO:VSSOP-10_3x3mm_P0.5mm,데이터시트 운용범위 적용,
+R700,B7_VDDI_DIG,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",기본0Ω; 선택10Ω는 재교정·bias/gain 오차 검증
+R701,B7_VDDI_DIG,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",P와 동일값; 불균형 금지
+R702,B7_VDDI_DIG,4.7k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C700,B7_VDDI_DIG,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C701,B7_VDDI_DIG,1n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+C702,B7_VDDI_DIG,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+U710,B7_VDDI,INA228AIDGSR,INA228AIDGSR,Texas Instruments,FIT,Package_SO:VSSOP-10_3x3mm_P0.5mm,데이터시트 운용범위 적용,
+R710,B7_VDDI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",기본0Ω; 선택10Ω는 재교정·bias/gain 오차 검증
+R711,B7_VDDI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",P와 동일값; 불균형 금지
+R712,B7_VDDI,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C710,B7_VDDI,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C711,B7_VDDI,1n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+C712,B7_VDDI,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+U720,B7_VCI,INA228AIDGSR,INA228AIDGSR,Texas Instruments,FIT,Package_SO:VSSOP-10_3x3mm_P0.5mm,데이터시트 운용범위 적용,
+R720,B7_VCI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",기본0Ω; 선택10Ω는 재교정·bias/gain 오차 검증
+R721,B7_VCI,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",P와 동일값; 불균형 금지
+R722,B7_VCI,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C720,B7_VCI,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C721,B7_VCI,1n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+C722,B7_VCI,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+U730,B7_AVDDH1,INA228AIDGSR,INA228AIDGSR,Texas Instruments,FIT,Package_SO:VSSOP-10_3x3mm_P0.5mm,데이터시트 운용범위 적용,
+R730,B7_AVDDH1,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",기본0Ω; 선택10Ω는 재교정·bias/gain 오차 검증
+R731,B7_AVDDH1,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",P와 동일값; 불균형 금지
+R732,B7_AVDDH1,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C730,B7_AVDDH1,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C731,B7_AVDDH1,1n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+C732,B7_AVDDH1,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+R737,B7_AVDDH1,20R,RT1206BRD0720RL,YAGEO,FIT,Project:R_1206_KELVIN4 (커스텀 풋프린트 필요),"0.1%, ≤25ppm/°C, 0.25W 요구; 발주 원문 확인","물리2단자/논리4핀; footprint net-tie groups 1,3 및2,4. 저항 1↔2는 단락 아님."
+U740,B7_AVDDH2,INA228AIDGSR,INA228AIDGSR,Texas Instruments,FIT,Package_SO:VSSOP-10_3x3mm_P0.5mm,데이터시트 운용범위 적용,
+R740,B7_AVDDH2,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",기본0Ω; 선택10Ω는 재교정·bias/gain 오차 검증
+R741,B7_AVDDH2,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",P와 동일값; 불균형 금지
+R742,B7_AVDDH2,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C740,B7_AVDDH2,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C741,B7_AVDDH2,1n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+C742,B7_AVDDH2,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+R747,B7_AVDDH2,3.01R,RT1206BRD073R01L,YAGEO,FIT,Project:R_1206_KELVIN4 (커스텀 풋프린트 필요),"0.1%, ≤25ppm/°C, 0.25W 요구; 발주 원문 확인","물리2단자/논리4핀; footprint net-tie groups 1,3 및2,4. 저항 1↔2는 단락 아님."
+U750,B7_VGH,INA228AIDGSR,INA228AIDGSR,Texas Instruments,FIT,Package_SO:VSSOP-10_3x3mm_P0.5mm,데이터시트 운용범위 적용,
+R750,B7_VGH,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",기본0Ω; 선택10Ω는 재교정·bias/gain 오차 검증
+R751,B7_VGH,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",P와 동일값; 불균형 금지
+R752,B7_VGH,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C750,B7_VGH,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C751,B7_VGH,1n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+C752,B7_VGH,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+R757,B7_VGH,20R,RT1206BRD0720RL,YAGEO,FIT,Project:R_1206_KELVIN4 (커스텀 풋프린트 필요),"0.1%, ≤25ppm/°C, 0.25W 요구; 발주 원문 확인","물리2단자/논리4핀; footprint net-tie groups 1,3 및2,4. 저항 1↔2는 단락 아님."
+R708,B7_VDDI_DIG,2.2k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R709,B7_VDDI_DIG,2.2k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+U800,B8_PWR,RFM-0505S,RFM-0505S,RECOM,FIT,Project:RFM_SIP4 (커스텀 풋프린트 필요),"5V±10% 입력,5V/200mA 비안정화,기능절연",
+C800,B8_PWR,10u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,50V X7R ±10%,RFM Class-A 제안6.8µF 이상 유효용량 목표; EMC성적 아님
+C801,B8_PWR,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+R800,B8_PWR,220R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_2512_6332Metric,"1%, ≥0.5W, ≥25V","1%,≥0.5W로 필드 Override; 4.75V에서21.6mA; 열원으로 분류"
+U810,B8_PWR,TPS7A1633DGNR,TPS7A1633DGNR,Texas Instruments,FIT,Project:TPS7A16_DGN8 (커스텀 풋프린트 필요),데이터시트 운용범위 적용,고정3.3V형 pin2 DNC 연결/동박 금지; EP 프로젝트9번
+R810,B8_PWR,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C810,B8_PWR,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,25V X7R ±10%,
+C811,B8_PWR,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+C812,B8_PWR,22u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_1210_3225Metric,16V X7R ±10%,최소유효2.2µF; 권장10µF 유효 목표
+C813,B8_PWR,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,50V X7R ±10%,
+R807,B8_INA,20R,RT1206BRD0720RL,YAGEO,FIT,Project:R_1206_KELVIN4 (커스텀 풋프린트 필요),"0.1%, ≤25ppm/°C, 0.25W 요구; 발주 원문 확인","물리2단자/논리4핀; footprint net-tie groups 1,3 및2,4. 저항 1↔2는 단락 아님."
+U820,B8_INA,INA228AIDGSR,INA228AIDGSR,Texas Instruments,FIT,Package_SO:VSSOP-10_3x3mm_P0.5mm,데이터시트 운용범위 적용,
+R820,B8_INA,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",기본0Ω; 선택10Ω는 재교정·bias/gain 오차 검증
+R821,B8_INA,0R,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"jumper; ≤50mΩ 목표, ≥0.1W",P와 동일값; 불균형 금지
+R822,B8_INA,10k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C820,B8_INA,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C821,B8_INA,1n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,DNP,Capacitor_SMD:C_0603_1608Metric,25V C0G ±5%,
+C822,B8_INA,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+U830,B8_ISO,ISO1641DWR,ISO1641DWR,Texas Instruments,FIT,Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm,데이터시트 운용범위 적용,DW16 핀맵 사용. 8pin ISO1641B 핀맵과 혼용 금지. clock stretching 불가
+R830,B8_ISO,2.2k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R831,B8_ISO,2.2k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R832,B8_ISO,2.2k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R833,B8_ISO,2.2k,확인 필요: 지정값·정격 구매품,YAGEO 후보,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+C830,B8_ISO,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C831,B8_ISO,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C832,B8_ISO,100n,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C833,B8_ISO,1u,확인 필요: 유효용량·누설 검증 후 선정,Murata 후보,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+U900,B9,MOSCATO_PLACEHOLDER,USER_PROVIDED,USER_PROVIDED,PLACEHOLDER,USER_PROVIDED,실제핀·정격·필수수동소자 사용자확인,임시번호. 실제 회로 대치 후 재export/비교해야 함
+U1100,B11_CORE,STM32F072CBT6,STM32F072CBT6,STMicroelectronics,FIT,Package_QFP:LQFP-48_7x7mm_P0.5mm,2.0~3.6V; 48MHz; LQFP48,"DS9826 Rev6 Table14~16. pin36=VDDIO2, pin1=VBAT. Crystal/HSE + PLL for USB and timer."
+C1100,B11_POWER,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,U1100 pin24 바로 옆
+C1101,B11_POWER,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,U1100 pin36 바로 옆
+C1102,B11_POWER,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,U1100 pin48 바로 옆
+C1103,B11_POWER,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,U1100 pin1 바로 옆
+C1104,B11_POWER,4.7u,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0805_2012Metric,16V X7R ±10%,MCU 국부 bulk
+R1103,B11_POWER,1R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",VDDA RC 필터; 10mA에서도 DC drop10mV
+C1105,B11_POWER,1u,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C1106,B11_POWER,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+Y1100,B11_CLOCK,8MHz / CL10pF,ABM3B-8.000MHZ-10-1-U-T,Abracon,FIT,Crystal:Crystal_SMD_5032-4Pin_5.0x3.2mm,"±10ppm initial, ±10ppm temperature(-10~60°C), aging ±5ppm first year; ESR≤200Ω; C0≤7pF","Cs=4pF 가정, C1107=C1108=12pF. Cs와 load pull은 실제 PCB에서 교정. 0~50°C 실험실 운용 가정."
+R1102,B11_CLOCK,0R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V","drive 제한/기동 margin 조정용; 초기0Ω, 최종 drive≤100µW 실측"
+C1107,B11_CLOCK,12p,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,50V C0G ±1%,
+C1108,B11_CLOCK,12p,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,50V C0G ±1%,
+R1100,B11_DEBUG,10k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",NRST 외부 pull-up; 내부 pull-up과 병렬
+C1109,B11_DEBUG,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+SW1100,B11_DEBUG,RESET,B3U-1000P,Omron,FIT,Button_Switch_SMD:SW_SPST_B3U-1000P,접점 정격 원문 확인 필요,접점 누름=NRST low
+R1101,B11_DEBUG,10k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",기본 사용자 Flash boot
+J1101,B11_DEBUG,BOOT SERVICE,확인 필요: 1x2 2.54mm,확인 필요,FIT,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,"3.3V, shunt 기본 미장착",커넥터 실장 FIT와 jumper short는 다름. 점퍼 없을 때 R1101이low.
+R1104,B11_DEBUG,33R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+R1105,B11_DEBUG,33R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",
+J1100,B11_DEBUG,ARM SWD 2x5 1.27,FTSH-105-01-L-DV-K,Samtec,FIT,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical_SMD,1.27mm; footprint tail/land pattern 최종 대조,pin1은 debugger VTREF sense만; debugger 전원 출력 금지. M0 SWO 없음. pin7 NC/key 위치.
+J1200,B12_CONNECTOR,USB-C USB2.0 DEVICE,USB4105-GF-A,GCT,FIT,Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A,"VBUS contacts collective5A, GND6.25A; 사용전류20mA이내","4개 shield stake는 같은 S1 pad number로 모두 USB_SHIELD. A6/B6 및A7/B7 각각 합침. USB PD 미사용, 5V sink only."
+R1200,B12_CONNECTOR,5.1k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",CC1 독립 Rd
+R1201,B12_CONNECTOR,5.1k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",CC2 독립 Rd; CC1과 합치지 않음
+U1200,B12_ISOLATOR,ADuM4160BRWZ,ADuM4160BRWZ,Analog Devices,FIT,Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm,"USB FS12Mbps, side1 5V / side2 3.3V, each side≤8mA active","RevE Table9, Figure5. Side2 pin14와16 모두 CTRL_3V3. Host ground와system ground를 직접 연결하지 않음."
+R1202,B12_ISOLATOR,24R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",ADuM full-speed 양측 D+/D- 직렬 종단; ADuM 핀 근처
+R1203,B12_ISOLATOR,24R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",ADuM full-speed 양측 D+/D- 직렬 종단; ADuM 핀 근처
+R1204,B12_ISOLATOR,24R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",ADuM full-speed 양측 D+/D- 직렬 종단; ADuM 핀 근처
+R1205,B12_ISOLATOR,24R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",ADuM full-speed 양측 D+/D- 직렬 종단; ADuM 핀 근처
+R1206,B12_CONNECTOR,0R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",실드의 리턴은 host측만; GND 또는 GND_F에 연결 금지
+R1207,B12_ISOLATOR,100k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",부팅 중 detach; MCU 내부 USB pull-up 준비 후 PIN=1
+C1200,B12_ISOLATOR,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,pin1 bypass
+C1201,B12_ISOLATOR,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,pin3 internal LDO bypass
+C1202,B12_ISOLATOR,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,pin14 bypass
+C1203,B12_ISOLATOR,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,pin16 bypass
+C1204,B12_ISOLATOR,1u,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C1205,B12_CONNECTOR,1u,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,"host VBUS 총직접용량1.1uF, 10uF보다작음"
+U1201,B12_CONNECTOR,TPD2EUSB30DRTR,TPD2EUSB30DRTR,Texas Instruments,FIT,Project:TPD2EUSB30_DRT3 (커스텀 land pattern 확인 필요),"DRT3, Cio typ0.7pF; VBR/VRWM 원문 확인","커넥터 바로 뒤, R1202/1203 앞. 전류 경로는 USB_GND."
+U1202,B12_CONNECTOR,TPD1E10B06DPYR,TPD1E10B06DPYR,Texas Instruments,FIT,Project:TPD1E10B06_DPY2 (확인 필요),6V standoff; 양방향; DPY2,두 단자 교환 가능. ESD 보호이며 지속 과전압/오접속 PD 전압 차단기가 아님.
+U1203,B12_CONNECTOR,TPD1E10B06DPYR,TPD1E10B06DPYR,Texas Instruments,FIT,Project:TPD1E10B06_DPY2 (확인 필요),6V standoff; 양방향; DPY2,두 단자 교환 가능. ESD 보호이며 지속 과전압/오접속 PD 전압 차단기가 아님.
+U1204,B12_CONNECTOR,TPD1E10B06DPYR,TPD1E10B06DPYR,Texas Instruments,FIT,Project:TPD1E10B06_DPY2 (확인 필요),6V standoff; 양방향; DPY2,두 단자 교환 가능. ESD 보호이며 지속 과전압/오접속 PD 전압 차단기가 아님.
+U1300,B13,SN74AXC2T45DCTR,SN74AXC2T45DCTR,Texas Instruments,FIT,Project:SN74AXC2T45_DCT8 (land pattern 확인 필요),DIR=VCCA -> A to B; VCC<0.1V시 high-Z; Ioff≤8uA(full temp),"모델의 A/B 방향은 이번 고정배선 기능 기준. 원소자 양방향. DIR=1 고정, OE핀 없음."
+C1300,B13,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+C1301,B13,100n,확인 필요: 유효용량·공차 구매품,확인 필요,FIT,Capacitor_SMD:C_0603_1608Metric,16V X7R ±10%,
+R1300,B13,10k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",MCU high-Z 시MOSCATO EN low
+R1301,B13,10k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",MCU high-Z 시DDI reset assert
+R1302,B13,47R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",출력 ringing 완화; B쪽 전원off격리용 저항은 아님
+R1303,B13,47R,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",출력 ringing 완화
+R1304,B13,10k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V","B측 high-Z 시low, 8uA leakage일때80mV"
+R1305,B13,10k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",B측 high-Z 시reset assert; pull-up 금지
+J1400,B14,DIGITAL / 2x6,TSW-106-07-G-D,Samtec,FIT,Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical,TSW/SSW 4.7A(one pin/row powered); 시스템 설계≤0.1A/rail,"인접 짝수 핀 GND. J1402는 양전압헤더와≥10mm 분리, 서로 다른핀수로오접속완화. mating cable/connector 별도검증."
+J1401,B14,ANALOG POS / 2x3,TSW-103-07-G-D,Samtec,FIT,Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical,TSW/SSW 4.7A(one pin/row powered); 시스템 설계≤0.1A/rail,"인접 짝수 핀 GND. J1402는 양전압헤더와≥10mm 분리, 서로 다른핀수로오접속완화. mating cable/connector 별도검증."
+J1402,B14,ANALOG NEG / 1x2,TSW-102-07-G-S,Samtec,FIT,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,TSW/SSW 4.7A(one pin/row powered); 시스템 설계≤0.1A/rail,"인접 짝수 핀 GND. J1402는 양전압헤더와≥10mm 분리, 서로 다른핀수로오접속완화. mating cable/connector 별도검증."
+R1500,B15,3.3k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",POWER GREEN LED 전류 제한
+D1500,B15,POWER GREEN,확인 필요: green 0603 LED,Lite-On 후보,FIT,LED_SMD:LED_0603_1608Metric,Vf/밝기/핀 극성 발주품 확인 필요,측정 rail에서 LED 전원을 끌어오지 않음
+R1501,B15,1.5k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",STATUS GREEN LED 전류 제한
+D1501,B15,STATUS GREEN,확인 필요: green 0603 LED,Lite-On 후보,FIT,LED_SMD:LED_0603_1608Metric,Vf/밝기/핀 극성 발주품 확인 필요,측정 rail에서 LED 전원을 끌어오지 않음
+R1502,B15,1.5k,확인 필요: 지정값·정격 구매품,확인 필요,FIT,Resistor_SMD:R_0603_1608Metric,"1%, ≥0.1W, ≥50V",FAULT RED LED 전류 제한
+D1502,B15,FAULT RED,확인 필요: red 0603 LED,Lite-On 후보,FIT,LED_SMD:LED_0603_1608Metric,Vf/밝기/핀 극성 발주품 확인 필요,측정 rail에서 LED 전원을 끌어오지 않음

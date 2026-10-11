@@ -1,0 +1,97 @@
+[
+  {
+    "RefDes": "U100",
+    "RequestedFootprint": "Project:TPS26600_PWP16 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "C102",
+    "RequestedFootprint": "Capacitor_SMD:CP_Elec_6.3x7.7 (확인 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "L200",
+    "RequestedFootprint": "Project:XFL4020 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "L300",
+    "RequestedFootprint": "Project:XFL4020 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "R507",
+    "RequestedFootprint": "Project:R_1206_KELVIN4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "R547",
+    "RequestedFootprint": "Project:R_1206_KELVIN4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "R527",
+    "RequestedFootprint": "Project:R_1206_KELVIN4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "R737",
+    "RequestedFootprint": "Project:R_1206_KELVIN4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "R747",
+    "RequestedFootprint": "Project:R_1206_KELVIN4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "R757",
+    "RequestedFootprint": "Project:R_1206_KELVIN4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "R807",
+    "RequestedFootprint": "Project:R_1206_KELVIN4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U800",
+    "RequestedFootprint": "Project:RFM_SIP4 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U810",
+    "RequestedFootprint": "Project:TPS7A16_DGN8 (커스텀 풋프린트 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U900",
+    "RequestedFootprint": "USER_PROVIDED",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U1201",
+    "RequestedFootprint": "Project:TPD2EUSB30_DRT3 (커스텀 land pattern 확인 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U1202",
+    "RequestedFootprint": "Project:TPD1E10B06_DPY2 (확인 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U1203",
+    "RequestedFootprint": "Project:TPD1E10B06_DPY2 (확인 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U1204",
+    "RequestedFootprint": "Project:TPD1E10B06_DPY2 (확인 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  },
+  {
+    "RefDes": "U1300",
+    "RequestedFootprint": "Project:SN74AXC2T45_DCT8 (land pattern 확인 필요)",
+    "Reason": "Physical geometry / manufacturer pinout requires review"
+  }
+]
