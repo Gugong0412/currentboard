@@ -4,11 +4,55 @@
 <style>
 :root{color-scheme:light;--ink:#152b46;--muted:#63758a;--line:#cbd8e6;--blue:#1766be;--cyan:#087b96;--bg:#f2f6fa;--paper:#fff;--warn:#9e540c;--warnbg:#fff4e4;--green:#187257;--shadow:0 5px 20px #1533530b}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,Inter,"Noto Sans KR",Apple SD Gothic Neo,system-ui,sans-serif;line-height:1.52}button,input,select{font:inherit}button{cursor:pointer}a{color:var(--blue)}header{background:#12253d;color:#fff;padding:25px max(22px,calc((100vw - 1500px)/2));display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}h1{margin:0;font-size:clamp(21px,3vw,30px);letter-spacing:-.8px}header p{color:#b9cddd;margin:5px 0 0;font-size:13px}.eyebrow{color:#6fd2e7;font-size:11px;letter-spacing:2px;font-weight:850;margin-bottom:4px}.headmeta{text-align:right;font-size:12px;color:#c6d8e9}.headmeta strong{color:#fff;display:block;font-size:13px}.layout{max-width:1540px;margin:auto;padding:22px 22px 45px}.notice{background:var(--warnbg);border:1px solid #eccca3;border-left:4px solid #e09a3a;padding:12px 16px;border-radius:9px;color:#744015;font-size:13px;margin-bottom:14px}.notice strong{color:#803e0d}.stats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.stat{background:white;border:1px solid var(--line);border-radius:10px;padding:10px 15px;font-size:12px;color:var(--muted);flex:1;min-width:145px}.stat strong{display:block;color:var(--ink);font-size:17px}.main{display:grid;grid-template-columns:minmax(0,1fr) 325px;gap:15px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}.panelhead{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}.panelhead h2{font-size:16px;margin:0;letter-spacing:-.4px}.panelhead .sub{color:var(--muted);font-size:11px}.actions{display:flex;align-items:center;gap:6px}.act{background:#fff;color:var(--ink);border:1px solid var(--line);padding:6px 11px;border-radius:7px;font-size:12px}.act:hover{border-color:var(--blue);background:#f1f7ff}.tabs{display:flex;gap:5px;flex-wrap:wrap;padding:13px 18px;border-bottom:1px solid var(--line)}.tab{border:1px solid var(--line);background:#f7f9fc;color:#456078;border-radius:7px;font-weight:750;font-size:12px;padding:8px 11px}.tab.active{background:#125bab;border-color:#125bab;color:#fff}.tab.unknown{border-style:dashed;border-color:#e0ad67}.schematicwrap{overflow:auto;background-color:#fff;background-image:linear-gradient(#eff3f8 1px,transparent 1px),linear-gradient(90deg,#eff3f8 1px,transparent 1px);background-size:20px 20px;padding:12px;scrollbar-color:#bdcde0 transparent}#schematic{display:block;max-width:none;height:auto}.legend{display:flex;flex-wrap:wrap;gap:13px;font-size:11px;color:var(--muted);padding:12px 18px;border-top:1px solid var(--line)}.keyline{width:27px;height:0;border-top:2px solid #286aab;display:inline-block;vertical-align:middle;margin-right:5px}.keyline.sense{border-color:#078b98;border-top-style:dashed}.keyline.warn{border-color:#d88b2d;border-top-style:dashed}.chipbox{fill:#fff;stroke:#304b65;stroke-width:2}.chipbox.warn{fill:#fff9ef;stroke:#c3832e;stroke-dasharray:9 6}.wire{fill:none;stroke:#286aab;stroke-width:2.4;stroke-linejoin:round}.wire.sense{stroke:#078b98;stroke-width:2;stroke-dasharray:6 4}.wire.warn{stroke:#c3832e;stroke-dasharray:7 4}.pintext{fill:#48667f;font:12px monospace}.ntext{fill:#185885;font:600 12px monospace}.svgtitle{font-weight:800;fill:#1a3352;font-size:17px}.svgsub{fill:#6d8193;font-size:12px}.svgbig{font-weight:850;fill:#243b57;font-size:19px}.svgwarn{fill:#a35e0b;font-size:12px;font-weight:750}.svgsmall{font-size:12px;fill:#587089}.svg-tappable{cursor:pointer}.svg-tappable:hover .chipbox{stroke:#166fc4;stroke-width:3}.pin-dot{fill:#286aab}.badgewarn{display:inline-block;background:#fff0d9;color:#95530e;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:800}.badgegood{display:inline-block;background:#e7f7f0;color:#126c50;padding:2px 8px;border-radius:5px;font-size:10px;font-weight:800}.tablewrap{overflow:auto}.table{width:100%;border-collapse:collapse;text-align:left;font-size:12px;min-width:600px}.table th{background:#f5f8fc;color:#596e83;font-weight:800;font-size:11px}.table th,.table td{padding:9px 12px;border-bottom:1px solid #e7edf4;vertical-align:top}.table tr:hover td{background:#f7fbff}.mono{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:11px;overflow-wrap:anywhere}.pinhelp{font-size:12px;color:#5d7187;padding:12px 16px}.sidecontent{padding:15px}.search{width:100%;padding:10px 11px;border-radius:7px;border:1px solid #c7d5e3;background:#fff;outline:none;color:#183750;margin:7px 0}.search:focus{border-color:#1476cb;box-shadow:0 0 0 3px #1e78d21e}.minihead{font-size:11px;letter-spacing:.7px;font-weight:850;color:#4e6b85;text-transform:uppercase;margin:8px 0 10px}.metarow{font-size:12px;padding:7px 0;border-bottom:1px solid #edf1f7}.metarow b{font-family:monospace}.metarow:last-child{border:0}.scrollpins{max-height:405px;overflow:auto}.pinrow{padding:9px 0;border-bottom:1px solid #edf1f7;display:grid;grid-template-columns:45px minmax(0,1fr);gap:9px;cursor:pointer}.pinrow:hover{background:#f5f9ff}.pnum{background:#eef4fa;border:1px solid #dce6f0;border-radius:5px;text-align:center;font:700 12px monospace;align-self:start;padding:5px 1px}.pnum.tbd{background:#fff0da;color:#9a560a;border:1px dashed #cf984e}.pinrow small{color:#65798c;display:block;font-size:10px}.pinrow strong{display:block;font:700 12px ui-monospace,monospace}.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.toolbar select{padding:8px 9px;border:1px solid var(--line);border-radius:7px;color:#284663;background:#fff;font-size:12px}.details{margin-top:15px;display:grid;grid-template-columns:1fr 1fr;gap:15px}.fine{padding:13px 15px;background:#f5f9fd;border-top:1px solid var(--line);color:#576f83;font-size:11px}.netmatches{max-height:265px;overflow:auto;border:1px solid #dce6f0;border-radius:8px}.netbtn{display:block;width:100%;background:#fff;border:0;border-bottom:1px solid #eaf0f5;text-align:left;padding:9px 11px;color:#1d547f;font:650 11px ui-monospace,monospace;cursor:pointer}.netbtn.active,.netbtn:hover{background:#e9f4ff}.netnodes{max-height:320px;overflow:auto}.netnode{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid #edf2f7;font-size:12px}.netnode code{font-size:11px;color:#236197}.small{font-size:11px;color:var(--muted)}.summary-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:15px}.sumcard{border:1px solid var(--line);border-radius:9px;padding:12px;background:#fff}.sumcard b{display:block;font-size:14px}.sumcard span{font-size:11px;color:var(--muted)}.warnchip{color:#9c5b11;font-weight:800}.resource{padding:12px 16px;display:flex;flex-wrap:wrap;gap:15px}.resource a{font-size:12px;text-decoration:none;font-weight:700}.resource a:hover{text-decoration:underline}footer{font-size:11px;color:#71859a;padding:20px 4px;text-align:center}@media(max-width:1050px){.main{grid-template-columns:1fr}.details{grid-template-columns:1fr}.summary-grid{grid-template-columns:1fr 1fr}}@media(max-width:600px){header{padding:19px}.layout{padding:12px}.summary-grid{grid-template-columns:1fr}.panelhead{padding:12px}.tabs{padding:10px}.tab{font-size:11px;padding:7px 9px}.stat{min-width:140px}.headmeta{text-align:left}.table th,.table td{padding:7px 8px}}
+
+/* Overall system schematic — vector, source-contract driven */
+.overview-shell{overflow:auto;max-height:760px;padding:12px;background-color:#fff;background-image:linear-gradient(#f1f5fa 1px,transparent 1px),linear-gradient(90deg,#f1f5fa 1px,transparent 1px);background-size:20px 20px;scrollbar-color:#becbd9 #f4f7fa}
+.overview-shell svg{display:block;width:2450px;max-width:none;height:auto;touch-action:pan-x pan-y}
+.overview-toolbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.overview-tag{display:inline-block;padding:3px 8px;background:#e8f2fc;border:1px solid #c5dff5;color:#226496;font-size:10px;font-weight:800;border-radius:5px;letter-spacing:.3px}
+.overview-source{background:#f5f9ff;border-top:1px solid #d9e6f2;padding:10px 17px;color:#526d82;font-size:12px}
+.overview-legend{padding:9px 17px;display:flex;flex-wrap:wrap;gap:14px;font-size:11px;color:#576f86}
+.overview-legend .marker{display:inline-block;width:25px;height:0;border-top:3px solid #2770b7;vertical-align:middle;margin-right:5px}
+.overview-legend .marker.teal{border-top-color:#078d95}
+.overview-legend .marker.orange{border-top-color:#c58025;border-top-style:dashed}
+#overview-schematic text{font-family:Inter,Pretendard,"Apple SD Gothic Neo",system-ui,sans-serif}
+#overview-schematic [data-ref],#overview-schematic [data-net]{cursor:pointer}
+#overview-schematic [data-ref]:hover rect{stroke:#2378d6;stroke-width:3}
+#overview-schematic [data-net]:hover{text-decoration:underline}
+#overview-schematic .ov-section{fill:#fcfdff;stroke:#cbdae9;stroke-width:1.5;stroke-dasharray:7 5}
+#overview-schematic .ov-heading{font-size:23px;font-weight:850;fill:#294965}
+#overview-schematic .ov-box{fill:#fff;stroke:#496982;stroke-width:2}
+#overview-schematic .ov-box-tbd{fill:#fff6e9;stroke:#c68630;stroke-width:2;stroke-dasharray:7 4}
+#overview-schematic .ov-comp{font-size:18px;font-weight:850;fill:#1a3a57}
+#overview-schematic .ov-value{font-size:13px;fill:#55718a}
+#overview-schematic .ov-pin{font:12px ui-monospace,SFMono-Regular,Consolas,monospace;fill:#405d76}
+#overview-schematic .ov-net{font:700 13px ui-monospace,SFMono-Regular,Consolas,monospace;fill:#1861a7}
+#overview-schematic .ov-warn{font-size:13px;font-weight:800;fill:#a86712}
+#overview-schematic .ov-wire{fill:none;stroke:#3173ac;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+#overview-schematic .ov-i2c{fill:none;stroke:#078d95;stroke-width:2.3;stroke-dasharray:8 4}
+#overview-schematic .ov-unknown{fill:none;stroke:#c68630;stroke-width:2.6;stroke-dasharray:7 5}
+#overview-schematic .ov-note{font-size:12px;fill:#6c8093}
+#overview-schematic .ov-dark{fill:#233c56}
+
 </style></head>
 <body><header><div><div class="eyebrow">HARDWARE ENGINEERING · REV 2026-10-14</div><h1>DDI 소비전류 측정보드 | Pin-to-Pin Explorer</h1><p>실제 KiCad 설계 계약을 기준으로 한 인터랙티브 회로 연결도 · 7개 측정 레일</p></div><div class="headmeta"><strong>Gugong0412 / currentboard</strong>Phase 2-2 연결 계약 기준 · 2026-10-14<br>HTML 단일 파일 / 오프라인 작동</div></header>
 <div class="layout">
 <div class="notice"><strong>설계 검토용 / 제작 승인 아님.</strong> 회로의 net·Ref.Pin은 GitHub의 <code>netcheck/ddi_contract.json</code> 기준입니다. <strong>U900 MOSCATO의 1~9번은 실제 핀 번호가 아닌 논리상 임시 번호(TBD)</strong>이며, 7개 Kelvin 션트의 4패드 구현과 별도 18개 풋프린트도 제작 전 검증 대상입니다. 그림의 배치·간략화된 선은 물리 배선이나 ERC를 대체하지 않습니다.</div>
 <div class="stats"><div class="stat"><strong>7</strong>INA228 전류 측정 채널</div><div class="stat"><strong id="comp-count"></strong>주요 부품 핀맵 탐색</div><div class="stat"><strong id="net-count"></strong>명명된 전체 네트</div><div class="stat"><strong style="color:#a65c0b">U900 · TBD</strong>실제 MOSCATO 핀번호 미확정</div></div>
+
+<section class="panel" style="margin-bottom:16px" id="overall-overview">
+  <div class="panelhead">
+    <div><h2>전체 회로 연결도 · Schematic-style Overview <span class="overview-tag">NEW</span></h2>
+      <div class="sub">상단 입력 전원 → MCU/USB → 7개 전원 레일 → INA228 센싱 → DUT 헤더를 한 장에 표현한 전체 개요도</div>
+    </div>
+    <div class="overview-toolbar"><button class="act" id="ov-min">− 축소</button><button class="act" id="ov-fit">화면 맞춤</button><button class="act" id="ov-one">100%</button><button class="act" id="ov-plus">+ 확대</button></div>
+  </div>
+  <div class="overview-shell" id="overview-shell">
+    <svg id="overview-schematic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2450 1500" role="img" aria-label="DDI current measurement board full schematic-style block connection overview with physical pins and TBD labels"></svg>
+  </div>
+  <div class="overview-legend"><span><i class="marker"></i> 전원 / 물리 커넥터 경로</span><span><i class="marker teal"></i> I2C / 센싱 신호</span><span><i class="marker orange"></i> MOSCATO 물리 핀번호 미확정</span><span>부품을 누르면 아래 핀 목록에서 상세 확인</span></div>
+  <div class="overview-source"><strong>표시 원칙:</strong> 위 이미지와 같은 전체 회로 레이아웃을 원본 설계 계약으로 재구성한 벡터 개요도입니다. MOSCATO U900의 논리 핀번호는 실제 물리 핀번호가 아니므로 <strong style="color:#a26312">? / TBD</strong>로 표시합니다. 실제 연결의 근거는 하단 핀별 회로/Net 역추적이며, 7개 Kelvin 션트 풋프린트와 기타 미확정 항목은 제작 전 검증이 필요합니다. (참고: 과거 생성된 래스터 개요도에는 실제 부품 Ref와 다른 간략 표시가 있어 그대로 설계 근거로 사용하지 않습니다.)</div>
+</section>
 <div class="main">
 <section class="panel">
 <div class="panelhead"><div><h2>Pin-to-pin schematic · Rail 상세 회로</h2><div class="sub">레일을 변경하면 실제 Ref.Pin/Net 연결에 따라 회로도가 갱신됩니다.</div></div><div class="actions"><button class="act" id="zminus">− 축소</button><button class="act" id="zreset">100%</button><button class="act" id="zplus">+ 확대</button></div></div>
@@ -165,4 +209,151 @@ document.getElementById("comp-count").textContent=DATA.comps.length;
 document.getElementById("net-count").textContent=DATA.nets.length;
 setRail(0);compList("");showNet(S.net);
 })();
-</script></body></html>
+</script>
+<script>
+(function(){
+"use strict";
+const DATA=JSON.parse(document.getElementById("design-data").textContent);
+const byRef=Object.fromEntries(DATA.comps.map(c=>[c.r,c]));
+const rails=DATA.rails;
+const svg=document.getElementById("overview-schematic");
+const shell=document.getElementById("overview-shell");
+let zoom=1;
+function e(v){return String(v??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]))}
+const out=[];
+function text(x,y,value,cls="ov-note",anchor="start"){out.push('<text x="'+x+'" y="'+y+'" class="'+cls+'" text-anchor="'+anchor+'">'+e(value)+'</text>')}
+function path(points,cls="ov-wire"){out.push('<path class="'+cls+'" d="M'+points.map(p=>p[0]+","+p[1]).join(" L")+'"/>')}
+function dot(x,y,color="#3173ac"){out.push('<circle cx="'+x+'" cy="'+y+'" r="4" fill="'+color+'"/>')}
+function section(x,y,w,h,title,detail){out.push('<rect class="ov-section" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="10"/>');text(x+18,y+32,title,"ov-heading");if(detail)text(x+18,y+51,detail,"ov-note")}
+function chip(x,y,w,h,ref,value,options={}){
+ const unknown=!!options.unknown;
+ out.push('<g data-ref="'+e(ref)+'"><rect class="'+(unknown?"ov-box-tbd":"ov-box")+'" x="'+x+'" y="'+y+'" width="'+w+'" height="'+h+'" rx="6"/>');
+ text(x+13,y+25,ref,"ov-comp");text(x+13,y+43,value,"ov-value");
+ if(options.pins)options.pins.forEach((s,i)=>text(x+13,y+64+17*i,s,unknown?"ov-warn":"ov-pin"));
+ if(unknown)text(x+13,y+h-11,"Physical PIN TBD","ov-warn");
+ out.push('</g>')
+}
+function resistor(x,y,ref,value){
+ out.push('<g data-ref="'+e(ref)+'"><rect x="'+x+'" y="'+(y-17)+'" width="92" height="35" rx="3" fill="#fff" stroke="#47718b" stroke-width="2"/>');
+ text(x+46,y-28,ref+" ("+value+")","ov-pin","middle");text(x+46,y+5,"SHUNT","ov-pin","middle");out.push('</g>')
+}
+function clickableNet(x,y,n,anchor="start",color){out.push('<text data-net="'+e(n)+'" x="'+x+'" y="'+y+'" text-anchor="'+anchor+'" class="'+(color||"ov-net")+'">'+e(n)+'</text>')}
+function legendArrow(x1,x2,y,cls="ov-wire"){path([[x1,y],[x2,y]],cls);out.push('<path d="M'+(x2-10)+' '+(y-5)+' L'+x2+' '+y+' L'+(x2-10)+' '+(y+5)+'" fill="none" stroke="#3173ac" stroke-width="2"/>')}
+out.push('<rect width="2450" height="1500" fill="#fff"/>');
+text(53,57,"DDI CURRENT MEASUREMENT BOARD  /  SYSTEM SCHEMATIC OVERVIEW","ov-heading");
+text(53,79,"계약상 U900 MOSCATO 핀번호 ≠ 실제 패키지 핀번호  |  블록 축약·배선 생략은 상세 Net 표에서 검증","ov-note");
+section(45,105,510,280,"1. INPUT POWER","12V / 2A · protection");
+chip(82,180,153,116,"J100","DC JACK",{pins:["1 CENTER","2 SLEEVE","3 NC"]});
+chip(320,180,198,116,"U100","TPS26600 eFuse",{pins:["IN 1/2 · OUT 15/16","RTN / UVLO / OVP"]});
+path([[235,230],[320,230]]);clickableNet(275,217,"VIN_12V_RAW","middle");
+path([[518,230],[554,230]]);clickableNet(520,273,"VIN_12V_PROT","end");
+text(82,335,"J100.1 → U100.1/2  |  3=NC","ov-pin");
+text(82,354,"J100.2 → GND  |  U100.15/16 → PROTECTED","ov-pin");
+section(580,105,545,280,"2. CONTROL / POWER RAILS","AUX_5V always-on · VBAT controlled");
+chip(615,172,200,86,"U200","TPS62130 Buck",{pins:["10-12 VIN_12V_PROT","14 VOS → AUX_5V"]});
+chip(860,172,218,86,"U400","TPS7A90 LDO",{pins:["9/10 IN AUX_5V","1/2 OUT CTRL_3V3"]});
+path([[815,213],[860,213]]);clickableNet(837,199,"AUX_5V","middle");
+chip(615,282,200,72,"U300","TPS62130 Buck",{pins:["13 EN_VBAT · VBAT"]});
+chip(860,282,218,72,"U620","TPS7A90 LDO",{pins:["7 EN_SYS_1V8"]});
+text(626,373,"U300 VBAT는 MCU 제어; U620 SYS_1V8 별도 제어","ov-note");
+section(45,407,1080,460,"3. USB / MCU / LEVEL SHIFT","USB Type-C ↔ ADuM4160 ↔ STM32F072  |  MCU GPIO / I2C / DDI RESET");
+chip(78,546,227,176,"J1200","USB-C DEVICE",{pins:["A6/B6  USB_DP_CONN","A7/B7  USB_DM_CONN","A4/B4 USB_VBUS","A1/B1 USB_GND"]});
+chip(355,546,228,176,"U1200","ADuM4160",{pins:["7 UD+   6 UD−","10 DD+  11 DD−","USB ↔ SYSTEM isolation"]});
+path([[305,600],[355,600]]);path([[305,628],[355,628]]);
+text(330,590,"USB D±","ov-pin","middle");
+chip(635,495,445,295,"U1100","STM32F072CBT6 MCU",{pins:[
+"PA12(33) USB_DP_MCU  / PA11(32) USB_DM_MCU",
+"PB6(42) I2C1_SCL     / PB7(43) I2C1_SDA",
+"PB10(21) I2C2_SCL    / PB11(22) I2C2_SDA",
+"PA0(10) ALERT_VDDI_DIG_N (blank capture)",
+"PA2(12) EN_VDDI_DIG / PA3(13) EN_VDDI",
+"PA4(14) EN_VCI / PA7(17) MOSCATO_EN_3V3",
+"PB0(18) DDI_RESET_N_3V3"
+]});
+path([[583,600],[635,600]]);path([[583,633],[635,633]]);
+chip(352,757,230,77,"U1300","SN74AXC2T45",{pins:["A:3.3V  ↔  B:1.8V"]});
+text(605,814,"U1300 handles MOSCATO_EN + DDI_RESET","ov-note");
+path([[582,789],[633,789],[633,760]]);
+text(83,835,"Isolation: USB_GND ≠ system GND; verify physical layout","ov-note");
+section(1150,105,906,762,"4. DUT POWER GENERATION","3 Digital LDO outputs + 4 MOSCATO placeholder analog outputs");
+section(2080,105,327,762,"5. DUT CONNECTORS","Pin numbers from connection contract");
+chip(2110,161,258,137,"J1400","DIGITAL 2 × 6",{pins:["1 VDDI_DIG / 3 VDDI","5 VCI / 7 VDDIO1V2","9 SYS_1V8 / 11 RESET"]});
+chip(2110,410,258,122,"J1401","ANALOG POS 2 × 3",{pins:["1 AVDDH1 / 3 AVDDH2","5 VGH"]});
+chip(2110,640,258,102,"J1402","ANALOG NEG 1 × 2",{pins:["1 VGL / 2 GND"]});
+const rowsY=[235,317,399,481,563,645,727];
+rails.forEach((r,i)=>{
+ const y=rowsY[i],unk=r.s==="U900";
+ const isVGL=r.name==="VGL";
+ chip(1174,y-42,295,78,r.s,unk?"MOSCATO PMIC PLACEHOLDER":"TPS7A90 LDO",{
+  pins:["OUT "+(unk?"?"+r.sourcePin[0]+" (logical)":r.sourcePin[0])+"  "+r.name+"_SRC"],unknown:unk});
+ path([[1469,y],[1515,y]],unk?"ov-unknown":"ov-wire");
+ chip(1515,y-42,120,78,r.ina,"INA228",{pins:["10 IN+ / 9 IN−"]});
+ path([[1635,y],[1670,y]]);
+ resistor(1670,y,r.sh,r.shVal);
+ path([[1762,y],[1998,y]]);
+ clickableNet(1878,y-11,r.name+"_DUT","middle");
+ text(2012,y+5,r.j+"."+r.jp,"ov-pin");
+ if(i<3){path([[1998,y],[2058,y],[2058,230+i*28],[2110,230+i*28]])}
+ else if(i<6){path([[1998,y],[2058,y],[2058,450+(i-3)*26],[2110,450+(i-3)*26]])}
+ else{path([[1998,y],[2062,y],[2062,683],[2110,683]])}
+ if(isVGL)text(1672,y+51,"I2C2 isolated, GND_F; NOT system GND","ov-warn");
+});
+text(1180,845,"U900 ?6/?7/?8/?9 are LOGICAL placeholders, NOT package pins.","ov-warn");
+section(45,890,2362,395,"6. INA228 CURRENT MEASUREMENT · KELVIN SHUNT SENSE","6 channels on I2C1, VGL channel isolated via ISO1641 → I2C2  |  resistors are logical 4-pad symbols");
+const monX=rails.map((_,i)=>70+330*i);
+rails.forEach((r,i)=>{
+ const x=monX[i],unk=r.name==="VGL";
+ chip(x,966,291,133,r.ina,"INA228AIDGSR",{pins:["3 ALERT  /  4 SDA  /  5 SCL","10 IN+ / 9 IN− / 8 VBUS","SHUNT "+r.sh+" → "+r.name]});
+ clickableNet(x+148,1126,r.name+"_INA_P","middle");
+ clickableNet(x+148,1148,r.name+"_INA_N","middle");
+ path([[x+148,1099],[x+148,1110]],"ov-i2c");
+ text(x+146,1190,unk?"I2C2 / GND_F":"I2C1 / GND","ov-pin","middle");
+});
+path([[120,1220],[1785,1220]],"ov-i2c");
+text(95,1248,"I2C1_SCL + I2C1_SDA → MCU PB6(42) / PB7(43)","ov-net");
+path([[2095,1207],[2300,1207]],"ov-i2c");
+text(2070,1247,"I2C2_SCL/SDA","ov-net");
+text(65,1315,"7. VGL ISOLATION BOUNDARY / PHYSICAL TBD GATES","ov-heading");
+out.push('<rect class="ov-box-tbd" x="65" y="1342" width="2310" height="115" rx="9"/>');
+chip(95,1355,330,77,"U800","RFM-0505S",{pins:["1 GND / 2 AUX_5V"]});
+chip(452,1355,340,77,"U810","TPS7A16",{pins:["4 GND_F / 1 F_3V3"]});
+chip(821,1355,345,77,"U830","ISO1641",{pins:["I2C2 ↔ I2C2_F"]});
+chip(1195,1355,330,77,"U820","INA228 VGL",{pins:["VS F_3V3 / GND_F"]});
+text(1560,1384,"CAUTION · U900 실제 핀번호 TBD","ov-warn");
+text(1560,1410,"GND_F / system GND 절연 유지","ov-warn");
+text(1560,1435,"Kelvin shunt footprint 7종 중 7개 확인 필요","ov-warn");
+svg.innerHTML=out.join("");
+function resize(){
+svg.style.width=Math.round(2450*zoom)+"px";
+svg.style.height=Math.round(1500*zoom)+"px";
+document.getElementById("ov-one").textContent=Math.round(zoom*100)+"%";
+}
+svg.addEventListener("click",function(ev){
+ const n=ev.target.closest("[data-net]");
+ if(n){
+  const key=n.getAttribute("data-net");
+  const search=document.getElementById("netfind");
+  if(search){search.value=key;search.dispatchEvent(new Event("input",{bubbles:true}))}
+  const netButton=document.querySelector("#netmatches [data-net='"+(typeof CSS!=="undefined"&&CSS.escape?CSS.escape(key):key)+"']");
+  if(netButton)netButton.click();
+  document.getElementById("nettitle")?.scrollIntoView({behavior:"smooth",block:"center"});
+  return
+ }
+ const r=ev.target.closest("[data-ref]");
+ if(r){
+  const finder=document.getElementById("compfind");
+  if(finder){
+   finder.value=r.getAttribute("data-ref");
+   finder.dispatchEvent(new Event("input",{bubbles:true}));
+   document.querySelector("aside.panel")?.scrollIntoView({behavior:"smooth",block:"center"})
+  }
+ }
+});
+document.getElementById("ov-plus").onclick=()=>{zoom=Math.min(1.65,zoom+.15);resize()};
+document.getElementById("ov-min").onclick=()=>{zoom=Math.max(.3,zoom-.15);resize()};
+document.getElementById("ov-one").onclick=()=>{zoom=1;resize()};
+document.getElementById("ov-fit").onclick=()=>{zoom=Math.max(.3,Math.min(1,(shell.clientWidth-28)/2450));resize()};
+resize();
+})();
+</script>
+</body></html>
