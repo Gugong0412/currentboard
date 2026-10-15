@@ -1,0 +1,171 @@
+{
+  "source_original_63_unchanged": true,
+  "previous_repair_unchanged": true,
+  "channel_definitions_unchanged": true,
+  "erc_settings_unchanged": true,
+  "changes": [
+    {
+      "pin": "U1100.39",
+      "before": "ALERT_AVDDH2_N",
+      "after": "ALERT_AVDDH2_S_O_N"
+    },
+    {
+      "pin": "TP1067.1",
+      "before": "ALERT_AVDDH2_N",
+      "after": "ALERT_AVDDH2_S_O_N"
+    },
+    {
+      "pin": "U1100.40",
+      "before": "ALERT_VGH_N",
+      "after": "ALERT_VGH1_N"
+    },
+    {
+      "pin": "TP1068.1",
+      "before": "ALERT_VGH_N",
+      "after": "ALERT_VGH1_N"
+    }
+  ],
+  "all_alerts": [
+    {
+      "rail": "VDDI_DIG",
+      "ina": "U700",
+      "net": "ALERT_VDDI_DIG_N",
+      "nodes": [
+        "R702.2",
+        "TP1063.1",
+        "U1100.10",
+        "U700.3"
+      ],
+      "mcu_connected": true
+    },
+    {
+      "rail": "VDDI",
+      "ina": "U710",
+      "net": "ALERT_VDDI_N",
+      "nodes": [
+        "R712.2",
+        "TP1064.1",
+        "U1100.30",
+        "U710.3"
+      ],
+      "mcu_connected": true
+    },
+    {
+      "rail": "VCI",
+      "ina": "U720",
+      "net": "ALERT_VCI_N",
+      "nodes": [
+        "R722.2",
+        "TP1065.1",
+        "U1100.31",
+        "U720.3"
+      ],
+      "mcu_connected": true
+    },
+    {
+      "rail": "AVDDH1",
+      "ina": "U730",
+      "net": "ALERT_AVDDH1_N",
+      "nodes": [
+        "R732.2",
+        "TP1066.1",
+        "U1100.38",
+        "U730.3"
+      ],
+      "mcu_connected": true
+    },
+    {
+      "rail": "AVDDH2_S_O",
+      "ina": "U740",
+      "net": "ALERT_AVDDH2_S_O_N",
+      "nodes": [
+        "R742.2",
+        "TP1067.1",
+        "U1100.39",
+        "U740.3"
+      ],
+      "mcu_connected": true
+    },
+    {
+      "rail": "VGH1",
+      "ina": "U750",
+      "net": "ALERT_VGH1_N",
+      "nodes": [
+        "R752.2",
+        "TP1068.1",
+        "U1100.40",
+        "U750.3"
+      ],
+      "mcu_connected": true
+    },
+    {
+      "rail": "VGL1",
+      "ina": "U820",
+      "net": "ALERT_VGL1_N",
+      "nodes": [
+        "R822.2",
+        "TP1069.1",
+        "U820.3"
+      ],
+      "mcu_connected": false
+    },
+    {
+      "rail": "AVDDH2_GM",
+      "ina": "U760",
+      "net": "ALERT_AVDDH2_GM_N",
+      "nodes": [
+        "R762.2",
+        "U760.3"
+      ],
+      "mcu_connected": false
+    },
+    {
+      "rail": "VGH2",
+      "ina": "U770",
+      "net": "ALERT_VGH2_N",
+      "nodes": [
+        "R772.2",
+        "U770.3"
+      ],
+      "mcu_connected": false
+    },
+    {
+      "rail": "VDDI_LPDP",
+      "ina": "U780",
+      "net": "ALERT_VDDI_LPDP_N",
+      "nodes": [
+        "R782.2",
+        "U780.3"
+      ],
+      "mcu_connected": false
+    },
+    {
+      "rail": "VDDI_OSC",
+      "ina": "U790",
+      "net": "ALERT_VDDI_OSC_N",
+      "nodes": [
+        "R792.2",
+        "U790.3"
+      ],
+      "mcu_connected": false
+    },
+    {
+      "rail": "VGL2",
+      "ina": "U840",
+      "net": "ALERT_VGL2_N",
+      "nodes": [
+        "R842.2",
+        "U840.3"
+      ],
+      "mcu_connected": false
+    }
+  ],
+  "changed_files": [
+    "B10_B.kicad_sch",
+    "B11_CORE.kicad_sch",
+    "BOM.csv",
+    "firmware_definitions.json",
+    "placement_manifest.json",
+    "source_contract.json"
+  ]
+}

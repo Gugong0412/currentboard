@@ -1,0 +1,33 @@
+R2 ALERT 넷 수정 결과 — 2026-10-15 KST
+
+작업 복사본: R2_REPAIRED_005
+기준 복사본: R2_REPAIRED_003 (원본 그대로 보존)
+최초 인수 원본 63개: SOURCE_MANIFEST SHA256 일치 유지
+
+수정:
+ALERT_AVDDH2_N → ALERT_AVDDH2_S_O_N
+  U1100.39 (PB3), TP1067.1을 U740.3 및 R742.2와 같은 net으로 연결.
+ALERT_VGH_N → ALERT_VGH1_N
+  U1100.40 (PB4), TP1068.1을 U750.3 및 R752.2와 같은 net으로 연결.
+회로도 라벨·TP Value, BOM, 계약, placement 목록 및 firmware_definitions.json의 관련 인터페이스 표기를 동기화.
+펌웨어 12채널 테이블과 Firmware_Definitions.h는 유지.
+
+검증:
+KiCad 10.0.7 새 netlist/ERC 생성. 기존 검사기 8,437개 검사 통과, 불일치 0.
+ERC 36시트 error 0 / warning 0. 기존 비활성 규칙 유지, 규칙 완화 없음.
+계약 named net 181개 (기존 183개에서 위 두 net 병합), NC 19핀 유지.
+전후 네이티브 Ref.pin/net 비교: 의도한 4핀만 변경, 나머지 모든 연결 동일.
+12채널·션트·FB·전원·헤더·절연 도메인 유지.
+MCU ALERT 연결: DIG, VDDI, VCI, AVDDH1, AVDDH2 S/O, VGH1 총 6개.
+
+VGL 질문:
+VGL1: U820.3 ALERT_VGL1_N, R822 10k pull-up → F_3V3, TP1069.
+VGL2: U840.3 ALERT_VGL2_N, R842 10k pull-up → F_3V3.
+두 ALERT 출력은 존재하지만 MCU 전달용 절연 경로는 없다. 현재 설계는 절연 I2C2 polling 방식.
+현재 요청은 두 시스템측 ALERT 수정이며 VGL 절연 경로 추가는 하지 않았다.
+전기적 ALERT 연결 확인이며 실행 펌웨어의 레지스터/인터럽트 동작 검증은 아니다.
+
+갱신 전체 블록도: block_diagram.mmd
+상세 핀 변경·12채널 ALERT 목록: delta_and_alert_audit.json
+네이티브 증거: native/verified_netlist.xml, native/erc_report.json, native/verification_summary.json
+GitHub에는 이번 수정본을 push하지 않았다. 제작 HOLD 유지.

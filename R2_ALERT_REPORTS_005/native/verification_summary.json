@@ -1,0 +1,43 @@
+{
+  "status": "SCHEMATIC_CHECKS_PASS_HARDWARE_HOLD",
+  "input_mode": "repository_directory",
+  "input_directory": "C:\\Users\\bagpa\\OneDrive\\Documents\\GitHub\\currentboard\\R2_REPAIRED_005",
+  "started_utc": "2026-10-15T14:40:51.842993+00:00",
+  "commit_sha": null,
+  "branch_ref": null,
+  "run_id": null,
+  "run_attempt": null,
+  "adapter_sha256": "80562ad6d4ad275160c66c8baa64a105cb20d5d8a3ef2dc08d2b01a549471f8e",
+  "checker_sha256": "c53c594353086ad5b1dda3987adf355c137735d7fb975eebcbdc52a486e61a85",
+  "limits": {
+    "hardware_performance_and_5uA_accuracy": "UNVERIFIED",
+    "manufacturer_physical_pinout_and_component_ratings": "UNVERIFIED",
+    "firmware_timing_register_math_and_actual_I2C_straps": "UNVERIFIED",
+    "physical_Kelvin_copper_and_PCB_DRC": "UNVERIFIED",
+    "production_release": "HOLD",
+    "independent_reviewer": "NOT_PERFORMED"
+  },
+  "commands": {
+    "native_netlist_exit_code": 0,
+    "native_erc_exit_code": 0
+  },
+  "input_file_count": 65,
+  "kicad_version": "10.0.7",
+  "counts": {
+    "contract_components_including_virtual": 387,
+    "native_components_excluding_power_flags": 379,
+    "contract_named_nets": 181,
+    "native_nets": 200,
+    "contract_NC_pins": 19,
+    "native_NC_pins": 19,
+    "copper_bridge_declarations": 25
+  },
+  "erc": {
+    "sheet_count": 36,
+    "violation_count": 0,
+    "severity_counts": {}
+  },
+  "checks_executed": 8437,
+  "errors": [],
+  "finished_utc": "2026-10-15T14:40:55.888713+00:00"
+}

@@ -1,0 +1,212 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-15T23:40:55",
+    "ignored_checks": [
+        {
+            "description": "Global label only appears once in the schematic",
+            "key": "single_global_label"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Assigned footprint doesn't match footprint filters",
+            "key": "footprint_filter"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.7",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d",
+            "violations": []
+        },
+        {
+            "path": "/B1/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/e9c78ab5-ab34-558a-82aa-ecaf29192292",
+            "violations": []
+        },
+        {
+            "path": "/B2/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/bf2bc58b-44fe-5161-af36-e2b939c4dbd0",
+            "violations": []
+        },
+        {
+            "path": "/B3/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/3dbb4ea2-54ac-58fb-9853-adef856802a2",
+            "violations": []
+        },
+        {
+            "path": "/B4/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/99862bbe-9615-51da-8c5c-777bded52195",
+            "violations": []
+        },
+        {
+            "path": "/B5_DIG/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/78e8303e-ec4d-5419-ac61-65d2d311f019",
+            "violations": []
+        },
+        {
+            "path": "/B5_VCI/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/eb56dddd-f423-5d55-90cf-a6f08d1e6d7e",
+            "violations": []
+        },
+        {
+            "path": "/B5_VDDI/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/d9f27c0e-db0f-5c2e-9ee5-1c793046ca89",
+            "violations": []
+        },
+        {
+            "path": "/B6_IO/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/08881687-9118-5603-9ab3-503185658c42",
+            "violations": []
+        },
+        {
+            "path": "/B6_SYS/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/81c7ce89-e171-5c6f-bd05-b6f144c3afbe",
+            "violations": []
+        },
+        {
+            "path": "/B7_AVDDH1/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/81b6006e-9b3e-5154-a025-938a17026b06",
+            "violations": []
+        },
+        {
+            "path": "/B7_AVDDH2/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/a90d0a5f-f212-55d5-9924-bc2c9c642590",
+            "violations": []
+        },
+        {
+            "path": "/B7_VCI/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/51303d2e-045d-5f2e-9ef0-494fb59b318d",
+            "violations": []
+        },
+        {
+            "path": "/B7_VDDI/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/7924c83a-bedd-5402-871f-c894e89ec24e",
+            "violations": []
+        },
+        {
+            "path": "/B7_VDDI_DIG/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/507753fd-ee3c-5843-9749-912dc5b5326f",
+            "violations": []
+        },
+        {
+            "path": "/B7_VGH/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/9cc667ec-388e-5a05-9495-a4d3ce83d2f3",
+            "violations": []
+        },
+        {
+            "path": "/B8_INA/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/5c98ec39-ed39-583e-8927-5c42cf2a548d",
+            "violations": []
+        },
+        {
+            "path": "/B8_ISO/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/859e63e0-e4c4-585a-9e36-b7cfa4b88741",
+            "violations": []
+        },
+        {
+            "path": "/B8_PWR/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/97934f17-282f-5833-b3b6-fb42028b0663",
+            "violations": []
+        },
+        {
+            "path": "/B9/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/e84fd163-571a-5559-b3e1-fcd5337d4ca6",
+            "violations": []
+        },
+        {
+            "path": "/B10_A/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/9f740d62-6e36-5fb7-9716-7a202bf5c6ff",
+            "violations": []
+        },
+        {
+            "path": "/B10_B/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/7ca48226-e302-5daa-a84d-26d53bf824f0",
+            "violations": []
+        },
+        {
+            "path": "/B11_CLOCK/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/4b9ca367-7828-524a-bef7-01ba022d10a6",
+            "violations": []
+        },
+        {
+            "path": "/B11_CORE/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/c92148e0-cc1c-54c2-8f01-0b29f9035d5c",
+            "violations": []
+        },
+        {
+            "path": "/B11_DEBUG/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/d50ced4f-1dcb-5a83-845f-4493d4187eb1",
+            "violations": []
+        },
+        {
+            "path": "/B11_POWER/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/c8ec69d0-ce48-54d0-bf96-8a1881017ebf",
+            "violations": []
+        },
+        {
+            "path": "/B12_CONNECTOR/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/8392bcd7-f522-5a93-9e1b-0494ac915427",
+            "violations": []
+        },
+        {
+            "path": "/B12_ISOLATOR/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/84d7daa6-920a-506a-a4e5-8949e71b7b08",
+            "violations": []
+        },
+        {
+            "path": "/B13/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/923cf662-6d3a-53ed-b80f-49883e78ee6b",
+            "violations": []
+        },
+        {
+            "path": "/B14/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/96b57a5a-fede-5cec-9dfe-cdb00745a871",
+            "violations": []
+        },
+        {
+            "path": "/B15/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/84bedaf7-b91d-5f8e-bae9-f54a72484436",
+            "violations": []
+        },
+        {
+            "path": "/B7_AVDDH2_GM/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/16b8f505-a6c6-58d5-98aa-4df69c9374d8",
+            "violations": []
+        },
+        {
+            "path": "/B7_VGH2/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/ab935068-fe15-53e4-8d86-b3796948cbca",
+            "violations": []
+        },
+        {
+            "path": "/B7_VDDI_LPDP/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/adea5ad2-cef2-5d64-bf05-dc3a00bf497f",
+            "violations": []
+        },
+        {
+            "path": "/B7_VDDI_OSC/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/63fbe424-14d6-56a2-98ed-3090be193e03",
+            "violations": []
+        },
+        {
+            "path": "/B8_VGL2/",
+            "uuid_path": "/a9bd6cee-aef4-589b-8a21-31694bfdda0d/43c40bfe-fe14-59ba-b669-0cd434f4fa4a",
+            "violations": []
+        }
+    ],
+    "source": "DDI_Phase2_2_R2.kicad_sch"
+}

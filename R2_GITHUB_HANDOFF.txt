@@ -1,20 +1,24 @@
 R2 수정본 및 로컬 검증 안내
 작성일: 2026-10-15 KST
 
-현재 수정본: R2_REPAIRED_003/DDI_Phase2_2_R2.kicad_pro
-최종 보고서: R2_FIX_REPORTS_003/RESULT_KO.txt
-최종 네이티브 증거: R2_FIX_REPORTS_003/native_final/
+현재 수정본: R2_REPAIRED_005/DDI_Phase2_2_R2.kicad_pro
+최종 보고서: R2_ALERT_REPORTS_005/RESULT_KO.txt
+최종 네이티브 증거: R2_ALERT_REPORTS_005/native/
+갱신 전체 블록도: R2_ALERT_REPORTS_005/BLOCK_DIAGRAM.md (원본: block_diagram.mmd)
+이전 검증 수정본: R2_REPAIRED_003/ 및 R2_FIX_REPORTS_003/ 보존
 원본 인수인계: CurrentBoard_R2_Desktop_Handoff/
 수정 전 대조 증거: R2_VERIFY_REPORTS_002/
 
-KiCad 10.0.7 로컬 검증: 8,445개 검사 통과, ERC 36시트 오류/경고 0건.
+KiCad 10.0.7 최신 로컬 검증: 8,437개 검사 통과, ERC 36시트 오류/경고 0건.
 Value 불일치 5건과 이전 테스트포인트 라벨 7건 수정.
 J1200 MPN USB4105-GF-A 유지, 제조사 도면 대조 후 프로젝트 전용 S1 실드 패드 풋프린트 적용.
-승인된 12채널 구조 유지. 네이티브 전후 비교의 연결 변경은 테스트포인트 7핀에 한정.
+이후 AVDDH2 S/O 및 VGH1 ALERT 넷을 MCU PB3/PB4와 연결하도록 수정.
+이번 네이티브 전후 비교: MCU 2핀 및 대응 테스트포인트 2핀만 변경.
+승인된 12채널 구조 유지. VGL1·2는 기존 절연 I2C2 polling 구성 유지.
 원본 63개 SHA256 보존. 제작 HOLD 유지.
 
 기존 README/상태 JSON 및 보고서의 '미검증', 'GitHub 쓰기 없음'은 각 작성 시점의 이력이다.
-최신 검증은 native_final/verification_summary.json을 따른다.
+최신 검증은 R2_ALERT_REPORTS_005/native/verification_summary.json을 따른다.
 사용자의 후속 명시 요청으로 이 묶음을 GitHub 검토용 브랜치에 push한다.
 
 로컬 전용 R2_VERIFY_ENV_001 및 R2_VERIFY_WORK_* 반복 작업 복사본은 커밋에 포함하지 않는다.
