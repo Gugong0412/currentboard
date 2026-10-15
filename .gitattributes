@@ -1,0 +1,5 @@
+# Preserve R2 source and verification evidence byte-for-byte for SHA256 manifests.
+CurrentBoard_R2_Desktop_Handoff/** -text
+R2_REPAIRED_003/** -text
+R2_VERIFY_REPORTS_002/** -text
+R2_FIX_REPORTS_003/** -text

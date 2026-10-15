@@ -1,0 +1,485 @@
+{
+  "status": "FAIL_OR_UNVERIFIED",
+  "input_mode": "repository_directory",
+  "input_directory": "C:\\Users\\bagpa\\OneDrive\\Documents\\GitHub\\currentboard\\CurrentBoard_R2_Desktop_Handoff\\DDI_Phase2_2_R2_12CH",
+  "started_utc": "2026-10-15T13:54:20.795621+00:00",
+  "commit_sha": null,
+  "branch_ref": null,
+  "run_id": null,
+  "run_attempt": null,
+  "adapter_sha256": "80562ad6d4ad275160c66c8baa64a105cb20d5d8a3ef2dc08d2b01a549471f8e",
+  "checker_sha256": "c53c594353086ad5b1dda3987adf355c137735d7fb975eebcbdc52a486e61a85",
+  "limits": {
+    "hardware_performance_and_5uA_accuracy": "UNVERIFIED",
+    "manufacturer_physical_pinout_and_component_ratings": "UNVERIFIED",
+    "firmware_timing_register_math_and_actual_I2C_straps": "UNVERIFIED",
+    "physical_Kelvin_copper_and_PCB_DRC": "UNVERIFIED",
+    "production_release": "HOLD",
+    "independent_reviewer": "NOT_PERFORMED"
+  },
+  "commands": {
+    "native_netlist_exit_code": 0,
+    "native_erc_exit_code": 5
+  },
+  "input_file_count": 63,
+  "kicad_version": "10.0.7",
+  "counts": {
+    "contract_components_including_virtual": 387,
+    "native_components_excluding_power_flags": 379,
+    "contract_named_nets": 190,
+    "native_nets": 209,
+    "contract_NC_pins": 19,
+    "native_NC_pins": 19,
+    "copper_bridge_declarations": 25
+  },
+  "erc": {
+    "sheet_count": 36,
+    "violation_count": 26,
+    "severity_counts": {
+      "warning": 26
+    }
+  },
+  "checks_executed": 8473,
+  "errors": [
+    {
+      "check": "native ERC succeeded without violations",
+      "detail": 5
+    },
+    {
+      "check": "native Value",
+      "detail": {
+        "ref": "J1403",
+        "expected": "EXPANSION / 2x6",
+        "actual": "DIGITAL / 2x6"
+      }
+    },
+    {
+      "check": "native Value",
+      "detail": {
+        "ref": "TP1034",
+        "expected": "VGL_DUT",
+        "actual": "VGL1_DUT"
+      }
+    },
+    {
+      "check": "native Value",
+      "detail": {
+        "ref": "TP1030",
+        "expected": "VGH_DUT",
+        "actual": "VGH1_DUT"
+      }
+    },
+    {
+      "check": "native Value",
+      "detail": {
+        "ref": "J1404",
+        "expected": "VGL2 / 1x2",
+        "actual": "ANALOG NEG / 1x2"
+      }
+    },
+    {
+      "check": "native Value",
+      "detail": {
+        "ref": "TP1026",
+        "expected": "AVDDH2_DUT",
+        "actual": "AVDDH2_S_O_DUT"
+      }
+    },
+    {
+      "check": "ERC violations including exclusions",
+      "detail": [
+        {
+          "description": "Label connected to only one pin",
+          "items": [
+            {
+              "description": "전역 라벨 'VGL_SNS_SRC'",
+              "pos": {
+                "x": 43.18,
+                "y": 68.58
+              },
+              "uuid": "868102d7-d0c8-53c3-9469-7c0412d9c5bb"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_pin_label"
+        },
+        {
+          "description": "Label connected to only one pin",
+          "items": [
+            {
+              "description": "전역 라벨 'VGL_SNS_DUT'",
+              "pos": {
+                "x": 119.38,
+                "y": 68.58
+              },
+              "uuid": "564f43c8-34cd-579e-a688-c55d730d609c"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_pin_label"
+        },
+        {
+          "description": "Label connected to only one pin",
+          "items": [
+            {
+              "description": "전역 라벨 'ALERT_VGL_N'",
+              "pos": {
+                "x": 347.98,
+                "y": 220.98
+              },
+              "uuid": "27a1572d-dd34-5360-9fe0-b6995347b7ed"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_pin_label"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Capacitor_SMD'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 C1104 [C]",
+              "pos": {
+                "x": 43.18,
+                "y": 119.38
+              },
+              "uuid": "ccd3a62c-c172-5e70-a32d-ff8fae36462c"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_PinHeader_2.54mm'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1400 [Conn_02x06_Odd_Even_J1400]",
+              "pos": {
+                "x": 76.2,
+                "y": 93.98
+              },
+              "uuid": "f15d9c0f-7a55-5ee0-a407-ac06acd2582f"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_PinHeader_2.54mm'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1403 [Conn_02x06_Odd_Even_J1403]",
+              "pos": {
+                "x": 76.2,
+                "y": 175.26
+              },
+              "uuid": "aa9e44d8-0e7f-5d35-9bb8-e69036e3958b"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_PinHeader_2.54mm'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1401 [Conn_02x03_Odd_Even_J1401]",
+              "pos": {
+                "x": 205.74,
+                "y": 93.98
+              },
+              "uuid": "ab997535-3f85-5f45-8994-d988fdc6400a"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_PinHeader_2.54mm'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1402 [Conn_01x02_J1402]",
+              "pos": {
+                "x": 335.28,
+                "y": 93.98
+              },
+              "uuid": "dacfa6ef-ec8d-518c-bafc-4a735adb6292"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_PinHeader_2.54mm'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1404 [Conn_01x02_J1404]",
+              "pos": {
+                "x": 335.28,
+                "y": 175.26
+              },
+              "uuid": "025b7282-13aa-55f5-a489-ccae29e94851"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Crystal'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 Y1100 [Crystal_GND24]",
+              "pos": {
+                "x": 100.33,
+                "y": 93.98
+              },
+              "uuid": "544b87ef-f8f7-5490-bde4-250730e28049"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_USB'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1200 [USB_C_Receptacle_USB2.0_16P_J1200]",
+              "pos": {
+                "x": 100.33,
+                "y": 93.98
+              },
+              "uuid": "2572bbfb-7b08-5916-8c59-62a6b520a9b1"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'MountingHole'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 H1502 [MountingHole]",
+              "pos": {
+                "x": 43.18,
+                "y": 152.4
+              },
+              "uuid": "c5320788-0fb8-5e78-b151-493ea047791d"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'LED_SMD'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 D1500 [LED]",
+              "pos": {
+                "x": 137.16,
+                "y": 86.36
+              },
+              "uuid": "e097077d-53ec-572f-9d4f-f4ae9436f815"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'LED_SMD'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 D1502 [LED]",
+              "pos": {
+                "x": 137.16,
+                "y": 119.38
+              },
+              "uuid": "a3a4ae5e-b0a6-5ac1-a9c7-38086f25eb33"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'MountingHole'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 H1503 [MountingHole]",
+              "pos": {
+                "x": 137.16,
+                "y": 152.4
+              },
+              "uuid": "a21c5e70-7f8a-5d18-8190-4ff2d61a4625"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'MountingHole'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 H1500 [MountingHole]",
+              "pos": {
+                "x": 231.14,
+                "y": 119.38
+              },
+              "uuid": "50d9f2a9-3c2c-5a84-91cd-a01b034d6ef4"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'LED_SMD'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 D1501 [LED]",
+              "pos": {
+                "x": 325.12,
+                "y": 86.36
+              },
+              "uuid": "880f4650-4011-504e-829b-a161523ae824"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'MountingHole'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 H1501 [MountingHole]",
+              "pos": {
+                "x": 325.12,
+                "y": 119.38
+              },
+              "uuid": "1d0a0d73-d7a6-579a-80e2-c6c50201b868"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Package_QFP'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 U1100 [STM32F072CBTx]",
+              "pos": {
+                "x": 205.74,
+                "y": 149.86
+              },
+              "uuid": "bb9907b9-ea05-5c04-90c6-63b715569f0c"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "Label connected to only one pin",
+          "items": [
+            {
+              "description": "전역 라벨 'VGH_SNS_SRC'",
+              "pos": {
+                "x": 119.38,
+                "y": 220.98
+              },
+              "uuid": "3eb94649-86bb-5074-a828-36e1887e3c24"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_pin_label"
+        },
+        {
+          "description": "Label connected to only one pin",
+          "items": [
+            {
+              "description": "전역 라벨 'AVDDH2_SNS_SRC'",
+              "pos": {
+                "x": 195.58,
+                "y": 195.58
+              },
+              "uuid": "6678018d-05fc-5350-8883-06969066e7c8"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_pin_label"
+        },
+        {
+          "description": "Label connected to only one pin",
+          "items": [
+            {
+              "description": "전역 라벨 'VGH_SNS_DUT'",
+              "pos": {
+                "x": 195.58,
+                "y": 220.98
+              },
+              "uuid": "b2e7209b-8af6-5156-a383-7b5d2129f168"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_pin_label"
+        },
+        {
+          "description": "Label connected to only one pin",
+          "items": [
+            {
+              "description": "전역 라벨 'AVDDH2_SNS_DUT'",
+              "pos": {
+                "x": 271.78,
+                "y": 195.58
+              },
+              "uuid": "de7943fa-b9e0-5ae6-a140-b06f925e18db"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_pin_label"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_PinHeader_2.54mm'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1101 [Conn_01x02_J1101]",
+              "pos": {
+                "x": 100.33,
+                "y": 93.98
+              },
+              "uuid": "5f077713-8279-513a-ab32-fdfa6c1eec0c"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Button_Switch_SMD'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 SW1100 [SW_Push]",
+              "pos": {
+                "x": 231.14,
+                "y": 160.02
+              },
+              "uuid": "741cce51-46ee-5254-95ac-63d94c2611a9"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        },
+        {
+          "description": "현재 구성에 풋프린트 라이브러리 'Connector_PinHeader_1.27mm'이(가) 포함되어 있지 않습니다",
+          "items": [
+            {
+              "description": "심볼 J1100 [Conn_02x05_Odd_Even_J1100]",
+              "pos": {
+                "x": 295.91,
+                "y": 93.98
+              },
+              "uuid": "1a5f3b18-df56-55a9-b739-ac632e44c41d"
+            }
+          ],
+          "severity": "warning",
+          "type": "footprint_link_issues"
+        }
+      ]
+    }
+  ],
+  "finished_utc": "2026-10-15T13:54:26.515626+00:00"
+}

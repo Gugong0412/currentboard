@@ -1,0 +1,254 @@
+[
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B1.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B10_A.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B10_B.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B11_CLOCK.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B11_CORE.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B11_DEBUG.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B11_POWER.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B12_CONNECTOR.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B12_ISOLATOR.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B13.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B14.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B15.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B2.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B3.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B4.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B5_DIG.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B5_VCI.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B5_VDDI.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B6_IO.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B6_SYS.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_AVDDH1.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_AVDDH2.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_AVDDH2_GM.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_VCI.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_VDDI.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_VDDI_DIG.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_VDDI_LPDP.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_VDDI_OSC.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_VGH.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B7_VGH2.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B8_INA.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B8_ISO.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B8_PWR.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B8_VGL2.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/B9.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/BOM.csv",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Phase2_2_R2.kicad_pro",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Phase2_2_R2.kicad_sch",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Project.kicad_sym",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/BarrelJack_CUI_PJ-102AH_Horizontal.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/C_0603_1608Metric.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/C_1210_3225Metric.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/D_SMB.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/NetTie-2_SMD_Pad0.5mm.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/R_0603_1608Metric.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/R_2512_6332Metric.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/SOIC-16W_7.5x10.3mm_P1.27mm.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/TestPoint_Pad_D1.5mm.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/Texas_S-PDSO-N10_EP1.2x2mm.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/VSSOP-10_3x3mm_P0.5mm.kicad_mod",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/Firmware_Definitions.h",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/KiCad_Footprints_LICENSE.md",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/R2_VALIDATION_STATUS.json",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/README_KO.txt",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/README_R2_PENDING_VALIDATION.txt",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/firmware_definitions.json",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/fp-lib-table",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/pending_footprints.json",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/placement_manifest.json",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/schematic_additions.json",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/source_contract.json",
+    "match": true
+  },
+  {
+    "file": "DDI_Phase2_2_R2_12CH/sym-lib-table",
+    "match": true
+  }
+]

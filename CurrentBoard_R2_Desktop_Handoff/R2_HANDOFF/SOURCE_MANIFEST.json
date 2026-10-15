@@ -1,0 +1,354 @@
+{
+  "scope": "Packaging integrity only. No KiCad/netlist/ERC execution performed in this handoff.",
+  "created_utc": "2026-10-15T13:39:32.719217+00:00",
+  "source_zip": {
+    "name": "DDI_Phase2_2_R2_12CH_DRAFT.zip",
+    "size_bytes": 302150,
+    "sha256": "e7683a9554c803873ce7bcfc3f633aa640f98f42cc600ccda81f475c585689fe",
+    "git_blob_sha1": "82e1c9ef879b1ba8e8f8fe451346275d4693173b"
+  },
+  "source_originals_preserved": true,
+  "original_file_count": 63,
+  "original_files": {
+    "DDI_Phase2_2_R2_12CH/B1.kicad_sch": {
+      "size_bytes": 49955,
+      "sha256": "710a05ab7a84f351ca06f1c27ebfca45602c90a3d0c229bc234904b0857b2a45",
+      "git_blob_sha1": "d74a742b6dc86a290eae4205e1c52a4bdc015d7a"
+    },
+    "DDI_Phase2_2_R2_12CH/B10_A.kicad_sch": {
+      "size_bytes": 71107,
+      "sha256": "ce11ff2d5307b17687905150bc9016f442d03792e6766f6fb032a07672bac65e",
+      "git_blob_sha1": "89c91e14b185df2ac541997b694b4149df4c8eb0"
+    },
+    "DDI_Phase2_2_R2_12CH/B10_B.kicad_sch": {
+      "size_bytes": 71095,
+      "sha256": "93b20a6b7cbabdb3fed7c5239842a26afece268d5af262cfa1c412ce49adbfa9",
+      "git_blob_sha1": "c6c081ca6bd87171dfbdab4bc3408ac3246f4a7a"
+    },
+    "DDI_Phase2_2_R2_12CH/B11_CLOCK.kicad_sch": {
+      "size_bytes": 13654,
+      "sha256": "f985b5cfa7c08e82c3a52513831dc081b72b2dec10cf346c669ccfead2b8090f",
+      "git_blob_sha1": "de40c98c90ad62d32decdd5cc5b74a6401bae8fa"
+    },
+    "DDI_Phase2_2_R2_12CH/B11_CORE.kicad_sch": {
+      "size_bytes": 27488,
+      "sha256": "ec84b7c30510d9763c1743926f1276f9478aa9c5782acddea4b8cfb54f0d0d6c",
+      "git_blob_sha1": "bfcbafb45f295e4a81351bc5a6e1bdd503ec13dd"
+    },
+    "DDI_Phase2_2_R2_12CH/B11_DEBUG.kicad_sch": {
+      "size_bytes": 26670,
+      "sha256": "f6f538c7742e0e92d51eb1745b65f171967c7364e9cd151ce6acfc6959773036",
+      "git_blob_sha1": "8023fbbd6cc23a28e688283298682baad26cbbcc"
+    },
+    "DDI_Phase2_2_R2_12CH/B11_POWER.kicad_sch": {
+      "size_bytes": 23259,
+      "sha256": "5e51f7f23d0adfd0010c6345a8da34316bf62d8b125a2fcb4027b691457eb0d2",
+      "git_blob_sha1": "10efeb48cfc2cb4df34c2c8245d557858727c43a"
+    },
+    "DDI_Phase2_2_R2_12CH/B12_CONNECTOR.kicad_sch": {
+      "size_bytes": 37721,
+      "sha256": "8ab3db18b53532ab7a859a346e1011e56b45bc47cd4994e3dffa3ae9bd5c5228",
+      "git_blob_sha1": "2e9a7ce335bd54aaa7182e2c3a08a5b67dd31b70"
+    },
+    "DDI_Phase2_2_R2_12CH/B12_ISOLATOR.kicad_sch": {
+      "size_bytes": 35658,
+      "sha256": "197b40dc6311cd92052eea495710875a7d0b3d7f19ac4936a23306e269bcafce",
+      "git_blob_sha1": "9622a35b02e223e31c6154bb9aad0b3f7b44d7f7"
+    },
+    "DDI_Phase2_2_R2_12CH/B13.kicad_sch": {
+      "size_bytes": 27257,
+      "sha256": "85a49ea5507cd0e990e26ecba5619597966dfe95f0bee59a1a8041e5e4fa9966",
+      "git_blob_sha1": "f4419ebbf14761c47d46c344f5c888ee5c563c3f"
+    },
+    "DDI_Phase2_2_R2_12CH/B14.kicad_sch": {
+      "size_bytes": 29393,
+      "sha256": "0fa0d23aef04d4d57b4c0ca4a9b8fd59127199765cff87d245274c6f2db6464d",
+      "git_blob_sha1": "7aae3e2351d8afc314b7715958c748baef6a7b68"
+    },
+    "DDI_Phase2_2_R2_12CH/B15.kicad_sch": {
+      "size_bytes": 44359,
+      "sha256": "0e12511e5e2837fe12a437713ee5ae8094931646715b002dd909e818473f1ffe",
+      "git_blob_sha1": "1668eacd3a24cf674ab62fcf2475cb7b396df130"
+    },
+    "DDI_Phase2_2_R2_12CH/B2.kicad_sch": {
+      "size_bytes": 41578,
+      "sha256": "b340ca4d0ba62d0594d9e83471d40b794b263644c3400f8b947c43c97fdcfabd",
+      "git_blob_sha1": "fe3b4aeb40f1cabff6e4caac8060f674d231a7b0"
+    },
+    "DDI_Phase2_2_R2_12CH/B3.kicad_sch": {
+      "size_bytes": 46135,
+      "sha256": "21a13742bdb57e4a4db2e5f11099490dcab15b4e0b4cef1d9030cf920f17e16e",
+      "git_blob_sha1": "68246d776a123d32e4f73f7b80f9ef0a3046c0ec"
+    },
+    "DDI_Phase2_2_R2_12CH/B4.kicad_sch": {
+      "size_bytes": 35215,
+      "sha256": "a47044ab0055a03b50a70e64f33fae88e36f2983ec3d13b403377a789f623846",
+      "git_blob_sha1": "98ae52c0997d04878ccdb4cfd7a92c9157246d16"
+    },
+    "DDI_Phase2_2_R2_12CH/B5_DIG.kicad_sch": {
+      "size_bytes": 43206,
+      "sha256": "e4166cb44c0721823c366193a2f5122fe2053ffa130ea649d984802fd3223148",
+      "git_blob_sha1": "3eae21b8febbc259ffb0b8feba3fb7342a476be6"
+    },
+    "DDI_Phase2_2_R2_12CH/B5_VCI.kicad_sch": {
+      "size_bytes": 45062,
+      "sha256": "452f8a1d23e7b96fce98e0d3632a803644a6d289a0b2a2370cf798186e614820",
+      "git_blob_sha1": "75f948668440dba4fde753df2b10e7dae22328e2"
+    },
+    "DDI_Phase2_2_R2_12CH/B5_VDDI.kicad_sch": {
+      "size_bytes": 45358,
+      "sha256": "717b98d88aa599ac57ef033fa580a9453d366d48ef42ff42895a6b81fe6b0644",
+      "git_blob_sha1": "f0001154b08871cb97f3ab6b09876e6c3d81419a"
+    },
+    "DDI_Phase2_2_R2_12CH/B6_IO.kicad_sch": {
+      "size_bytes": 32826,
+      "sha256": "dcab2d709106c55a74dfeae4a6740f7ef4f117334a04e0187f6eee81ca642715",
+      "git_blob_sha1": "7bcf694710fc288cd111e3160126ef4720c3a21d"
+    },
+    "DDI_Phase2_2_R2_12CH/B6_SYS.kicad_sch": {
+      "size_bytes": 35042,
+      "sha256": "a8faced45c3a9e7ae9293349c26e1c1a8f3a79c62fefa22708b7ae935b73e994",
+      "git_blob_sha1": "4646c4dc5b5684abc6c4f3e98ce699c708436062"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_AVDDH1.kicad_sch": {
+      "size_bytes": 28071,
+      "sha256": "8bc1453ba573cf221d979c41e939366062e86ea1275d284a9ead34ead22c8b27",
+      "git_blob_sha1": "8c8f3538f9558b03ffab8f054fe47701b50f9871"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_AVDDH2.kicad_sch": {
+      "size_bytes": 28022,
+      "sha256": "454545def65acfb9215d9722f13850aa4fc5b784b5084dd3cb4d37d68eb04205",
+      "git_blob_sha1": "a2eb411ed1acd5899c4cf3cfb32ba98eda045c5b"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_AVDDH2_GM.kicad_sch": {
+      "size_bytes": 28011,
+      "sha256": "78047bc5e3ff469798851e6ab35501e9b1778878f80e7322ff0f3407cccf2c0b",
+      "git_blob_sha1": "d445679786ae2232bb198d30bcddbbaa9497306d"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_VCI.kicad_sch": {
+      "size_bytes": 23276,
+      "sha256": "b252ef494e8a89219d9a4040f0e605cc9ffda752033bbdd824918fb3e901703f",
+      "git_blob_sha1": "5c73a1a694231d09de436660c10b7141d847e7dd"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_VDDI.kicad_sch": {
+      "size_bytes": 23290,
+      "sha256": "4a84f3a53857b20b133d1c5de25ff5eaa79bd52329716daf3a1ef1876b159171",
+      "git_blob_sha1": "96bfdf957fbbea31d32f8e712f2e1ec6a5c2e8f0"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_VDDI_DIG.kicad_sch": {
+      "size_bytes": 28319,
+      "sha256": "1e29c47459882cab323c49381d62837ddc035d9345b4e41aed49531612d9de77",
+      "git_blob_sha1": "049d92a99e0c891788debe5257233ef44482afa8"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_VDDI_LPDP.kicad_sch": {
+      "size_bytes": 27999,
+      "sha256": "072d8cbcde147de93aeb75260f9054685c86eaa48047dc23478d5d782e548fdf",
+      "git_blob_sha1": "6f5474852507a451d045bb1032e49fd34a305fd9"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_VDDI_OSC.kicad_sch": {
+      "size_bytes": 27988,
+      "sha256": "9eec946aeffa0ef5e692027fc2cd896f5c087932f1026293917254c8161b77d8",
+      "git_blob_sha1": "694897f6e61e9b3d24f2b1500ed8cec58009104d"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_VGH.kicad_sch": {
+      "size_bytes": 28039,
+      "sha256": "9c6c5791f7dc9d4176dbb9acd27ebbdac9395a1a3f62dd7ced963489176e4adc",
+      "git_blob_sha1": "cdb75b745dec1d7087c7995459226706bded49a7"
+    },
+    "DDI_Phase2_2_R2_12CH/B7_VGH2.kicad_sch": {
+      "size_bytes": 28039,
+      "sha256": "08a4d960e125a13deb825e4964abb9b98fa9f2fcde3e2dbee07bb0672673e3d6",
+      "git_blob_sha1": "27e46143f8f38c56e8d584774a984af8c1096215"
+    },
+    "DDI_Phase2_2_R2_12CH/B8_INA.kicad_sch": {
+      "size_bytes": 28106,
+      "sha256": "5cc6080ddb6da3f4269d790b1881c932f5363ac972f7018770009ba5e7edb088",
+      "git_blob_sha1": "b331455c9f0118579e6b61227a13c3e8765da939"
+    },
+    "DDI_Phase2_2_R2_12CH/B8_ISO.kicad_sch": {
+      "size_bytes": 31008,
+      "sha256": "ee406f90d732339f9240b19f5b1b04933bf9d94c10ad7710acf2ea2c930b53cb",
+      "git_blob_sha1": "5a67f07ce3b213a955ad87d3726df16d88c5dcd2"
+    },
+    "DDI_Phase2_2_R2_12CH/B8_PWR.kicad_sch": {
+      "size_bytes": 36925,
+      "sha256": "205b703c1355e3e0785419f6b9ffa7d659a695ded1468941bce9d328c3d9ba7a",
+      "git_blob_sha1": "90289ad64348531290c5137ec7ddc3b53068427a"
+    },
+    "DDI_Phase2_2_R2_12CH/B8_VGL2.kicad_sch": {
+      "size_bytes": 23146,
+      "sha256": "9cce31b4a98723a1e8de159dcbefadd40a4649dedf1ba545a8cc7c78f1422419",
+      "git_blob_sha1": "343ef082f12f5d1be3191b8bbca41919f46dbade"
+    },
+    "DDI_Phase2_2_R2_12CH/B9.kicad_sch": {
+      "size_bytes": 8174,
+      "sha256": "3e17d299142ad16c4926017a7389164d790f3c0bcc3264afff13eaceab1dbbf1",
+      "git_blob_sha1": "dd49826fa89d793bf3c4dc6b932f1d391c20884e"
+    },
+    "DDI_Phase2_2_R2_12CH/BOM.csv": {
+      "size_bytes": 65312,
+      "sha256": "5b7c25878582ca514556aa08b2816fe55f26d9e5249a8fb0f52c65c11e26a558",
+      "git_blob_sha1": "12ef72c9221adcb875105e3fe8b1cf73cbc0ab9b"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Phase2_2_R2.kicad_pro": {
+      "size_bytes": 637,
+      "sha256": "62876b4d31c33969021716252a2ba0a51ea91f5d79d09e575a73f206c9e36878",
+      "git_blob_sha1": "16b390c5732768e60359677515b8a0b818799967"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Phase2_2_R2.kicad_sch": {
+      "size_bytes": 22184,
+      "sha256": "87fc2ff5223a87d4b76d7c477678e0fcac6e175bc22677944c0bdf236fd652f5",
+      "git_blob_sha1": "23efad94af8f14f0c2276dd53efa8646f9c03df3"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Project.kicad_sym": {
+      "size_bytes": 57156,
+      "sha256": "4f4ca68e2e0970e17c6157742b7168e9006052e55db9400bc678374496b79e20",
+      "git_blob_sha1": "987691d1573e1312a876286b08b1f152905f1500"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/BarrelJack_CUI_PJ-102AH_Horizontal.kicad_mod": {
+      "size_bytes": 6346,
+      "sha256": "c0a9c223851faa8888c36633fe3c9266a72b63abb1adae55d21f4036bf4f9500",
+      "git_blob_sha1": "04261c66167ff556fc2e3d5fb8d0b1726c1f539f"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/C_0603_1608Metric.kicad_mod": {
+      "size_bytes": 3698,
+      "sha256": "cb77dd7fe32d4edf273d7bde468841743c430354037a75be0c07e65fa4694f86",
+      "git_blob_sha1": "d7d91634fefdb46e5cd52d0888c9e6599f1df7ed"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/C_1210_3225Metric.kicad_mod": {
+      "size_bytes": 3700,
+      "sha256": "7b4c335f37e6ddff4e87ae9d06749e1611984312a4afedcae6b7fcc21457b4b7",
+      "git_blob_sha1": "dd7d9c5642ee635a1dd9019012dcd5c772e66988"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/D_SMB.kicad_mod": {
+      "size_bytes": 4632,
+      "sha256": "53e5a8e5f205af2dbc1c7d4e2b8e7ea5ce0ae294f60d3ec32810885d5deb677c",
+      "git_blob_sha1": "2509b346ce34e3fab2028fb15724c2481e98c36e"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/NetTie-2_SMD_Pad0.5mm.kicad_mod": {
+      "size_bytes": 1707,
+      "sha256": "ab305e0868a34f8d442e370cbd8409eff8a08e3dff45f8126658df3016d3c119",
+      "git_blob_sha1": "e03a330c720a101211bbea328279d4d009a5d494"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/R_0603_1608Metric.kicad_mod": {
+      "size_bytes": 3731,
+      "sha256": "edc7209daba328d12059edbed06806395a7ec97aaa428aa0029967d58b6d55eb",
+      "git_blob_sha1": "5aafdd31d4f27760d5a72b62a9bb012ae10f4e6a"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/R_2512_6332Metric.kicad_mod": {
+      "size_bytes": 3717,
+      "sha256": "3832879c76f8898c6f55cc115530460208ae78864c8d7d3ae7b16a4fb49e2d39",
+      "git_blob_sha1": "1c1b681ad81dd4a1e04420dc438890d8a6302bb6"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/SOIC-16W_7.5x10.3mm_P1.27mm.kicad_mod": {
+      "size_bytes": 5168,
+      "sha256": "5d89461b7be9aba257e4fe1999d0a2bab4ef1472a38a8eb61ae0be6f21968320",
+      "git_blob_sha1": "8b9aab1f3ad1e5d18ba23a90efc27415fda8446a"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/TestPoint_Pad_D1.5mm.kicad_mod": {
+      "size_bytes": 1843,
+      "sha256": "d6f31a114e83bbf57812ac0c3a131b24749964cb3b079c2d71150e955d28ffd0",
+      "git_blob_sha1": "440d5ef792cf6db332885a3a230a1aae3fecb291"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/Texas_S-PDSO-N10_EP1.2x2mm.kicad_mod": {
+      "size_bytes": 4203,
+      "sha256": "e50e17a3c6cceeeccbdd96434bcf81546ca52942ee044be44f23d0cc04e91dad",
+      "git_blob_sha1": "a0cdf94a89b3c1d97809ddb250055318a5877cca"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias.kicad_mod": {
+      "size_bytes": 6542,
+      "sha256": "94a6a60d167cc4d3ea2d44d675036dea496480223e0a0a262e5f384d4378c358",
+      "git_blob_sha1": "663dbd77cc613e7cb8bbe0c151679e98a3a31ebb"
+    },
+    "DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/VSSOP-10_3x3mm_P0.5mm.kicad_mod": {
+      "size_bytes": 3789,
+      "sha256": "523164dceffb8f40d756700520efbc2c63a50472cd1b7b3d3f2b3934c4b44ebf",
+      "git_blob_sha1": "7181dd57434abf679a9ea6ace693d562537f580b"
+    },
+    "DDI_Phase2_2_R2_12CH/Firmware_Definitions.h": {
+      "size_bytes": 2002,
+      "sha256": "53eaa294b6218fe7a8690a08396b6111190bad52623761a1725ecffd23d6d7e1",
+      "git_blob_sha1": "0e3007ccc29ba78d728ffcfbdb39829254f1422f"
+    },
+    "DDI_Phase2_2_R2_12CH/KiCad_Footprints_LICENSE.md": {
+      "size_bytes": 2101,
+      "sha256": "45d2bce75e5a4208f5afb01b8fb2c406e700371c4fe2b5f5cd5c443d46db4d8f",
+      "git_blob_sha1": "314afa8a91e3273f3e90203b8382315bbb40bbfb"
+    },
+    "DDI_Phase2_2_R2_12CH/R2_VALIDATION_STATUS.json": {
+      "size_bytes": 591,
+      "sha256": "b6ea84d20b70daed060a56f5f06e92750a0f05632ad38ce72a6e4eac34017cb6",
+      "git_blob_sha1": "771349a794fd738d0932f7908a1c0c20eef3b256"
+    },
+    "DDI_Phase2_2_R2_12CH/README_KO.txt": {
+      "size_bytes": 2689,
+      "sha256": "225e6a9a516b8e30e98059a459d96ae82fb93514ce4b16a03d980549ab154f9e",
+      "git_blob_sha1": "eaf232f42faa2a854f0ac3717df0cc013f23d4d1"
+    },
+    "DDI_Phase2_2_R2_12CH/README_R2_PENDING_VALIDATION.txt": {
+      "size_bytes": 2567,
+      "sha256": "76a51ec03b466e4de55c1156711a401005c2750d8156f41f910587d545ee8d3c",
+      "git_blob_sha1": "80469e05e47ac9b99d9199d4f6571eb7e4e0ce6d"
+    },
+    "DDI_Phase2_2_R2_12CH/firmware_definitions.json": {
+      "size_bytes": 12137,
+      "sha256": "1cbf6261cf11d32aecb4ff862158c0916f59bc3a9321518b7fda4237a989e816",
+      "git_blob_sha1": "e11345d4e1bf1397eccbd09d0464261f79a5ce2d"
+    },
+    "DDI_Phase2_2_R2_12CH/fp-lib-table": {
+      "size_bytes": 170,
+      "sha256": "8bdc3ab3fda15d75a7e25b68fea2f4f0fcc412eb406afa1397d0d021e13abe26",
+      "git_blob_sha1": "f8813f9326aac2df9b3f5c5841682a11faf0dbe1"
+    },
+    "DDI_Phase2_2_R2_12CH/pending_footprints.json": {
+      "size_bytes": 4651,
+      "sha256": "85240ad17330629a2fc66bd4f304d129090434c88070260715d871490914b3c9",
+      "git_blob_sha1": "a760aa15295000d28e079d057d06d5acedca08de"
+    },
+    "DDI_Phase2_2_R2_12CH/placement_manifest.json": {
+      "size_bytes": 75320,
+      "sha256": "eabdc1187d2036f806b875b5f832db85efbf9f29ffc3261ebcd9a43f7658c62c",
+      "git_blob_sha1": "2a6bfcc248153845bd6953b0bb8a286ea362bc99"
+    },
+    "DDI_Phase2_2_R2_12CH/schematic_additions.json": {
+      "size_bytes": 544,
+      "sha256": "ebc0d7a0e2869fef8e505bd2c00f847cd51f597580c431b73717ee26b2af5419",
+      "git_blob_sha1": "2b84b8eb5343902c63c4d1f4f8e6d87d7be878d8"
+    },
+    "DDI_Phase2_2_R2_12CH/source_contract.json": {
+      "size_bytes": 368809,
+      "sha256": "d8d3925d4ec743c5d871750433fda60b1855c911eac9eef10dd51d8ad90a17e9",
+      "git_blob_sha1": "98cbfd6db95423e216126107cb529b5e71c6b9e4"
+    },
+    "DDI_Phase2_2_R2_12CH/sym-lib-table": {
+      "size_bytes": 192,
+      "sha256": "df40e3c204174a322e4f90472fcb1fbca4d0871944692077278a9d85a7fc2b99",
+      "git_blob_sha1": "a02ebed60dbb04d0d100cfb096036a151ee60164"
+    }
+  },
+  "verification_tools": {
+    "verify_r2_directory.py": {
+      "size_bytes": 8510,
+      "sha256": "80562ad6d4ad275160c66c8baa64a105cb20d5d8a3ef2dc08d2b01a549471f8e",
+      "git_blob_sha1": "b9963033bdc48b9c466c99f6c273efd937f75974",
+      "upstream_commit": "1c0a53f3c40c1a344b649e96abf0f0972f639304",
+      "changed_in_handoff": false,
+      "test_performed_in_handoff": "Python syntax parse only; no native KiCad execution"
+    },
+    "verify_r2.py": {
+      "size_bytes": 19602,
+      "sha256": "c53c594353086ad5b1dda3987adf355c137735d7fb975eebcbdc52a486e61a85",
+      "git_blob_sha1": "581e653eece24100ec3cd34cd8355994ebedb623",
+      "upstream_commit": "1c0a53f3c40c1a344b649e96abf0f0972f639304",
+      "changed_in_handoff": false,
+      "test_performed_in_handoff": "Python syntax parse only; no native KiCad execution"
+    }
+  },
+  "github_readback": {
+    "repository": "Gugong0412/currentboard",
+    "main": "1c4c7ad623752fbb99b3c27d991d42db47674347",
+    "verify/kicad-r2": "1c0a53f3c40c1a344b649e96abf0f0972f639304"
+  },
+  "native_R2_verification": "UNVERIFIED",
+  "production_release": "HOLD"
+}

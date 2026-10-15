@@ -1,0 +1,12 @@
+{
+  "revision": "Phase2-2 R2",
+  "base_sha256": "1b187dc51e4337e9bd532c7e0a98f2f429918a4ae3b4c05d0b1c2c0d1116f1d8",
+  "static_contract_checks": "PASS: per-pin internal consistency, 12 INA channels, unique I2C addresses, reference presence, s-expression balance",
+  "KiCad_native_netlist_export": "UNVERIFIED \u2014 kicad-cli unavailable",
+  "KiCad_ERC": "UNVERIFIED \u2014 kicad-cli unavailable",
+  "KiCad_Library_Symbol_DRC": "UNVERIFIED",
+  "VDDI_load_regulation": "UNVERIFIED",
+  "5uA_0p5_percent": "UNVERIFIED",
+  "MOSCATO_physical_pinout": "UNVERIFIED",
+  "PCB_manufacturing": "HOLD"
+}

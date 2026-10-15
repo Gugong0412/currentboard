@@ -1,0 +1,61 @@
+R2 작업 복사본 수정 및 재검증 — 2026-10-15 KST
+
+최종 판정: SCHEMATIC_CHECKS_PASS_HARDWARE_HOLD
+수정 프로젝트: ../R2_REPAIRED_003/DDI_Phase2_2_R2.kicad_pro
+최종 증거: native_final/verification_summary.json, verified_netlist.xml, erc_report.json
+검증 버전: KiCad CLI 10.0.7. 과거 8.0.9 결과와 구분한다.
+
+결과
+- 기존 두 검사 스크립트를 수정 없이 사용: verify_r2_directory.py가 verify_r2.py 핵심 비교 함수를 호출.
+- 8,445개 검사, 불일치 0건. 새 넷리스트와 ERC 명령 모두 exit 0.
+- ERC 36개 시트, error 0 / warning 0 / violation 0.
+- 실제 부품 379개, 계약 명명 net 183개, 전체 native net 202개, NC 19핀, copper bridge 선언 25개.
+- 이전 단독 net 7개를 정상 net에 병합하여 계약 net이 190→183개, 검사 수가 8,473→8,445개로 감소했다. 검사 규칙을 제거하지 않았다.
+
+Value 불일치 5건 해결
+- J1403 회로도: DIGITAL / 2x6 → EXPANSION / 2x6 (기존 계약·BOM과 일치).
+- J1404 회로도: ANALOG NEG / 1x2 → VGL2 / 1x2 (기존 계약·BOM과 일치).
+- TP1026 계약·BOM: AVDDH2_DUT → AVDDH2_S_O_DUT (현재 회로도·실제 net 이름과 일치).
+- TP1030 계약·BOM: VGH_DUT → VGH1_DUT (현재 회로도·실제 net 이름과 일치).
+- TP1034 계약·BOM: VGL_DUT → VGL1_DUT (현재 회로도·실제 net 이름과 일치).
+
+이전 라벨 7건 해결: 실제 테스트포인트 연결 복구
+- TP1027.1: AVDDH2_SNS_SRC → AVDDH2_S_O_SNS_SRC
+- TP1028.1: AVDDH2_SNS_DUT → AVDDH2_S_O_SNS_DUT
+- TP1031.1: VGH_SNS_SRC → VGH1_SNS_SRC
+- TP1032.1: VGH_SNS_DUT → VGH1_SNS_DUT
+- TP1035.1: VGL_SNS_SRC → VGL1_SNS_SRC
+- TP1036.1: VGL_SNS_DUT → VGL1_SNS_DUT
+- TP1069.1: ALERT_VGL_N → ALERT_VGL1_N
+회로도 global_label, 테스트포인트 Value, BOM, source_contract의 pin/net 선언 및 placement_manifest의 관련 목록을 동기화했다.
+경고를 숨기거나 라벨만 삭제하지 않았다. 이전 네이티브 넷리스트와 최종 넷리스트를 비교해 전체 Ref.pin 집합이 동일하고 위 7핀 이외 net 변경이 없음을 확인했다.
+12채널·션트·LDO·GND_F·I2C·FB·DUT 헤더·제어 연결은 유지된다. 펌웨어 JSON/헤더 및 프로젝트 ERC 설정은 원본과 바이트 동일하다.
+
+J1200 확인 및 처리
+- MPN: GCT USB4105-GF-A 유지. 제조사 ordering grid에서 GF=Gold Flash, A=Tape & Reel, stake suffix 공란=0.95mm 확인.
+- 제조사: https://gct.co/connector/usb4105
+- 공식 도면: https://gct.co/files/drawings/usb4105.pdf (B4, 18/12/23, sheet 1); 내려받은 원본 usb4105.pdf 보존.
+- 설치 KiCad 10 풋프린트: Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal
+- 패드 배열, 간격, land 크기, shell slot 및 peg 치수를 제조사 권장 PCB 도면과 대조했다. 세부 대조값은 프로젝트의 J1200_FOOTPRINT_PROVENANCE.txt에 기록.
+- 설치 풋프린트 shell pad는 SH지만 기존 회로도·계약은 S1이다. 프로젝트 전용 DDI_R2_Local 라이브러리로 복사하여 shell pad 4개만 SH→S1로 변경했다. 풋프린트 식별명에 _S1을 붙였다.
+- 최종 배정: DDI_R2_Local:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal_S1
+- 원본 KiCad 풋프린트와 역변환 비교로 모든 geometry 및 3D model 원본 경로 보존 확인. 라이선스·출처·원본/변경본 SHA256 보존.
+- 회로도 Footprint/RequestedFootprint, BOM, 계약을 일치시켰다. Datasheet에 공식 도면 URL 추가.
+- 최종 XML의 실제 footprint 배정 확인, 심볼 pin set과 footprint pad set 일치, S1 4개와 USB_SHIELD 연결 확인.
+- 겹치는 A1/B12, A4/B9, A9/B4, A12/B1 패드쌍이 각각 동일 net임을 확인.
+- 첫 통과 후 3D model 참조 경로에 붙은 불필요한 _S1을 발견해 복원하고, native_final 폴더에서 새 넷리스트와 ERC를 다시 생성했다. 이전 native 결과는 보존했다.
+
+보존 및 한계
+- 인수인계 원본 63개 모두 SOURCE_MANIFEST SHA256과 검증 후 일치.
+- 기존 검증 결과와 원본 폴더는 보존. GitHub 쓰기/push 없음.
+- 작업 복사본 안의 R2_VALIDATION_STATUS.json 및 이전 README는 원본에서 가져온 과거 기록이다. 이번 수정의 현재 상태는 이 보고서와 native_final 증거를 따른다.
+- 기존 ERC 비활성 규칙(single_global_label, four_way_junction, simulation_model_issue, footprint_filter)은 변경하지 않았다. 0건은 기존 프로젝트 규칙에 따른 결과이다.
+- KiCad의 HKCU 레지스트리 접근 메시지는 로그에 보존했다. export/ERC는 정상 종료했고 소스 무변경 검사를 통과했다.
+- 이번 검증은 PCB DRC, 실물 핀맵 전체 승인, 열/피크/기동/절연 공급, 정확도·실측 및 제작 승인을 포함하지 않는다. 제작 HOLD 유지.
+
+재현 및 변경 추적
+- repair_and_verify.py: 새로운 수정 복사본 생성 및 첫 검증. 기존 목적 폴더가 있으면 덮어쓰기를 거부한다.
+- finalize.py: 기존 첫 실행본의 3D 참조를 복원하고 최종 재검증한 이력 스크립트.
+- repair_manifest_final.json: 최종 변경 의도·풋프린트 해시.
+- changed_files_final.json: 원본 대비 최종 변경 파일과 해시.
+- connectivity_delta.json: 의도된 7핀 변경 목록. 최종 단계에서도 동일 비교를 다시 확인했다.

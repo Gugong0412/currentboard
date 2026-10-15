@@ -1,0 +1,52 @@
+[
+  {
+    "file": "B10_A.kicad_sch",
+    "before_sha256": "ce11ff2d5307b17687905150bc9016f442d03792e6766f6fb032a07672bac65e",
+    "after_sha256": "043d522b9aff427eab7c0c9534d077cf8063c3d1a23ca7826405bef6073f0f9e"
+  },
+  {
+    "file": "B10_B.kicad_sch",
+    "before_sha256": "93b20a6b7cbabdb3fed7c5239842a26afece268d5af262cfa1c412ce49adbfa9",
+    "after_sha256": "47c6cb550ca5f2b25b3385421ab809fae6a4ecef177b28a28149a2e97d142dd8"
+  },
+  {
+    "file": "B12_CONNECTOR.kicad_sch",
+    "before_sha256": "8ab3db18b53532ab7a859a346e1011e56b45bc47cd4994e3dffa3ae9bd5c5228",
+    "after_sha256": "7ca9b543ba683a8a7bbab0a8380cc683e047bd4162a306f60a7f438dedbd3bdb"
+  },
+  {
+    "file": "B14.kicad_sch",
+    "before_sha256": "0fa0d23aef04d4d57b4c0ca4a9b8fd59127199765cff87d245274c6f2db6464d",
+    "after_sha256": "3115ceea119f06a89c8d88f90c56fedc13eaf34fad4901368f7c79f526113528"
+  },
+  {
+    "file": "BOM.csv",
+    "before_sha256": "5b7c25878582ca514556aa08b2816fe55f26d9e5249a8fb0f52c65c11e26a558",
+    "after_sha256": "bbde2a98d02073e87558de4450b909f6e298270690e20006de21296457c295df"
+  },
+  {
+    "file": "DDI_R2_Local.pretty\\USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal_S1.kicad_mod",
+    "before_sha256": null,
+    "after_sha256": "c27934d33853cb50f0483cacada87a7a57d936ece8d1f1aa336d10770d971d57"
+  },
+  {
+    "file": "fp-lib-table",
+    "before_sha256": "8bdc3ab3fda15d75a7e25b68fea2f4f0fcc412eb406afa1397d0d021e13abe26",
+    "after_sha256": "03842b6b9c6195b3b70fcad8692d3edfc7a56022ff8405f722a81e4e3c656616"
+  },
+  {
+    "file": "J1200_FOOTPRINT_PROVENANCE.txt",
+    "before_sha256": null,
+    "after_sha256": "1dcb36b83323c8587c45a65e90e169365dd504cc897d791f84f0517435502eb3"
+  },
+  {
+    "file": "placement_manifest.json",
+    "before_sha256": "eabdc1187d2036f806b875b5f832db85efbf9f29ffc3261ebcd9a43f7658c62c",
+    "after_sha256": "b4ad2cf2e011ac078ca446cfa2c02a97f027bc9a8422184acb691fdd7512d8c1"
+  },
+  {
+    "file": "source_contract.json",
+    "before_sha256": "d8d3925d4ec743c5d871750433fda60b1855c911eac9eef10dd51d8ad90a17e9",
+    "after_sha256": "4502546503e9f70d5af61bf09d8dbb41a10512718fb9d47e589abe93b4e3cc68"
+  }
+]

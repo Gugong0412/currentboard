@@ -1,0 +1,46 @@
+{
+  "unexpected_changes": [],
+  "changes": [
+    {
+      "pin": "TP1027.1",
+      "before": "AVDDH2_SNS_SRC",
+      "after": "AVDDH2_S_O_SNS_SRC"
+    },
+    {
+      "pin": "TP1028.1",
+      "before": "AVDDH2_SNS_DUT",
+      "after": "AVDDH2_S_O_SNS_DUT"
+    },
+    {
+      "pin": "TP1031.1",
+      "before": "VGH_SNS_SRC",
+      "after": "VGH1_SNS_SRC"
+    },
+    {
+      "pin": "TP1032.1",
+      "before": "VGH_SNS_DUT",
+      "after": "VGH1_SNS_DUT"
+    },
+    {
+      "pin": "TP1035.1",
+      "before": "VGL_SNS_SRC",
+      "after": "VGL1_SNS_SRC"
+    },
+    {
+      "pin": "TP1036.1",
+      "before": "VGL_SNS_DUT",
+      "after": "VGL1_SNS_DUT"
+    },
+    {
+      "pin": "TP1069.1",
+      "before": "ALERT_VGL_N",
+      "after": "ALERT_VGL1_N"
+    }
+  ],
+  "original_63_files_unchanged": true,
+  "firmware_unchanged": true,
+  "erc_rules_unchanged": true,
+  "J1200_symbol_pad_set_match": true,
+  "J1200_shield_pads": 4,
+  "J1200_coincident_pad_nets_match": true
+}

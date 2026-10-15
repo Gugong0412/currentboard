@@ -1,0 +1,41 @@
+{
+  "source": "C:\\Users\\bagpa\\OneDrive\\Documents\\GitHub\\currentboard\\CurrentBoard_R2_Desktop_Handoff\\DDI_Phase2_2_R2_12CH",
+  "project": "C:\\Users\\bagpa\\OneDrive\\Documents\\GitHub\\currentboard\\R2_REPAIRED_003",
+  "net_renames": {
+    "AVDDH2_SNS_SRC": "AVDDH2_S_O_SNS_SRC",
+    "AVDDH2_SNS_DUT": "AVDDH2_S_O_SNS_DUT",
+    "VGH_SNS_SRC": "VGH1_SNS_SRC",
+    "VGH_SNS_DUT": "VGH1_SNS_DUT",
+    "VGL_SNS_SRC": "VGL1_SNS_SRC",
+    "VGL_SNS_DUT": "VGL1_SNS_DUT",
+    "ALERT_VGL_N": "ALERT_VGL1_N"
+  },
+  "testpoint_moves": {
+    "TP1027": "AVDDH2_S_O_SNS_SRC",
+    "TP1028": "AVDDH2_S_O_SNS_DUT",
+    "TP1031": "VGH1_SNS_SRC",
+    "TP1032": "VGH1_SNS_DUT",
+    "TP1035": "VGL1_SNS_SRC",
+    "TP1036": "VGL1_SNS_DUT",
+    "TP1069": "ALERT_VGL1_N"
+  },
+  "values": {
+    "J1403": "EXPANSION / 2x6",
+    "J1404": "VGL2 / 1x2",
+    "TP1026": "AVDDH2_S_O_DUT",
+    "TP1030": "VGH1_DUT",
+    "TP1034": "VGL1_DUT",
+    "TP1027": "AVDDH2_S_O_SNS_SRC",
+    "TP1028": "AVDDH2_S_O_SNS_DUT",
+    "TP1031": "VGH1_SNS_SRC",
+    "TP1032": "VGH1_SNS_DUT",
+    "TP1035": "VGL1_SNS_SRC",
+    "TP1036": "VGL1_SNS_DUT",
+    "TP1069": "ALERT_VGL1_N"
+  },
+  "footprint": "DDI_R2_Local:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal_S1",
+  "mpn": "USB4105-GF-A",
+  "footprint_source_sha256": "012da5bac71f8e9d4f59d0f7041c3cd8e1e5af3a3d297354b974f61ab24e8691",
+  "footprint_adapted_sha256": "3a34e59ae6116bcb582921c062dd461fe4c54335d3a3ed3a3d554c5a86ccc101",
+  "manufacturer_pdf_sha256": "fb331fbabee8392ed2937ed757c1610cb0f174b84625147c0b580a18eea8c0e5"
+}

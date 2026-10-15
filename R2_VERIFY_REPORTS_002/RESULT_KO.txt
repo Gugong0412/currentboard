@@ -1,0 +1,53 @@
+R2 로컬 검증 결과 — 2026-10-15 (KST)
+
+판정: FAIL_OR_UNVERIFIED / 제작 HOLD
+로컬 터미널·파일 접근 확인. KiCad CLI: C:\Program Files\KiCad\10.0\bin\kicad-cli.exe, 버전 10.0.7.
+Python 3.12.14. 기존 8.0.9 검증과 다른 버전이며 8.0.9 재현 검증은 수행하지 않았다.
+SOURCE_MANIFEST 원본 63개: 검증 후 SHA256 전부 일치 = True.
+원본·계약·BOM·펌웨어·기존 검사 스크립트 수정 없음. GitHub 쓰기/push 없음.
+입력은 시작 시 이미 Git 미추적 상태였다. 결과와 작업 복사본은 원본 외부에만 생성했다.
+
+기존 verify_r2_directory.py가 수정하지 않은 verify_r2.py 핵심 비교 함수를 호출했다.
+001 실행: 자식 프로세스 PATH 전달 문제로 KiCad 탐색 실패. 네이티브 결과 생성 전 중단.
+002 실행: Python 내부에서 실행 환경을 명시하여 해결. 새 넷리스트 export exit 0, ERC exit 5.
+설정은 R2_VERIFY_ENV_001에 격리. HKCU\Software\kicad-cli 레지스트리 접근 경고는 로그에 보존.
+검사 8473개. 실제 부품 379개, 계약 명명 net 190개, NC 19핀, copper bridge 선언 25개 일치.
+전체 36개 계층 시트의 네이티브 ERC 결과 존재. B8_VGL2 시트 위반 0개.
+named net/핀 집합 불일치 0건. BOM 대 계약 불일치 0건. C 헤더 대 JSON, 션트 값 대 네이티브 불일치 0건.
+
+Value 불일치 (계약·BOM 기대값 → 실제 회로도):
+- J1403: EXPANSION / 2x6 → DIGITAL / 2x6
+- TP1034: VGL_DUT → VGL1_DUT
+- TP1030: VGH_DUT → VGH1_DUT
+- J1404: VGL2 / 1x2 → ANALOG NEG / 1x2
+- TP1026: AVDDH2_DUT → AVDDH2_S_O_DUT
+
+ERC: 최초 26 warning / 0 error. 설치된 기본 footprint 전역 테이블과 KICAD10_FOOTPRINT_DIR를 설정한 후 별도 재실행: 8 warning / 0 error.
+최초 증거는 보존했으며 erc_configured.json에 재실행 결과를 저장했다. 18건은 라이브러리 탐색 설정으로 해소됐다.
+남은 경고:
+- / isolated_pin_label: Label connected to only one pin; [{'description': "전역 라벨 'VGL_SNS_SRC'", 'pos': {'x': 43.18, 'y': 68.58}, 'uuid': '868102d7-d0c8-53c3-9469-7c0412d9c5bb'}]
+- / isolated_pin_label: Label connected to only one pin; [{'description': "전역 라벨 'VGL_SNS_DUT'", 'pos': {'x': 119.38, 'y': 68.58}, 'uuid': '564f43c8-34cd-579e-a688-c55d730d609c'}]
+- / isolated_pin_label: Label connected to only one pin; [{'description': "전역 라벨 'ALERT_VGL_N'", 'pos': {'x': 347.98, 'y': 220.98}, 'uuid': '27a1572d-dd34-5360-9fe0-b6995347b7ed'}]
+- / footprint_link_issues: 풋프린트 'USB_C_Receptacle_GCT_USB4105-xx-A'을(를) 라이브러리 'Connector_USB'에서 찾을 수 없습니다; [{'description': '심볼 J1200 [USB_C_Receptacle_USB2.0_16P_J1200]', 'pos': {'x': 100.33, 'y': 93.98}, 'uuid': '2572bbfb-7b08-5916-8c59-62a6b520a9b1'}]
+- / isolated_pin_label: Label connected to only one pin; [{'description': "전역 라벨 'VGH_SNS_SRC'", 'pos': {'x': 119.38, 'y': 220.98}, 'uuid': '3eb94649-86bb-5074-a828-36e1887e3c24'}]
+- / isolated_pin_label: Label connected to only one pin; [{'description': "전역 라벨 'AVDDH2_SNS_SRC'", 'pos': {'x': 195.58, 'y': 195.58}, 'uuid': '6678018d-05fc-5350-8883-06969066e7c8'}]
+- / isolated_pin_label: Label connected to only one pin; [{'description': "전역 라벨 'VGH_SNS_DUT'", 'pos': {'x': 195.58, 'y': 220.98}, 'uuid': 'b2e7209b-8af6-5156-a383-7b5d2129f168'}]
+- / isolated_pin_label: Label connected to only one pin; [{'description': "전역 라벨 'AVDDH2_SNS_DUT'", 'pos': {'x': 271.78, 'y': 195.58}, 'uuid': 'de7943fa-b9e0-5ae6-a140-b06f925e18db'}]
+
+J1200 footprint: Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A가 설치 라이브러리에 없음. 임의 대체하지 않았다.
+7개 isolated label은 루트에 남은 VGL/VGH/AVDDH2 이전 이름이다. 핀 net 대조는 통과하지만 경고를 면제하지 않았다.
+기존 프로젝트에서 비활성인 ERC 규칙: single_global_label, four_way_junction, simulation_model_issue, footprint_filter. --severity-all은 비활성 규칙을 다시 켜지 않는다. 전체 규칙 무예외 PASS가 아니다.
+
+주요 핀·구조 확인:
+- U840.1=GND_F, .2=F_3V3, .4=I2C2_SDA_F, .5=I2C2_SCL_F, .6=F_3V3, .7=GND_F.
+- U840.9=VGL2_INA_N, .10=VGL2_INA_P. U820과 절연 도메인 공유. GND_F와 시스템 GND는 별도 논리 net.
+- U520.1/.2=VDDI_SRC, R526.1=VDDI_SRC, R525.1=VDDI_DUT; R525/526.2=VDDI_FB_SEL. R525 DNP / R526 FIT 일치.
+- U520.3=VDDI_FB; 전체 FB 저항망의 계약 대비 연결도 일치. VDDI_SRC는 U710/U780/U790 공급 공통점.
+- AVDDH2_SRC는 U740/U760 공통 공급, VGH_SRC는 U750/U770 공통 공급. S/O 합산 및 GM 분리 12채널 유지.
+- 헤더: J1400.3 VDDI_DUT, J1403.1 LPDP, .3 OSC, .5 AVDDH2_GM, .7 VGH2; J1401.3 AVDDH2_S_O; J1402.1 VGL1; J1404.1 VGL2.
+- INA A1(.1)/A0(.2), SDA(.4)/SCL(.5), VS(.6)/GND(.7), sense(.9/.10)는 channel_pin_audit.csv에 12개 모두 기록했다.
+- 주소 스트랩은 계약의 각 Ref.pin/net과 일치한다. 기존 검사기의 주소 검사는 JSON 내 유일성/C 헤더 일치이며 실제 IC 주소 디코딩·물리 핀맵 독립 승인은 아니다.
+- 25개 copper bridge의 논리 net 선언 일치. 실제 PCB copper/Kelvin 배선 검증은 아니다.
+
+다음 해결 대상: Value 표기 5건 정합성, 남은 이전 라벨 7개, J1200 정확한 footprint/MPN 확인. 원본에는 수정하지 않았다.
+피크·기동·열·공급 안정도·정확도·실측·PCB DRC·완성 펌웨어 검증은 미완료이며 제작 HOLD 유지.
