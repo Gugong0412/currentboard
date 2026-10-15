@@ -1,4 +1,0 @@
-Status: SCHEMATIC_CHECKS_PASS_HARDWARE_HOLD
-Checks: 8445
-Issues: 0
-Production: HOLD

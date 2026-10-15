@@ -5,3 +5,5 @@ R2_VERIFY_REPORTS_002/** -text
 R2_FIX_REPORTS_003/** -text
 R2_REPAIRED_005/** -text
 R2_ALERT_REPORTS_005/** -text
+history/** -text
+tools/r2/** -text

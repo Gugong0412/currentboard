@@ -1,35 +1,42 @@
-# DDI 소비전류 측정보드
+# DDI Current Board · R2 최종 작업본
 
-모바일 디스플레이 DDI의 전원 레일 7개(VDDI_DIG, VDDI, VCI, AVDDH1, AVDDH2, VGH, VGL)의 평균 소비전류를 측정하는 보드입니다.
-120Hz / 1Hz 구동 조건에서 ±0.5% 정확도를 목표로 합니다.
+검증된 **12채널** 회로도와 전원·측정·ALERT 연결을 모은 브랜치입니다. 현재 기준은 `R2_REPAIRED_005`이며 VGL1·2는 절연 I2C2 polling을 유지합니다.
 
-- 측정: 채널별 단일 션트 + INA228 (VGL은 절연 플로팅 측정)
-- 제어: STM32F072CBT6, USB 절연(ADuM4160), PC Python UI
-- 전원: 12V 단일 입력, moscato(외부 PMIC)용 VBAT 3.8V/1A 생성
+## 먼저 열기
 
-## 폴더 구성
-
-| 경로 | 내용 |
+| 목적 | 파일 |
 |---|---|
-| `요구사항*.txt` | 초기 요구사항과 답변 |
-| `current board 프롬프트*.txt` | 단계별 설계 AI 지시 프롬프트 |
-| `DDI_Current_Board_Phase1*.html` | Phase 1: 아키텍처, 부품 선정, 오차 예산 (Rev.A / Rev.B) |
-| `DDI_Phase2_1_Detailed_Design.html` | Phase 2-1: 전원부 + 측정 아날로그부 상세 설계 |
-| `DDI_Phase2_2_Integrated_Design.html` | Phase 2-2: MCU·USB·레벨시프터·DUT 헤더 + 전체 통합 설계 |
-| `DDI_Phase2_2_KiCad/` | KiCad 회로도 프로젝트, 넷리스트, BOM, 검증 기록 |
-| `netcheck/` | KiCad 넷리스트 ↔ 설계 계약 자동 대조 스크립트 |
+| 인터랙티브 HTML 블록도 | [R2_INTERACTIVE_DIAGRAM.html](R2_ALERT_REPORTS_005/R2_INTERACTIVE_DIAGRAM.html) |
+| GitHub에서 바로 보는 블록도 | [BLOCK_DIAGRAM.md](R2_ALERT_REPORTS_005/BLOCK_DIAGRAM.md) |
+| 최종 KiCad 프로젝트 | [DDI_Phase2_2_R2.kicad_pro](R2_REPAIRED_005/DDI_Phase2_2_R2.kicad_pro) |
+| BOM | [BOM.csv](R2_REPAIRED_005/BOM.csv) |
+| 최종 검증 증거 | [verification_summary.json](R2_ALERT_REPORTS_005/native/verification_summary.json) |
+| 변경 이력·정리 기록 | [history/README.md](history/README.md) |
 
-## 넷리스트 대조
+**HTML 사용:** 다운로드한 파일을 브라우저에서 여세요. 서버·외부 라이브러리 없이 작동합니다. GitHub 파일 화면은 HTML을 실행하지 않습니다. 전원/채널/통신 탭, 채널별 상세, 확대·축소, 인쇄 기능을 제공합니다.
 
-```bash
-cd netcheck
-python kicad_netcheck.py ddi_contract.json board.net             # 전체 검사
-python kicad_netcheck.py ddi_contract.json board.net --partial   # 작성 도중 검사
+## 현재 상태
+
+- KiCad **10.0.7**, **8,437개 검사 통과**, ERC **36시트 오류·경고 0건**.
+- 실제 부품 379개, 명명 넷 181개, NC 19핀, copper bridge 선언 25개.
+- AVDDH2 S/O ALERT → MCU PB3, VGH1 ALERT → PB4 연결 복구.
+- MCU 직접 ALERT 6채널. VGL1·2를 포함한 나머지 6채널은 전용 ALERT MCU 연결 없이 I2C polling 구성.
+- 승인된 12채널·고정 션트·공통 공급원 분기·절연 도메인 유지.
+- 기존 ERC 비활성 규칙을 유지한 결과입니다. 실측·PCB DRC·정확도·제작 승인은 미완료이며 **제작 HOLD**입니다.
+
+`R2_REPAIRED_005`는 검증 입력과 바이트 동일하게 보존합니다. 그 안의 이전 README 및 `R2_VALIDATION_STATUS.json`은 초안 생성 시점 기록이며 현재 상태는 위 최종 검증 증거를 따릅니다.
+
+## 재검증·HTML 재생성
+
+Python 3.10 이상과 KiCad CLI 10.0.7을 사용합니다. `kicad-cli`를 PATH에 등록하고 전역 footprint 테이블 및 `KICAD10_FOOTPRINT_DIR`를 설정하세요. work/out에는 존재하지 않는 새 폴더를 지정합니다.
+
+```text
+python tools/r2/verify_r2_directory.py --project R2_REPAIRED_005 --work R2_VERIFY_WORK_NEW --out R2_LOCAL_CHECK_NEW --expected-kicad 10.0.7
+python R2_ALERT_REPORTS_005/build_explorer.py
 ```
-Windows에서는 `run_netcheck.bat`을 더블클릭해도 됩니다.
 
-## 현재 상태 (2026-10-11)
+HTML은 최종 네이티브 넷리스트와 펌웨어 정의에서 생성하며 `explorer-template.html`이 편집 원본입니다. Playwright와 Edge가 설치된 환경에서는 `node R2_ALERT_REPORTS_005/check_explorer.cjs`로 UI 동작을 검사합니다. `PLAYWRIGHT_MODULE`, `BROWSER_CHANNEL`로 설치 경로와 브라우저를 지정할 수 있습니다.
 
-- 회로도 연결: 설계 계약과 **오류 0건** (부품 336, 핀 870)
-- 남은 작업: 커스텀 풋프린트 18개 지정 (4단자 션트 7, USB ESD 4, 인덕터 2 등), moscato 실제 핀맵 반영
-- 다음 단계: PCB 레이아웃, 펌웨어, Python UI
+## 정리 원칙
+
+최종 프로젝트·검증 증거·HTML과 도구를 유지하고, 요구사항·변경 기록·과거 검증 요약은 `history/`에 모았습니다. 구버전 설계 HTML, 중복 KiCad 프로젝트와 중간 넷리스트는 현재 브랜치에서 제거했습니다. 로컬 원본은 유지했고 제거 전 전체 자료는 커밋 `3569bfe`에서 복구할 수 있습니다. `main`과 Git 이력은 변경하지 않았습니다.

@@ -1,0 +1,514 @@
+{
+  "date_kst": "2026-10-16",
+  "parent_commit": "3569bfef5af6575f45f3320c10bb6439a10d0399",
+  "policy": "Remove superseded payloads from current branch index only. Keep local originals and earlier Git commits. Preserve history documents byte-for-byte.",
+  "removed_from_current_tree": [
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B1.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B10_A.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B10_B.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B11_CLOCK.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B11_CORE.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B11_DEBUG.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B11_POWER.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B12_CONNECTOR.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B12_ISOLATOR.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B13.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B14.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B15.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B2.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B3.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B4.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B5_DIG.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B5_VCI.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B5_VDDI.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B6_IO.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B6_SYS.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_AVDDH1.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_AVDDH2.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_AVDDH2_GM.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_VCI.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_VDDI.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_VDDI_DIG.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_VDDI_LPDP.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_VDDI_OSC.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_VGH.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B7_VGH2.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B8_INA.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B8_ISO.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B8_PWR.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B8_VGL2.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/B9.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/BOM.csv",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Phase2_2_R2.kicad_pro",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Phase2_2_R2.kicad_sch",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Project.kicad_sym",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/BarrelJack_CUI_PJ-102AH_Horizontal.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/C_0603_1608Metric.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/C_1210_3225Metric.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/D_SMB.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/NetTie-2_SMD_Pad0.5mm.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/R_0603_1608Metric.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/R_2512_6332Metric.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/SOIC-16W_7.5x10.3mm_P1.27mm.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/TestPoint_Pad_D1.5mm.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/Texas_S-PDSO-N10_EP1.2x2mm.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/DDI_Verified.pretty/VSSOP-10_3x3mm_P0.5mm.kicad_mod",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/Firmware_Definitions.h",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/KiCad_Footprints_LICENSE.md",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/R2_VALIDATION_STATUS.json",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/README_KO.txt",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/README_R2_PENDING_VALIDATION.txt",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/firmware_definitions.json",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/fp-lib-table",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/pending_footprints.json",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/placement_manifest.json",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/schematic_additions.json",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/source_contract.json",
+    "CurrentBoard_R2_Desktop_Handoff/DDI_Phase2_2_R2_12CH/sym-lib-table",
+    "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/DESKTOP_START_PROMPT.txt",
+    "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/SOURCE_MANIFEST.json",
+    "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/START_HERE_KO.txt",
+    "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/tools/verify_r2.py",
+    "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/tools/verify_r2_directory.py",
+    "DDI_Current_Board_Phase1.html",
+    "DDI_Current_Board_Phase1_revB.html",
+    "DDI_Phase2_1_Detailed_Design.html",
+    "DDI_Phase2_2_Integrated_Design.html",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B1.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B10_A.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B10_B.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B11_CLOCK.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B11_CORE.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B11_DEBUG.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B11_POWER.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B12_CONNECTOR.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B12_ISOLATOR.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B13.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B14.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B15.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B2.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B3.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B4.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B5_DIG.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B5_VCI.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B5_VDDI.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B6_IO.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B6_SYS.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B7_AVDDH1.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B7_AVDDH2.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B7_VCI.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B7_VDDI.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B7_VDDI_DIG.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B7_VGH.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B8_INA.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B8_ISO.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B8_PWR.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/B9.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/BOM.csv",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Phase2_2.kicad_pro",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Phase2_2.kicad_sch",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Phase2_2.net",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Phase2_2_Integrated_Design.html",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Phase2_2_Schematic.pdf",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Project.kicad_sym",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/BarrelJack_CUI_PJ-102AH_Horizontal.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/C_0603_1608Metric.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/C_1210_3225Metric.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/D_SMB.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/NetTie-2_SMD_Pad0.5mm.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/R_0603_1608Metric.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/R_2512_6332Metric.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/SOIC-16W_7.5x10.3mm_P1.27mm.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/TestPoint_Pad_D1.5mm.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/Texas_S-PDSO-N10_EP1.2x2mm.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/DDI_Verified.pretty/VSSOP-10_3x3mm_P0.5mm.kicad_mod",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/KiCad_Footprints_LICENSE.md",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/README_KO.txt",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/SHA256SUMS.json",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/erc_report.json",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/fp-lib-table",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/pending_footprints.json",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/placement_manifest.json",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/schematic_additions.json",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/source_contract.json",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/sym-lib-table",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/validate_project.py",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/verification_summary.json",
+    "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/verified_netlist.xml",
+    "DDI_Pin_to_Pin_Schematic_Explorer.html",
+    "PCB_PRELAYOUT_HANDOFF_2026-10-13.md",
+    "R2_FIX_REPORTS_003/RESULT_KO.txt",
+    "R2_FIX_REPORTS_003/changed_files.json",
+    "R2_FIX_REPORTS_003/changed_files_final.json",
+    "R2_FIX_REPORTS_003/connectivity_delta.json",
+    "R2_FIX_REPORTS_003/final_run.log",
+    "R2_FIX_REPORTS_003/finalize.py",
+    "R2_FIX_REPORTS_003/native/SUMMARY.txt",
+    "R2_FIX_REPORTS_003/native/erc.log",
+    "R2_FIX_REPORTS_003/native/erc_report.json",
+    "R2_FIX_REPORTS_003/native/input_manifest.json",
+    "R2_FIX_REPORTS_003/native/kicad-version.txt",
+    "R2_FIX_REPORTS_003/native/netlist-export.log",
+    "R2_FIX_REPORTS_003/native/verification_summary.json",
+    "R2_FIX_REPORTS_003/native/verified_netlist.xml",
+    "R2_FIX_REPORTS_003/native_final/SUMMARY.txt",
+    "R2_FIX_REPORTS_003/native_final/erc.log",
+    "R2_FIX_REPORTS_003/native_final/erc_report.json",
+    "R2_FIX_REPORTS_003/native_final/input_manifest.json",
+    "R2_FIX_REPORTS_003/native_final/kicad-version.txt",
+    "R2_FIX_REPORTS_003/native_final/netlist-export.log",
+    "R2_FIX_REPORTS_003/native_final/verification_summary.json",
+    "R2_FIX_REPORTS_003/native_final/verified_netlist.xml",
+    "R2_FIX_REPORTS_003/repair_and_verify.py",
+    "R2_FIX_REPORTS_003/repair_manifest.json",
+    "R2_FIX_REPORTS_003/repair_manifest_final.json",
+    "R2_FIX_REPORTS_003/usb4105.pdf",
+    "R2_FIX_REPORTS_003/usb4105_page1.png",
+    "R2_FIX_REPORTS_003/verification_run.log",
+    "R2_GITHUB_HANDOFF.txt",
+    "R2_REPAIRED_003/B1.kicad_sch",
+    "R2_REPAIRED_003/B10_A.kicad_sch",
+    "R2_REPAIRED_003/B10_B.kicad_sch",
+    "R2_REPAIRED_003/B11_CLOCK.kicad_sch",
+    "R2_REPAIRED_003/B11_CORE.kicad_sch",
+    "R2_REPAIRED_003/B11_DEBUG.kicad_sch",
+    "R2_REPAIRED_003/B11_POWER.kicad_sch",
+    "R2_REPAIRED_003/B12_CONNECTOR.kicad_sch",
+    "R2_REPAIRED_003/B12_ISOLATOR.kicad_sch",
+    "R2_REPAIRED_003/B13.kicad_sch",
+    "R2_REPAIRED_003/B14.kicad_sch",
+    "R2_REPAIRED_003/B15.kicad_sch",
+    "R2_REPAIRED_003/B2.kicad_sch",
+    "R2_REPAIRED_003/B3.kicad_sch",
+    "R2_REPAIRED_003/B4.kicad_sch",
+    "R2_REPAIRED_003/B5_DIG.kicad_sch",
+    "R2_REPAIRED_003/B5_VCI.kicad_sch",
+    "R2_REPAIRED_003/B5_VDDI.kicad_sch",
+    "R2_REPAIRED_003/B6_IO.kicad_sch",
+    "R2_REPAIRED_003/B6_SYS.kicad_sch",
+    "R2_REPAIRED_003/B7_AVDDH1.kicad_sch",
+    "R2_REPAIRED_003/B7_AVDDH2.kicad_sch",
+    "R2_REPAIRED_003/B7_AVDDH2_GM.kicad_sch",
+    "R2_REPAIRED_003/B7_VCI.kicad_sch",
+    "R2_REPAIRED_003/B7_VDDI.kicad_sch",
+    "R2_REPAIRED_003/B7_VDDI_DIG.kicad_sch",
+    "R2_REPAIRED_003/B7_VDDI_LPDP.kicad_sch",
+    "R2_REPAIRED_003/B7_VDDI_OSC.kicad_sch",
+    "R2_REPAIRED_003/B7_VGH.kicad_sch",
+    "R2_REPAIRED_003/B7_VGH2.kicad_sch",
+    "R2_REPAIRED_003/B8_INA.kicad_sch",
+    "R2_REPAIRED_003/B8_ISO.kicad_sch",
+    "R2_REPAIRED_003/B8_PWR.kicad_sch",
+    "R2_REPAIRED_003/B8_VGL2.kicad_sch",
+    "R2_REPAIRED_003/B9.kicad_sch",
+    "R2_REPAIRED_003/BOM.csv",
+    "R2_REPAIRED_003/DDI_Phase2_2_R2.kicad_pro",
+    "R2_REPAIRED_003/DDI_Phase2_2_R2.kicad_sch",
+    "R2_REPAIRED_003/DDI_Project.kicad_sym",
+    "R2_REPAIRED_003/DDI_R2_Local.pretty/USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal_S1.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/BarrelJack_CUI_PJ-102AH_Horizontal.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/C_0603_1608Metric.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/C_1210_3225Metric.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/D_SMB.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/NetTie-2_SMD_Pad0.5mm.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/R_0603_1608Metric.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/R_2512_6332Metric.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/SOIC-16W_7.5x10.3mm_P1.27mm.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/TestPoint_Pad_D1.5mm.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/Texas_S-PDSO-N10_EP1.2x2mm.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/VQFN-16-1EP_3x3mm_P0.5mm_EP1.68x1.68mm_ThermalVias.kicad_mod",
+    "R2_REPAIRED_003/DDI_Verified.pretty/VSSOP-10_3x3mm_P0.5mm.kicad_mod",
+    "R2_REPAIRED_003/Firmware_Definitions.h",
+    "R2_REPAIRED_003/J1200_FOOTPRINT_PROVENANCE.txt",
+    "R2_REPAIRED_003/KiCad_Footprints_LICENSE.md",
+    "R2_REPAIRED_003/R2_VALIDATION_STATUS.json",
+    "R2_REPAIRED_003/README_KO.txt",
+    "R2_REPAIRED_003/README_R2_PENDING_VALIDATION.txt",
+    "R2_REPAIRED_003/firmware_definitions.json",
+    "R2_REPAIRED_003/fp-lib-table",
+    "R2_REPAIRED_003/pending_footprints.json",
+    "R2_REPAIRED_003/placement_manifest.json",
+    "R2_REPAIRED_003/schematic_additions.json",
+    "R2_REPAIRED_003/source_contract.json",
+    "R2_REPAIRED_003/sym-lib-table",
+    "R2_VERIFY_REPORTS_002/RESULT_KO.txt",
+    "R2_VERIFY_REPORTS_002/SUMMARY.txt",
+    "R2_VERIFY_REPORTS_002/build_audit.py",
+    "R2_VERIFY_REPORTS_002/channel_pin_audit.csv",
+    "R2_VERIFY_REPORTS_002/erc.log",
+    "R2_VERIFY_REPORTS_002/erc_configured.json",
+    "R2_VERIFY_REPORTS_002/erc_configured.log",
+    "R2_VERIFY_REPORTS_002/erc_report.json",
+    "R2_VERIFY_REPORTS_002/input_manifest.json",
+    "R2_VERIFY_REPORTS_002/kicad-version.txt",
+    "R2_VERIFY_REPORTS_002/netlist-export.log",
+    "R2_VERIFY_REPORTS_002/source_integrity.json",
+    "R2_VERIFY_REPORTS_002/verification_summary.json",
+    "R2_VERIFY_REPORTS_002/verified_netlist.xml",
+    "current board 프롬프트.txt",
+    "current board 프롬프트_phase2-2.txt",
+    "current board 프롬프트_phase2.txt",
+    "current board 프롬프트_revB.txt",
+    "netcheck/board.net",
+    "netcheck/ddi_contract.json",
+    "netcheck/kicad_netcheck.py",
+    "netcheck/run_netcheck.bat",
+    "revisions/2026-10-13_R1/DDI_Phase2_2_Independent_Audit.html",
+    "revisions/2026-10-13_R1/DDI_Phase2_2_R1_Block_Diagrams.html",
+    "revisions/2026-10-13_R1/DDI_Phase2_2_R1_Design_and_Blocks.html",
+    "revisions/2026-10-13_R1/DDI_Phase2_2_R1_KiCad.zip",
+    "요구사항.txt",
+    "요구사항2.txt",
+    "요구사항3.txt",
+    "R2_ALERT_REPORTS_005/repair_verify.py"
+  ],
+  "preserved_records": [
+    {
+      "original_path": "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/DESKTOP_START_PROMPT.txt",
+      "retained_path": "history/R2_HANDOFF/DESKTOP_START_PROMPT.txt",
+      "sha256": "88b39d5a796aaff871254c5ebec01b4de7748bc17f2a1018295f5fc904affd16"
+    },
+    {
+      "original_path": "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/SOURCE_MANIFEST.json",
+      "retained_path": "history/R2_HANDOFF/SOURCE_MANIFEST.json",
+      "sha256": "88210ab293954b15c603bdd77af2d0e00e27d356d02691ba0a620ea6b96b078f"
+    },
+    {
+      "original_path": "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/START_HERE_KO.txt",
+      "retained_path": "history/R2_HANDOFF/START_HERE_KO.txt",
+      "sha256": "f830b02c8f1d9169894dba0d710e4e8f3f27f661836a2e37596b0861f43b9f82"
+    },
+    {
+      "original_path": "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/tools/verify_r2.py",
+      "retained_path": "tools/r2/verify_r2.py",
+      "sha256": "c53c594353086ad5b1dda3987adf355c137735d7fb975eebcbdc52a486e61a85"
+    },
+    {
+      "original_path": "CurrentBoard_R2_Desktop_Handoff/R2_HANDOFF/tools/verify_r2_directory.py",
+      "retained_path": "tools/r2/verify_r2_directory.py",
+      "sha256": "80562ad6d4ad275160c66c8baa64a105cb20d5d8a3ef2dc08d2b01a549471f8e"
+    },
+    {
+      "original_path": "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/SHA256SUMS.json",
+      "retained_path": "history/R1/SHA256SUMS.json",
+      "sha256": "0c19c54adba5cd5ff3c21375da8ec9835c325ff8765e047d4dfeed156e6514c6"
+    },
+    {
+      "original_path": "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/erc_report.json",
+      "retained_path": "history/R1/erc_report.json",
+      "sha256": "1b165c2cc5310183291e770420cd7e254ad852218bb976547ad3bf0de06c6e96"
+    },
+    {
+      "original_path": "DDI_Phase2_2_KiCad/DDI_Phase2_2_KiCad/verification_summary.json",
+      "retained_path": "history/R1/verification_summary.json",
+      "sha256": "e5612dc1744094e441ea9f2a37f0069b7a82868ff86becac3cdacb6fd7ce0349"
+    },
+    {
+      "original_path": "PCB_PRELAYOUT_HANDOFF_2026-10-13.md",
+      "retained_path": "history/R1/PCB_PRELAYOUT_HANDOFF_2026-10-13.md",
+      "sha256": "4bc80cf3ce7ede54d2b57c0b73bae05a8202ad00970c25449641c119a8373bc5"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/RESULT_KO.txt",
+      "retained_path": "history/R2_FIX_003/RESULT_KO.txt",
+      "sha256": "64be46ad79caf3610a3e1f96b27bd38671ad4c131308ec5582859b39133fbb71"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/changed_files.json",
+      "retained_path": "history/R2_FIX_003/changed_files.json",
+      "sha256": "33a15caf6a24a906cd611043562b0ece8019156965fd3a6e6f43284adf2c761a"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/changed_files_final.json",
+      "retained_path": "history/R2_FIX_003/changed_files_final.json",
+      "sha256": "689ebc54d1c132bb3b20e6c2dd6cef37f47c963197433f6669a2a34c107b2ca3"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/connectivity_delta.json",
+      "retained_path": "history/R2_FIX_003/connectivity_delta.json",
+      "sha256": "574aaf076d6ba3400015b72d37a20c8d04ea07cd524c378a14154eb3fd60e8a8"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/final_run.log",
+      "retained_path": "history/R2_FIX_003/final_run.log",
+      "sha256": "80e051b5506f022da9f3fc2ee9dc8feb64f90027edd9582e0faec4da5ac4a097"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/finalize.py",
+      "retained_path": "history/R2_FIX_003/finalize.py",
+      "sha256": "3532935376e74ce81d21d2a42dc49014e46f2a872922d9accec082cdc93c65de"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/native_final/SUMMARY.txt",
+      "retained_path": "history/R2_FIX_003/native_final/SUMMARY.txt",
+      "sha256": "f0d7e80b5dfe233db265d74989d5762600740b023039d21405de43753f785218"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/native_final/erc.log",
+      "retained_path": "history/R2_FIX_003/native_final/erc.log",
+      "sha256": "d82843c8a989737bee9a20f7261f8c364c04c555493fb744a6bd2e64fd5afdc4"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/native_final/erc_report.json",
+      "retained_path": "history/R2_FIX_003/native_final/erc_report.json",
+      "sha256": "0babf097b9f72fc7875a7a0a5239f0e773392cee8052e1620283b3cc84e327a2"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/native_final/input_manifest.json",
+      "retained_path": "history/R2_FIX_003/native_final/input_manifest.json",
+      "sha256": "874260a3864bb8178ccd4ce5fbfd738b700096df3f1d4d5a1e01ae45b218cd2e"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/native_final/kicad-version.txt",
+      "retained_path": "history/R2_FIX_003/native_final/kicad-version.txt",
+      "sha256": "86b996e373f5bd7be1445ef49dc3d2ac70889494a1ee47725eb5082dd47a5e4d"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/native_final/netlist-export.log",
+      "retained_path": "history/R2_FIX_003/native_final/netlist-export.log",
+      "sha256": "ddd30c720dd1f94e480aea1e3040397c56a8498e849241f577de0015c2cc4eea"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/native_final/verification_summary.json",
+      "retained_path": "history/R2_FIX_003/native_final/verification_summary.json",
+      "sha256": "c4a920ac665ae1aa132deffcbd081ad502406f9b9baa167985240d93769ed53d"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/repair_and_verify.py",
+      "retained_path": "history/R2_FIX_003/repair_and_verify.py",
+      "sha256": "5781076e55d5007420c1f0f45cd0b379ebccf615a85afb7e7669912253a77078"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/repair_manifest.json",
+      "retained_path": "history/R2_FIX_003/repair_manifest.json",
+      "sha256": "55c26e7be543536686aa0db141e5e6c8d6c44c17ebb489802f7b8c89e3669977"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/repair_manifest_final.json",
+      "retained_path": "history/R2_FIX_003/repair_manifest_final.json",
+      "sha256": "bb9abf74f48e55a134c979a5e567b4dcaace061458e0e6ac541bfe44107bdc53"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/usb4105.pdf",
+      "retained_path": "history/R2_FIX_003/usb4105.pdf",
+      "sha256": "fb331fbabee8392ed2937ed757c1610cb0f174b84625147c0b580a18eea8c0e5"
+    },
+    {
+      "original_path": "R2_FIX_REPORTS_003/verification_run.log",
+      "retained_path": "history/R2_FIX_003/verification_run.log",
+      "sha256": "37b44ec09802167930a86fe0c020531a94a354272d394122faeb58be002ea30f"
+    },
+    {
+      "original_path": "R2_GITHUB_HANDOFF.txt",
+      "retained_path": "history/R2_GITHUB_HANDOFF_2026-10-15.txt",
+      "sha256": "f12b7a7f16b7ff4c94dfc695d0faecea136048dd1223147c9cc736247ef2af7f"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/RESULT_KO.txt",
+      "retained_path": "history/R2_VERIFY_002/RESULT_KO.txt",
+      "sha256": "046b222d23d78c281e2f3b99d56b77e09753ce1464baa81d9aaf47f31d99714f"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/SUMMARY.txt",
+      "retained_path": "history/R2_VERIFY_002/SUMMARY.txt",
+      "sha256": "5b837e652614ff2be67bbe97e04c79e4dc9de2e6974999e817ece1a6fbee5a3b"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/channel_pin_audit.csv",
+      "retained_path": "history/R2_VERIFY_002/channel_pin_audit.csv",
+      "sha256": "4cd49505d267217541aae5493347206281babed02e61b7260835864e6ac71709"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/erc.log",
+      "retained_path": "history/R2_VERIFY_002/erc.log",
+      "sha256": "eae2ba6d56c50ecc500008f98edba9fdfae4c42bc94a9a41ded37b587465e882"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/erc_configured.json",
+      "retained_path": "history/R2_VERIFY_002/erc_configured.json",
+      "sha256": "e508b0dad8492eb98077bdaefb01497c23f9930c73c32787f1422f281d2261cf"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/erc_configured.log",
+      "retained_path": "history/R2_VERIFY_002/erc_configured.log",
+      "sha256": "6c73e9b8db91e7f5d99037662fca2001bc5a4454997a97f30c700282e6aaf8be"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/erc_report.json",
+      "retained_path": "history/R2_VERIFY_002/erc_report.json",
+      "sha256": "73087f1c305cf95508aaa0248962fcd7f113a5519a83ecf97e76b5994f12d7a5"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/input_manifest.json",
+      "retained_path": "history/R2_VERIFY_002/input_manifest.json",
+      "sha256": "02bba80c5db331959321e4c3dc77445c107c6a46f61a515ba90b84bded116500"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/kicad-version.txt",
+      "retained_path": "history/R2_VERIFY_002/kicad-version.txt",
+      "sha256": "86b996e373f5bd7be1445ef49dc3d2ac70889494a1ee47725eb5082dd47a5e4d"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/netlist-export.log",
+      "retained_path": "history/R2_VERIFY_002/netlist-export.log",
+      "sha256": "9283b0b19c545decc2fdbda5d8adce2baf17454d7155288d5bae96caeb4b33f9"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/source_integrity.json",
+      "retained_path": "history/R2_VERIFY_002/source_integrity.json",
+      "sha256": "602c1093f34063d158f51e469c1d0213f52ad87bc7457039bde18a8b12b03c59"
+    },
+    {
+      "original_path": "R2_VERIFY_REPORTS_002/verification_summary.json",
+      "retained_path": "history/R2_VERIFY_002/verification_summary.json",
+      "sha256": "35415a9f81b88506e0dc348849a9bfeeeb49e9143ed94f57b97239bbdca8a9c6"
+    },
+    {
+      "original_path": "current board 프롬프트.txt",
+      "retained_path": "history/requirements/current board 프롬프트.txt",
+      "sha256": "d6dd70ca3bf123f86c59dcca02db58d402ec1edb7df448ffbb0f9feb27377e43"
+    },
+    {
+      "original_path": "current board 프롬프트_phase2-2.txt",
+      "retained_path": "history/requirements/current board 프롬프트_phase2-2.txt",
+      "sha256": "b3fa198a1116c44cd1f43ec38c81300567ecb105c48113d628ce8d8212774186"
+    },
+    {
+      "original_path": "current board 프롬프트_phase2.txt",
+      "retained_path": "history/requirements/current board 프롬프트_phase2.txt",
+      "sha256": "0a0ef663a8b59b5b2806153b80d13199eadd37c63062ea2978c02d2e2eadbcf1"
+    },
+    {
+      "original_path": "current board 프롬프트_revB.txt",
+      "retained_path": "history/requirements/current board 프롬프트_revB.txt",
+      "sha256": "1e74fd3dd01f545ab9f352f6649609739d32c3bd1c1e3d56a161a18fe2a00c9e"
+    },
+    {
+      "original_path": "revisions/2026-10-13_R1/DDI_Phase2_2_Independent_Audit.html",
+      "retained_path": "history/R1/DDI_Phase2_2_Independent_Audit.html",
+      "sha256": "a146c95a5b7f59d41d41c0730fdb35b2704722373c1b8e56ef0bbaf6b97dab0a"
+    },
+    {
+      "original_path": "요구사항.txt",
+      "retained_path": "history/requirements/요구사항.txt",
+      "sha256": "0ca68f2300479356d862a2dae2bd7f930e1caa122d5afe078988bab4fcec0965"
+    },
+    {
+      "original_path": "요구사항2.txt",
+      "retained_path": "history/requirements/요구사항2.txt",
+      "sha256": "41174688718818944b55ff0fc348b3631449156f7396773530b0b426c2a24e7b"
+    },
+    {
+      "original_path": "요구사항3.txt",
+      "retained_path": "history/requirements/요구사항3.txt",
+      "sha256": "3abdc06cd9384ff7898d419df8934981509d580363d87823f452fd129eb38ffa"
+    },
+    {
+      "original_path": "R2_ALERT_REPORTS_005/repair_verify.py",
+      "retained_path": "history/R2_ALERT_005/repair_verify.py",
+      "sha256": "645c8b8e11c3ea882596f78382bedb96e5429a3607330b4686547d06681071f1"
+    }
+  ]
+}

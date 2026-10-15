@@ -1,2 +1,0 @@
-(fp_lib_table (version 7) (lib (name "DDI_Verified") (type "KiCad") (uri "${KIPRJMOD}/DDI_Verified.pretty") (options "") (descr "Unmodified KiCad reference footprints"))
-(lib (name "DDI_R2_Local") (type "KiCad") (uri "${KIPRJMOD}/DDI_R2_Local.pretty") (options "") (descr "USB4105 KiCad 10 footprint; shield pad identifiers adapted to existing S1 symbol")))

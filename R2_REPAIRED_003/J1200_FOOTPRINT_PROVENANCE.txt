@@ -1,9 +1,0 @@
-MPN retained: GCT USB4105-GF-A. GF = gold flash; A = tape/reel; no stake suffix = 0.95 mm.
-Manufacturer drawing: https://gct.co/files/drawings/usb4105.pdf, B4, 18/12/23, sheet 1.
-Product: https://gct.co/connector/usb4105
-KiCad 10.0.7 source: C:\Program Files\KiCad\10.0\share\kicad\footprints\Connector_USB.pretty\USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal.kicad_mod
-Source SHA256: 012da5bac71f8e9d4f59d0f7041c3cd8e1e5af3a3d297354b974f61ab24e8691
-Changes: footprint/Value identifier suffix _S1; four SH pads renamed S1 to retain existing J1200.S1 USB_SHIELD. All geometry unchanged.
-KiCad library license: CC-BY-SA-4.0 with KiCad exception; see KiCad_Footprints_LICENSE.md.
-Manufacturer land pattern checked: 12 distinct SMT land positions, 16 contact pad IDs; 0.50 mm inner pitch; 0.30/0.60 x 1.15 mm lands; shell x +/-4.32 mm; shell slots 0.60 x 1.70 and 0.60 x 1.40 mm; shell row spacing 4.18 mm; pegs diameter 0.65 mm, x +/-2.89 mm.
-Coincident pad pairs A1/B12, A4/B9, A9/B4, A12/B1 must have identical nets. Checked after fresh export.

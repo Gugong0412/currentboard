@@ -24,3 +24,30 @@ Thumbs.db
 desktop.ini
 __pycache__/
 *.pyc
+
+# Superseded originals retained locally; historical Git tree: 3569bfe.
+/CurrentBoard_R2_Desktop_Handoff/
+/DDI_Phase2_2_KiCad/
+/R2_REPAIRED_003/
+/R2_VERIFY_REPORTS_002/
+/R2_FIX_REPORTS_003/
+/netcheck/
+/revisions/
+/DDI_Current_Board_Phase1*.html
+/DDI_Phase2_1_Detailed_Design.html
+/DDI_Phase2_2_Integrated_Design.html
+/DDI_Pin_to_Pin_Schematic_Explorer.html
+/PCB_PRELAYOUT_HANDOFF_2026-10-13.md
+/R2_GITHUB_HANDOFF.txt
+/요구사항*.txt
+/current board 프롬프트*.txt
+/R2_ALERT_REPORTS_005/repair_verify.py
+
+# Local execution copies, environment, screenshots and cleanup helpers.
+/R2_VERIFY_WORK_*/
+/R2_VERIFY_ENV_*/
+/R2_VERIFY_REPORTS_001/
+/R2_LOCAL_CHECK_*/
+/R2_ALERT_REPORTS_005/explorer-*.png
+/prepare_branch_cleanup.py
+/.cleanup-remove-paths
