@@ -1,15 +1,13 @@
 name: KiCad R2 verify
 
-# This branch-only workflow does NOT require registration on main.
-# Upload the R2 ZIP and verify_r2.py first; commit this workflow LAST.
+# The checked-in project folder is the input; no ZIP is required.
+# Trigger on source changes, not on this input-adapter setup commit.
 on:
   push:
     branches:
       - verify/kicad-r2
     paths:
-      - DDI_Phase2_2_R2_12CH_DRAFT.zip
-      - verify_r2.py
-      - .github/workflows/kicad-verify.yml
+      - DDI_Phase2_2_R2_12CH/**
 
 permissions:
   contents: read
@@ -26,7 +24,6 @@ jobs:
       DEBIAN_FRONTEND: noninteractive
       KICAD8_SYMBOL_DIR: /usr/share/kicad/symbols
       KICAD8_FOOTPRINT_DIR: /usr/share/kicad/footprints
-      R2_SHA256: e7683a9554c803873ce7bcfc3f633aa640f98f42cc600ccda81f475c585689fe
     steps:
       - name: Check out this exact verification commit
         uses: actions/checkout@v4.4.0
@@ -34,15 +31,15 @@ jobs:
           persist-credentials: false
           fetch-depth: 1
 
-      - name: Record input identity and check the ZIP hash
+      - name: Record the source commit and require the project folder
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p reports
           printf '%s\n' "$GITHUB_SHA" > reports/commit-sha.txt
           printf '%s\n' "$GITHUB_REF" > reports/branch-ref.txt
-          sha256sum verify_r2.py .github/workflows/kicad-verify.yml > reports/checker-sha256.txt
-          printf '%s  %s\n' "$R2_SHA256" 'DDI_Phase2_2_R2_12CH_DRAFT.zip' | sha256sum --check | tee reports/input-hash-check.txt
+          sha256sum verify_r2.py verify_r2_directory.py .github/workflows/kicad-verify.yml > reports/checker-sha256.txt
+          python3 -c 'from pathlib import Path; import json; from verify_r2_directory import inventory; m = inventory(Path("DDI_Phase2_2_R2_12CH")); Path("reports/input_manifest.json").write_text(json.dumps(m, indent=2) + "\n", encoding="utf-8"); print("Input files:", len(m))' 2>&1 | tee reports/input-check.log
 
       - name: Install the R1-compatible KiCad 8.0.9 baseline
         shell: bash
@@ -64,17 +61,15 @@ jobs:
           cp /usr/share/kicad/template/sym-lib-table "$HOME/.config/kicad/8.0/sym-lib-table"
           cp /usr/share/kicad/template/fp-lib-table "$HOME/.config/kicad/8.0/fp-lib-table"
 
-      - name: Export fresh netlist, run ERC, and compare R2 data
+      - name: Verify the R2 project directory with fresh netlist and ERC
         shell: bash
         run: |
           set -euo pipefail
-          xvfb-run -a python3 verify_r2.py \
-            --zip DDI_Phase2_2_R2_12CH_DRAFT.zip \
-            --expected-sha256 "$R2_SHA256" \
+          xvfb-run -a python3 verify_r2_directory.py \
+            --project DDI_Phase2_2_R2_12CH \
             --expected-kicad 8.0.9 \
             --out reports 2>&1 | tee reports/verification.log
 
-      # Logs remain available even when installation, export, ERC, or comparison fails.
       - name: Save evidence, including failure logs
         if: always()
         uses: actions/upload-artifact@v7.0.0
