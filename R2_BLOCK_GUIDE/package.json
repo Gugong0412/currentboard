@@ -1,0 +1,8 @@
+{
+  "name": "currentboard-circuit-guide",
+  "private": true,
+  "devDependencies": {
+    "@viz-js/viz": "3.12.0",
+    "playwright": "1.62.1"
+  }
+}

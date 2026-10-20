@@ -1,6 +1,6 @@
 # 변경 이력 및 보존 기록
 
-과거 의사결정과 검증 경과를 보존합니다. 현재 설계는 `R2_REPAIRED_005`입니다. 이곳의 과거 채널 수·경로·미검증 문구는 당시 기록이며 최신 설계 지시가 아닙니다.
+과거 의사결정과 검증 경과를 보존합니다. 현재 설계는 `R2_REPAIRED_006`입니다. 이곳의 과거 채널 수·경로·미검증 문구는 당시 기록이며 최신 설계 지시가 아닙니다.
 
 | 단계 | 기록 | 결과 |
 |---|---|---|
@@ -27,3 +27,11 @@
 구버전 회로도·넷리스트·HTML·ZIP은 이전 커밋에 남아 있습니다. 로컬에서도 삭제하지 않고 Git 추적만 해제했으며 `.gitignore`로 재업로드를 방지했습니다. 최초 인수 원본 63개와 이전 수정본의 로컬 파일을 보존했습니다.
 
 정리 manifest의 `removed_from_current_tree`는 현재 브랜치에서 제거한 경로, `preserved_records`는 새 위치와 원문 해시입니다. 제작 HOLD는 유지합니다.
+
+## 2026-10-20 · VDDI 실장 표시 정정 및 전체 블록 해설
+
+`R2_REPAIRED_006`은 005를 복사한 작업본입니다. R525의 Value를 `0R [DNP]`, R526을 `0R`로 변경해 기존 DNP 플래그·Population·BOM과 맞췄습니다. VDDI는 SRC 전단 피드백을 유지합니다. 변경된 회로 파일은 B5_VDDI.kicad_sch 하나이며 배선·BOM·펌웨어·12채널 및 VGL polling은 동일합니다.
+
+[새 검증](../R2_FIX_REPORTS_006/native/verification_summary.json): KiCad 10.0.7, 8,437개 검사, 36시트 ERC 위반 0건. [변경 감사](../R2_FIX_REPORTS_006/change_audit.json)에 이전 65개 파일 해시와 전체 핀-넷 동일 결과를 기록했습니다. 기존 ERC 설정을 유지했고 제작 HOLD는 해제하지 않았습니다.
+
+[B1~B15 탭형 해설](../R2_BLOCK_GUIDE/ALL_BLOCKS_GUIDE.html)을 추가했습니다. VDDI·LPDP·OSC 공통 공급원은 U520/VDDI_SRC이며 DIG/U500과 별개임을 해설에도 바로잡았습니다.

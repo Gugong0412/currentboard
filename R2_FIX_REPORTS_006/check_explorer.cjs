@@ -1,0 +1,33 @@
+const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const path=require('path');
+const {pathToFileURL}=require('url');
+(async()=>{
+ const browser=await chromium.launch({headless:true,channel:process.env.BROWSER_CHANNEL || 'msedge'});
+ const page=await browser.newPage({viewport:{width:1440,height:1100},deviceScaleFactor:1});
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(pathToFileURL(path.join(__dirname,'R2_INTERACTIVE_DIAGRAM.html')).href);
+ await page.locator('.channel').last().waitFor();
+ if(await page.locator('.channel').count()!==12)throw Error('Expected 12 channels');
+ await page.locator('[data-rail="VGL2"]').click();
+ if(!(await page.locator('#detail').innerText()).includes('전용 ALERT 연결 없음'))throw Error('VGL polling not shown');
+ await page.locator('[data-rail="AVDDH2_S_O"]').click();
+ if(!(await page.locator('#detail').innerText()).includes('PB3'))throw Error('New ALERT connection missing');
+ await page.locator('#plus').click();
+ if(await page.locator('#scale').innerText()!=='110%')throw Error('Zoom failed');
+ await page.locator('#fit').click();
+ await page.screenshot({path:path.join(__dirname,'explorer-desktop.png'),fullPage:true});
+ await page.locator('#tab-control').click();
+ if(await page.locator('#alertrows .tree-row').count()!==6)throw Error('Expected six ALERT routes');
+ await page.screenshot({path:path.join(__dirname,'explorer-control.png'),fullPage:true});
+ await page.locator('#tab-table').click();
+ if(await page.locator('#channelTable tr').count()!==12)throw Error('Expected 12 table rows');
+ await page.locator('[data-show="VGL1"]').click();
+ if(!(await page.locator('#detail').innerText()).includes('TP1069'))throw Error('Table drilldown failed');
+ await page.setViewportSize({width:390,height:844});
+ if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile outer overflow');
+ await page.screenshot({path:path.join(__dirname,'explorer-mobile.png'),fullPage:true});
+ for(const id of ['power','control','table']){await page.locator('#tab-'+id).click();if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile overflow: '+id);}
+ if(errors.length)throw Error(errors.join('\n'));
+ console.log('PASS: 12 channels, 6 direct ALERT routes, VGL polling detail, tab navigation, zoom, table drilldown, mobile outer layout, no JavaScript errors.');
+ await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});

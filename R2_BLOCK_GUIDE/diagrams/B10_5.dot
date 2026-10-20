@@ -1,0 +1,25 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad=.25,nodesep=.2,ranksep=.7,splines=polyline,outputorder=edgesfirst,fontname="Arial"];
+node [fontname="Arial",fontsize=12,shape=plain]; edge [arrowhead=none,color="#839da8",penwidth=1.2];
+"TP1063" [id="part-TP1063",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1063 · ALERT_VDDI_DIG_N</B></TD></TR></TABLE>>];
+"TP1064" [id="part-TP1064",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1064 · ALERT_VDDI_N</B></TD></TR></TABLE>>];
+"TP1065" [id="part-TP1065",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1065 · ALERT_VCI_N</B></TD></TR></TABLE>>];
+"TP1066" [id="part-TP1066",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1066 · ALERT_AVDDH1_N</B></TD></TR></TABLE>>];
+"TP1067" [id="part-TP1067",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1067 · ALERT_AVDDH2_S_O_N</B></TD></TR></TABLE>>];
+"TP1068" [id="part-TP1068",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1068 · ALERT_VGH1_N</B></TD></TR></TABLE>>];
+"TP1069" [id="part-TP1069",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1069 · ALERT_VGL1_N</B></TD></TR></TABLE>>];
+"n75" [id="n75",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="ALERT_VDDI_DIG_N",tooltip="ALERT_VDDI_DIG_N"];
+"TP1063":p1 -> "n75" [id="edge-TP1063-1",class="wire n75",tooltip="TP1063.1 = ALERT_VDDI_DIG_N",style="solid"];
+"n77" [id="n77",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="ALERT_VDDI_N",tooltip="ALERT_VDDI_N"];
+"TP1064":p1 -> "n77" [id="edge-TP1064-1",class="wire n77",tooltip="TP1064.1 = ALERT_VDDI_N",style="solid"];
+"n74" [id="n74",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="ALERT_VCI_N",tooltip="ALERT_VCI_N"];
+"TP1065":p1 -> "n74" [id="edge-TP1065-1",class="wire n74",tooltip="TP1065.1 = ALERT_VCI_N",style="solid"];
+"n71" [id="n71",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="ALERT_AVDDH1_N",tooltip="ALERT_AVDDH1_N"];
+"TP1066":p1 -> "n71" [id="edge-TP1066-1",class="wire n71",tooltip="TP1066.1 = ALERT_AVDDH1_N",style="solid"];
+"n73" [id="n73",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="ALERT_AVDDH2_S_O_N",tooltip="ALERT_AVDDH2_S_O_N"];
+"TP1067":p1 -> "n73" [id="edge-TP1067-1",class="wire n73",tooltip="TP1067.1 = ALERT_AVDDH2_S_O_N",style="solid"];
+"n79" [id="n79",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="ALERT_VGH1_N",tooltip="ALERT_VGH1_N"];
+"TP1068":p1 -> "n79" [id="edge-TP1068-1",class="wire n79",tooltip="TP1068.1 = ALERT_VGH1_N",style="solid"];
+"n81" [id="n81",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="ALERT_VGL1_N",tooltip="ALERT_VGL1_N"];
+"TP1069":p1 -> "n81" [id="edge-TP1069-1",class="wire n81",tooltip="TP1069.1 = ALERT_VGL1_N",style="solid"];
+}

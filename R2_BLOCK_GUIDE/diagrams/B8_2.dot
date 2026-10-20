@@ -1,0 +1,48 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad=.25,nodesep=.2,ranksep=.7,splines=polyline,outputorder=edgesfirst,fontname="Arial"];
+node [fontname="Arial",fontsize=12,shape=plain]; edge [arrowhead=none,color="#839da8",penwidth=1.2];
+"U830" [id="part-U830",class="component",tooltip="B8 / IC",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e2f2f2" COLSPAN="2"><B>U830 · ISO1641DWR</B></TD></TR><TR><TD PORT="p1" ALIGN="LEFT">1</TD><TD ALIGN="LEFT">GND1</TD></TR><TR><TD PORT="p2" ALIGN="LEFT">2</TD><TD ALIGN="LEFT">NC × NC</TD></TR><TR><TD PORT="p3" ALIGN="LEFT">3</TD><TD ALIGN="LEFT">VCC1</TD></TR><TR><TD PORT="p4" ALIGN="LEFT">4</TD><TD ALIGN="LEFT">NC × NC</TD></TR><TR><TD PORT="p5" ALIGN="LEFT">5</TD><TD ALIGN="LEFT">SDA1</TD></TR><TR><TD PORT="p6" ALIGN="LEFT">6</TD><TD ALIGN="LEFT">SCL1</TD></TR><TR><TD PORT="p7" ALIGN="LEFT">7</TD><TD ALIGN="LEFT">GND1</TD></TR><TR><TD PORT="p8" ALIGN="LEFT">8</TD><TD ALIGN="LEFT">NC × NC</TD></TR><TR><TD PORT="p9" ALIGN="LEFT">9</TD><TD ALIGN="LEFT">GND2</TD></TR><TR><TD PORT="p10" ALIGN="LEFT">10</TD><TD ALIGN="LEFT">NC × NC</TD></TR><TR><TD PORT="p11" ALIGN="LEFT">11</TD><TD ALIGN="LEFT">SCL2</TD></TR><TR><TD PORT="p12" ALIGN="LEFT">12</TD><TD ALIGN="LEFT">SDA2</TD></TR><TR><TD PORT="p13" ALIGN="LEFT">13</TD><TD ALIGN="LEFT">NC × NC</TD></TR><TR><TD PORT="p14" ALIGN="LEFT">14</TD><TD ALIGN="LEFT">VCC2</TD></TR><TR><TD PORT="p15" ALIGN="LEFT">15</TD><TD ALIGN="LEFT">NC × NC</TD></TR><TR><TD PORT="p16" ALIGN="LEFT">16</TD><TD ALIGN="LEFT">GND2</TD></TR></TABLE>>];
+"R830" [id="part-R830",class="component",tooltip="B8 / 절연 I2C pull-up",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R830 · 2.2k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R831" [id="part-R831",class="component",tooltip="B8 / 절연 I2C pull-up",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R831 · 2.2k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R832" [id="part-R832",class="component",tooltip="B8 / 절연 I2C pull-up",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R832 · 2.2k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R833" [id="part-R833",class="component",tooltip="B8 / 절연 I2C pull-up",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R833 · 2.2k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"C830" [id="part-C830",class="component",tooltip="B8 / 디커플링",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>C830 · 100n</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"C831" [id="part-C831",class="component",tooltip="B8 / 디커플링",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>C831 · 1u</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"C832" [id="part-C832",class="component",tooltip="B8 / 디커플링",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>C832 · 100n</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"C833" [id="part-C833",class="component",tooltip="B8 / 디커플링",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>C833 · 1u</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"n105" [id="n105",class="net",shape=box,style="rounded,filled",fillcolor="#d9e7f7",color="#8fa9ad",fontcolor="#28536a",label="GND",tooltip="GND"];
+"n105" -> "U830":p1 [id="edge-U830-1",class="wire n105",tooltip="U830.1 = GND",style="solid"];
+"n105" -> "U830":p7 [id="edge-U830-7",class="wire n105",tooltip="U830.7 = GND",style="solid"];
+"C830":p2 -> "n105" [id="edge-C830-2",class="wire n105",tooltip="C830.2 = GND",style="solid"];
+"C831":p2 -> "n105" [id="edge-C831-2",class="wire n105",tooltip="C831.2 = GND",style="solid"];
+"n95" [id="n95",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="CTRL_3V3",tooltip="CTRL_3V3"];
+"n95" -> "U830":p3 [id="edge-U830-3",class="wire n95",tooltip="U830.3 = CTRL_3V3",style="solid"];
+"R830":p1 -> "n95" [id="edge-R830-1",class="wire n95",tooltip="R830.1 = CTRL_3V3",style="solid"];
+"R831":p1 -> "n95" [id="edge-R831-1",class="wire n95",tooltip="R831.1 = CTRL_3V3",style="solid"];
+"C830":p1 -> "n95" [id="edge-C830-1",class="wire n95",tooltip="C830.1 = CTRL_3V3",style="solid"];
+"C831":p1 -> "n95" [id="edge-C831-1",class="wire n95",tooltip="C831.1 = CTRL_3V3",style="solid"];
+"n113" [id="n113",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="I2C2_SDA",tooltip="I2C2_SDA"];
+"n113" -> "U830":p5 [id="edge-U830-5",class="wire n113",tooltip="U830.5 = I2C2_SDA",style="solid"];
+"R830":p2 -> "n113" [id="edge-R830-2",class="wire n113",tooltip="R830.2 = I2C2_SDA",style="solid"];
+"n111" [id="n111",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="I2C2_SCL",tooltip="I2C2_SCL"];
+"n111" -> "U830":p6 [id="edge-U830-6",class="wire n111",tooltip="U830.6 = I2C2_SCL",style="solid"];
+"R831":p2 -> "n111" [id="edge-R831-2",class="wire n111",tooltip="R831.2 = I2C2_SCL",style="solid"];
+"n106" [id="n106",class="net",shape=box,style="rounded,filled",fillcolor="#d9e7f7",color="#8fa9ad",fontcolor="#28536a",label="GND_F",tooltip="GND_F"];
+"n106" -> "U830":p9 [id="edge-U830-9",class="wire n106",tooltip="U830.9 = GND_F",style="solid"];
+"n106" -> "U830":p16 [id="edge-U830-16",class="wire n106",tooltip="U830.16 = GND_F",style="solid"];
+"C832":p2 -> "n106" [id="edge-C832-2",class="wire n106",tooltip="C832.2 = GND_F",style="solid"];
+"C833":p2 -> "n106" [id="edge-C833-2",class="wire n106",tooltip="C833.2 = GND_F",style="solid"];
+"n112" [id="n112",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="I2C2_SCL_F",tooltip="I2C2_SCL_F"];
+"n112" -> "U830":p11 [id="edge-U830-11",class="wire n112",tooltip="U830.11 = I2C2_SCL_F",style="solid"];
+"R833":p2 -> "n112" [id="edge-R833-2",class="wire n112",tooltip="R833.2 = I2C2_SCL_F",style="solid"];
+"n114" [id="n114",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="I2C2_SDA_F",tooltip="I2C2_SDA_F"];
+"n114" -> "U830":p12 [id="edge-U830-12",class="wire n114",tooltip="U830.12 = I2C2_SDA_F",style="solid"];
+"R832":p2 -> "n114" [id="edge-R832-2",class="wire n114",tooltip="R832.2 = I2C2_SDA_F",style="solid"];
+"n104" [id="n104",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="F_3V3",tooltip="F_3V3"];
+"n104" -> "U830":p14 [id="edge-U830-14",class="wire n104",tooltip="U830.14 = F_3V3",style="solid"];
+"R832":p1 -> "n104" [id="edge-R832-1",class="wire n104",tooltip="R832.1 = F_3V3",style="solid"];
+"R833":p1 -> "n104" [id="edge-R833-1",class="wire n104",tooltip="R833.1 = F_3V3",style="solid"];
+"C832":p1 -> "n104" [id="edge-C832-1",class="wire n104",tooltip="C832.1 = F_3V3",style="solid"];
+"C833":p1 -> "n104" [id="edge-C833-1",class="wire n104",tooltip="C833.1 = F_3V3",style="solid"];
+{rank=sink;"U830";}
+}

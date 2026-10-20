@@ -1,0 +1,99 @@
+{
+  "tps62130a": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps62130a.pdf",
+    "file": "tps62130a.pdf",
+    "pages": 43,
+    "sha256": "f9b1af285622c0cf1a5991f9641a6e64c5e6d899e52cc0b1632808742019579f",
+    "status": "downloaded",
+    "first_page": "TPS6213x 3-V to17-V, 3-A Step-Down Converter In 3-mm × 3-mm QFN Package\n1 Features\n• DCS-Control™ topology\n• Input voltage range: 3 V to 17 V\n• Up to 3-A output current\n• Adjustable output voltage from 0.9 V to 6 V\n• Pin-selectable output voltage (no"
+  },
+  "tps7a90": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps7a90.pdf",
+    "file": "tps7a90.pdf",
+    "pages": 35,
+    "sha256": "80fb3962747ce1fd3ea2ec089e669abe6ad62212053ed8b383d8aad9c3fa712f",
+    "status": "downloaded",
+    "first_page": "TPS7A90 500mA, High-Accuracy, Low-Noise LDO Voltage Regulator\n1 Features\n• 1.0% accuracy over line, load, and temperature\n• Low output noise: 4.7µVRMS (10Hz – 100kHz)\n• Low dropout: 100mV (maximum) at 0.5A\n• Wide input voltage range: 1.4V to 6.5V\n• W"
+  },
+  "ina228": {
+    "url": "https://www.ti.com/lit/ds/symlink/ina228.pdf",
+    "file": "ina228.pdf",
+    "pages": 48,
+    "sha256": "a138d39eeee04f8388426fed204c2f4012e75d36e95b60b0751ef003cd277447",
+    "status": "downloaded",
+    "first_page": "INA228 85-V, 20-Bit, Ultra-Precise Power/Energy/Charge Monitor With I2C Interface\n1 Features\n• High-resolution, 20-bit delta-sigma ADC\n• Current monitoring accuracy:\n– Offset voltage: ±1 µV (maximum)\n– Offset drift: ±0.01 µV/°C (maximum)\n– Gain error"
+  },
+  "iso1641": {
+    "url": "https://www.ti.com/lit/ds/symlink/iso1641.pdf",
+    "file": "iso1641.pdf",
+    "pages": 58,
+    "sha256": "5dc75560d1771a015ffc85d0bebbcf492f963a23a19eb6d2c7631ad2b01885a1",
+    "status": "downloaded",
+    "first_page": "ISO164x Hot-Swappable Bidirectional I2C Isolators with Enhanced EMC and GPIOs\n1 Features\n• Robust Isolated Bidirectional, I2C Compatible, \nCommunication\n– ISO1640: Bidirectional SDA and SCL \ncommunication\n– ISO1641: Bidirectional SDA and unidirection"
+  },
+  "tps7a16": {
+    "url": "https://www.ti.com/lit/ds/symlink/tps7a16.pdf",
+    "file": "tps7a16.pdf",
+    "pages": 37,
+    "sha256": "4e05cfdef8f64684f9f24b7d1f86e83badb7784c09c96f2ddbcbdbc0a3b48f80",
+    "status": "downloaded",
+    "first_page": "0\n10\n20\n30\n40\n50\n0 10 20 30 40 50 60\nInput Voltage (V)\nIQ (µA)\n− 40°C\n+ 25°C\n+ 85°C\n+ 105°C\n+ 125°C\nIOUT = 0mA\nTPS7A16\nOUT\nGND\nCIN\nIN\nEN\nVIN\nVOUT\nVEN\nRPG\nDELAY\nCDELAY\nPG\nCOUT\nVPG\nµC1\nIO1\nIO2\nIO3\nµC2\nEN\nVCC\n12 V\n60 V\nt\nVIN\nProduct\nFolder\nSample &\nBuy\n"
+  },
+  "sn74axc2t45": {
+    "url": "https://www.ti.com/lit/ds/symlink/sn74axc2t45.pdf",
+    "file": "sn74axc2t45.pdf",
+    "pages": 39,
+    "sha256": "2fbbad36930a9d370e15affdf9378246188b43efc53ba338f79f36ea29564990",
+    "status": "downloaded",
+    "first_page": "SN74AXC2T45 2-Bit Translating Transceiver with Configurable Level-Shifting\n1 Features\n• AEC-Q100 automotive qualified\n• Fully configurable dual-rail design allows each port \nto operate with a power supply range from 0.65V \nto 3.6V\n• Operating tempera"
+  },
+  "adum4160": {
+    "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/ADuM4160.pdf?download=1",
+    "status": "unavailable",
+    "error": "The read operation timed out"
+  },
+  "stm32f072": {
+    "url": "https://www.st.com/resource/en/datasheet/stm32f072c8.pdf",
+    "status": "unavailable",
+    "error": "The read operation timed out"
+  },
+  "rfm": {
+    "url": "https://recom-power.com/pdf/Econoline/RFM.pdf",
+    "file": "rfm.pdf",
+    "pages": 4,
+    "sha256": "3d0cc896c0022d40f8915303131a42eba21d35dd55aeae2ffbb3264f4fe31ac6",
+    "status": "downloaded",
+    "first_page": "www.recom-power.com REV.:  0/2018 ECO-1\nFeatures\nUnregulated \nConverters\n• bullet points (Productmanager)\nDC/DC Converter\nUL60950-1 certified\nCAN/CSA-C22.2 No 60950-1 certified\nEN55032 compliant\nRFM\n1 Watt \nSIP4 \nSingle Output\nDescription\nThe RFM DC/"
+  },
+  "xfl4020": {
+    "url": "https://www.coilcraft.com/getmedia/50632d43-da1b-4cdb-8ab4-3029cab51df3/xfl4020.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  "tpd2eusb30": {
+    "url": "https://www.ti.com/lit/ds/symlink/tpd2eusb30.pdf",
+    "file": "tpd2eusb30.pdf",
+    "pages": 27,
+    "sha256": "0598c5db22020f75981a25648f963d7065f76d9a3635c2bacb98cbfc49884d33",
+    "status": "downloaded",
+    "first_page": "TPDxEUSB30 2-, 4-Channel ESD Protection for Super-Speed USB 3.0 Interface\n1 Features\n• Supports USB 3.0 data rates (5 Gbps)\n• IEC 61000-4-2 ESD protection (level 4 contact)\n• IEC 61000-4-5 surge protection\n– 5 A (8/20 µs)\n• Low capacitance\n– DRT: 0.7"
+  },
+  "tpd1e10b06": {
+    "url": "https://www.ti.com/lit/ds/symlink/tpd1e10b06.pdf",
+    "file": "tpd1e10b06.pdf",
+    "pages": 33,
+    "sha256": "77fb9c454aee5b14a220d256b7ee9fa9751572840478f80437393aeed2582f8d",
+    "status": "downloaded",
+    "first_page": "TPD1E10B06 Single-Channel ESD Protection Diode\n1 Features\n• Provides system-level ESD protection for low-\nvoltage I/O interface\n• IEC 61000-4-2 level 4 ESD protection\n– ±30kV contact discharge\n– ±30kV air-gap discharge\n• IEC 61000-4-5 surge: 6A (8/20"
+  },
+  "tsw": {
+    "url": "https://suddendocs.samtec.com/catalog_english/tsw_th.pdf",
+    "status": "unavailable",
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self-signed certificate in certificate chain (_ssl.c:1010)>"
+  },
+  "usb4105": {
+    "url": "https://gct.co/files/specs/usb4105-spec.pdf",
+    "status": "unavailable",
+    "error": "HTTP Error 403: Forbidden"
+  }
+}

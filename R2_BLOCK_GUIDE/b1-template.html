@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>B1 회로 해설 · 12V 입력 보호</title>
+<style>
+:root{--ink:#162f3c;--muted:#5b6e78;--line:#d8e3e7;--accent:#087e80;--paper:#fff;--bg:#edf3f4}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:25px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 "Malgun Gothic",Arial,sans-serif}a{color:#006d80}button{cursor:pointer;font:inherit;border:1px solid var(--line);border-radius:8px;background:white;padding:8px 14px}nav{position:fixed;width:235px;inset:0 auto 0 0;background:#183644;color:#fff;padding:30px 22px;overflow:auto}nav b{display:block;font-size:24px;margin-bottom:8px}nav p{font-size:13px;color:#b5cbd4}nav a{display:block;color:#dbe8ed;text-decoration:none;padding:9px 0;border-bottom:1px solid #35515e;font-size:14px}nav button{margin-top:22px}main{max-width:1230px;margin-left:235px;padding:36px 46px 80px;min-width:0}header{padding:12px 0 25px}h1{font-size:40px;line-height:1.3;letter-spacing:-1.5px;margin:14px 0}h2{font-size:26px;margin:0 0 18px;line-height:1.4}h3{font-size:19px;margin:24px 0 8px}p{margin:10px 0 17px}.eyebrow{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:2px}.subtitle{max-width:770px;color:var(--muted)}section{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:30px;margin:20px 0;scroll-margin-top:20px}.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.card{background:#e4f0ef;border-radius:10px;padding:16px}.card strong{display:block;font-size:24px}.card small{font-size:12px;color:var(--muted)}.tag{display:inline-block;border-radius:5px;padding:1px 7px;background:#e1f2ec;color:#216749;font-size:12px;font-weight:700}.calc{background:#e7eefb;color:#244f8b}.infer{background:#fff0d4;color:#845f11}.pending{background:#fce9e5;color:#963d29}.note{background:#f2f7f8;border-left:4px solid var(--accent);padding:16px 19px;margin:18px 0}.warn{background:#fff6e8;border-color:#d39838}.formula{font:15px/1.85 Consolas,"Malgun Gothic",monospace;background:#173745;color:#effbfc;padding:18px 22px;border-radius:10px;overflow:auto;white-space:pre-wrap}.tablewrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px;margin:14px 0}th{text-align:left;background:#eaf1f3;white-space:nowrap}td,th{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}td{min-width:90px}td code{overflow-wrap:anywhere;font-size:12px}#pins td:last-child{min-width:280px}.small{font-size:13px;color:var(--muted)}.flow{display:grid;grid-template-columns:1fr 35px 1.2fr 35px 1fr;align-items:center;gap:8px;margin:22px 0}.box{border:2px solid #86b6bc;border-radius:10px;text-align:center;padding:18px 10px;background:#f5fbfb}.arrow{text-align:center;color:var(--accent);font-size:25px}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.divider{font-family:Consolas,monospace;font-size:15px;line-height:2;background:#f2f7f8;padding:18px;border-radius:10px;white-space:pre-wrap}details{border:1px solid var(--line);border-radius:10px;padding:14px;margin:14px 0}summary{cursor:pointer;font-weight:700}.sources a{overflow-wrap:anywhere}li{margin:8px 0}footer{font-size:12px;color:var(--muted);overflow-wrap:anywhere}input{width:100%;padding:10px;border:1px solid #b9cbd2;border-radius:6px;font:inherit}
+@media(max-width:1050px){nav{width:190px;padding:20px 15px}main{margin-left:190px;padding:25px}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}.two{grid-template-columns:1fr}h1{font-size:32px}}
+@media(max-width:650px){nav{position:static;width:auto;padding:16px}nav b{font-size:20px}nav p{display:none}nav a{display:inline-block;margin-right:15px;padding:4px 0}nav button{margin:10px 0}main{margin:0;padding:18px}section{padding:20px 16px}h1{font-size:29px}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg)}.card{padding:12px}.card strong{font-size:21px}}
+@media print{nav,.noprint{display:none}body{background:white;font-size:11px}main{margin:0;padding:0;max-width:none}section{padding:16px;border-radius:0;break-inside:auto}h1{font-size:28px}h2{font-size:20px}h3{break-after:avoid}tr,.card,.formula,.note{break-inside:avoid}table{font-size:10px}.tablewrap{overflow:visible}.cards{grid-template-columns:repeat(4,1fr)}.two{grid-template-columns:1fr 1fr}a{color:inherit}.formula{color:#162f3c;background:#edf3f4}details{display:block}footer{font-size:9px}}
+</style></head><body>
+<nav aria-label="문서 목차"><b>B1 / 입력 보호</b><p>회로를 읽기 위한 해설서<br>검토용 샘플 · 2026.10.20</p>
+<a href="#overview">01 · 한눈에 이해하기</a><a href="#flow">02 · 연결 흐름</a><a href="#threshold">03 · 전압 설정 저항</a><a href="#current">04 · 전류 제한·FAULT</a><a href="#caps">05 · 커패시터와 기동</a><a href="#protection">06 · TVS·입력 잭</a><a href="#pins">07 · IC 모든 핀</a><a href="#review">08 · 검토할 사항</a><a href="#parts">09 · 전체 부품 목록</a><a href="#sources">10 · 근거와 원본</a>
+<button id="print">인쇄 / PDF 저장</button></nav>
+<main><header><div class="eyebrow">CIRCUIT READING GUIDE / SAMPLE 01</div><h1>12V가 보드에 들어올 때<br>B1은 무엇을 보호할까?</h1><p class="subtitle">최종 작업본 <b>R2_REPAIRED_006 / B1</b>의 실제 연결을 따라 읽는 해설입니다. 부품 번호 → 연결 이유 → 값의 계산 → 남은 확인 사항 순서로 구성했습니다.</p>
+<span class="tag">회로·넷리스트 확인</span> <span class="tag calc">직접 계산</span> <span class="tag infer">설계 의도 해석</span> <span class="tag pending">추가 확인 필요</span>
+<p class="small">이 문서는 B1만 다룹니다. 12채널 회로를 수정하지 않았으며, 아래 계산은 명시한 가정의 예측값입니다. 기존 ERC 결과를 새로 수행한 결과로 표시하지 않습니다.</p></header>
+<section id="overview"><h2>01 · B1의 역할</h2><p><b>DC 잭으로 들어온 전원을 검사하고, 문제가 없을 때 후단 전원부에 전달하는 입구입니다.</b> B1 자체가 12V를 정밀하게 만드는 레귤레이터는 아닙니다. 정상 상태의 출력은 입력 전압에서 U100과 배선의 손실을 뺀 전압입니다.</p>
+<div class="cards"><div class="card"><small>입력 상승 시 켜짐 · 명목</small><strong>9.92 V</strong></div><div class="card"><small>입력 상승 시 OVP 차단 · 명목</small><strong>14.87 V</strong></div><div class="card"><small>전류 제한 · 명목</small><strong>1.49 A</strong></div><div class="card"><small>12V 출력 상승 시간 · 식(2)</small><strong>9.6 ms</strong></div></div>
+<p class="small">전압 문턱은 PWR_RTN 기준으로 계산했습니다. 저항 공차, IC 오차, 입력 변화 속도와 실제 부하에 따라 달라집니다.</p>
+<div class="note"><b>읽는 순서</b><br>① J100에서 전원이 들어옴 → ② D100/C100/C104가 입력 측에 병렬 연결 → ③ U100이 입력 조건과 전류를 관리 → ④ C102/C103 및 B2·B3로 전달 → ⑤ PWR_FLT_N이 MCU에 상태를 알림.</div>
+<p><span class="tag infer">설계 의도 해석</span> 역극성·과전압·과전류 상황을 한 IC에 모으고, 정상적인 12V 공급은 작은 손실로 통과시키려는 구성으로 읽을 수 있습니다. 원 설계자의 모든 선정 사유가 기록되어 있는 것은 아니므로, “이 값만이 정답”으로 설명하지 않습니다.</p></section>
+<section id="flow"><h2>02 · B1 전체 연결을 한 장으로 보기</h2>
+<p>13개 부품과 U100의 모든 핀을 한 회로로 합쳤습니다. 아래 그림은 실제 넷 연결을 읽기 쉽게 재배치한 설명용 회로도입니다. 같은 GND 기호끼리는 연결되어 있고, PWR_RTN은 별도의 연속선으로 표시했습니다.</p>
+<div class="noprint"><button id="diagram-fit">전체 맞춤</button> <button id="diagram-zoom">확대해서 읽기</button> <a href="B1_CONNECTED.svg" target="_blank">큰 그림만 열기</a></div>
+<div id="connected-diagram" style="overflow:auto;border:1px solid #d8e3e7;border-radius:10px;margin:16px 0"><div id="diagram-width" style="width:100%">__DIAGRAM__</div></div>
+<h3>세 가지 질문</h3>
+<details open><summary>J100 SWITCH는 전원 ON/OFF 스위치인가?</summary>
+<p><b>플러그를 꽂으면 기계적으로 열리는 잭 내부 접점</b>입니다. PJ-102AH 도면에서 플러그가 없을 때 2번과 3번이 접촉하고, 꽂으면 2–3번 접점이 열립니다. 중심 접점인 1번과는 별개입니다. <a href="https://www.sameskydevices.com/product/resource/pj-102ah.pdf#page=2">[제조사 접점 도면 p.2]</a></p>
+<p>이 접점을 이용하면 플러그 감지나 내부 전원 분리 같은 회로를 구성할 수 있습니다. <b>현재 B1은 3번을 NC로 두었으므로 그 기능을 사용하지 않습니다.</b> 외부 어댑터 전류는 1번으로 들어오고 2번으로 돌아갑니다. MCU가 플러그 삽입을 별도 SWITCH 신호로 읽는 연결도 없습니다.</p></details>
+<details open><summary>왜 PWR_FLT_N을 12V 출력이 아니라 3.3V로 풀업하나?</summary>
+<p><b>PWR_FLT_N은 MCU가 읽는 상태 신호이기 때문입니다.</b> U100의 FLT는 정상일 때 12V를 내보내는 전압 출력이 아니라, 고장 때 신호를 Low로 끌어내리는 오픈드레인 출력입니다. High 전압은 외부 풀업 전원이 정합니다. <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=4">[TI 핀 설명 p.4]</a></p>
+<div class="formula">정상 / FLT 해제: R104가 신호를 약 3.3V로 올림 → MCU High
+고장 / FLT 활성: U100이 신호를 Low로 당김 → MCU Low
+(CTRL_3V3와 MCU 전원이 정상적으로 존재하는 조건)</div>
+<p>현재 신호는 U1100의 PC15에 직접 연결됩니다. VIN_12V_PROT에 풀업하면 해제 상태의 신호도 약 12V로 올라가므로 MCU 입력에 직접 넣는 구성이 될 수 없습니다. <b>10kΩ 저항 하나는 12V를 3.3V로 바꾸는 분압기가 아닙니다.</b> 입력 전류가 거의 없는 High 상태에서는 저항의 전압 강하도 거의 없습니다.</p>
+<p>또한 PROT는 eFuse가 차단하는 바로 그 출력입니다. 그 전압으로 신호를 올리면 출력 차단과 함께 High 기준도 사라집니다. 3.3V 풀업은 로직 전압을 맞추지만, 3.3V 자체도 결국 사라질 경우 MCU가 계속 상태를 읽을 수 있다는 보장은 없습니다.</p></details>
+<details open><summary>PWR_FLAG는 어떤 부품이고 왜 필요한가?</summary>
+<p><b>실제 부품이 아니라 KiCad ERC에 “이 넷에는 전원 공급이 있다”고 알려 주는 선언</b>입니다. 잭 핀은 보통 passive 타입이므로, 사람이 보기에는 어댑터가 전원을 넣어도 ERC는 전원 출력 핀이 없는 넷으로 판단할 수 있습니다. PWR_FLAG의 power-output 핀이 그 선언을 담당합니다. <a href="https://docs.kicad.org/9.0/en/eeschema/eeschema.html">[KiCad 공식 설명 · PWR_FLAG]</a></p>
+<p>B1에서는 <b>#FLG0100=VIN_12V_RAW, #FLG0101=GND, #FLG0102=PWR_RTN</b>입니다. GND/RTN 플래그도 전원 기준 넷을 검사기에 선언하는 용도입니다. 플래그를 붙인다고 전압이 생성되거나 전류가 흐르지 않으며, 세 넷이 서로 연결되는 것도 아닙니다. BOM·PCB 실장 대상도 아닙니다.</p>
+<p>ERC 경고를 없애는 선언일 뿐 전원 경로의 실제 적합성을 증명하지 않으므로, 임의의 미연결 넷에 붙여 문제를 숨기면 안 됩니다.</p></details>
+<h3>전력 경로 요약</h3>
+<div class="flow"><div class="box"><b>J100 · DC 잭</b><br>1번: VIN_12V_RAW<br>2번: GND</div><div class="arrow">→</div><div class="box"><b>U100 · TPS26600PWPR</b><br>IN 1·2 → 내부 스위치 → OUT 15·16</div><div class="arrow">→</div><div class="box"><b>VIN_12V_PROT</b><br>C102/C103<br>B2 U200 · B3 U300</div></div>
+<div class="two"><div><h3>전력선에 병렬로 붙는 부품</h3><p>입력 RAW–GND 사이: <b>D100, C100, C104</b>.<br>출력 PROT–GND 사이: <b>C102, C103</b>.<br>이 부품들은 전류가 차례로 지나가는 직렬 경로가 아닙니다.</p></div><div><h3>IC를 설정하는 부품</h3><p><b>R100~R102</b>: 전압 문턱<br><b>R103</b>: 전류 제한<br><b>C101</b>: 상승 속도<br><b>R104</b>: FAULT 신호의 High 레벨</p></div></div>
+<div class="note warn"><b>PWR_RTN ≠ GND</b><p>실제 넷리스트에서 두 넷은 분리되어 있습니다. RTN은 U100 제어부의 기준이고, GND는 잭·부하의 시스템 귀환입니다. TI는 RTN–GND 외부 단락이 역극성 보호를 무력화한다고 설명합니다. 방열 패드도 RTN입니다. <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=26">[TI §9.3.5.5, p.26]</a></p><p class="small">따라서 R102/R103/C101의 아래쪽을 도면 편의상 GND로 바꿔 읽으면 안 됩니다. TP1002에 접지형 계측기의 GND 클립을 연결해 RTN과 시스템 GND를 외부에서 묶지 않도록 측정 기준도 확인해야 합니다.</p></div>
+</section>
+<section id="threshold"><h2>03 · R100·R101·R102: 왜 세 개를 직렬로 쓰나?</h2><p>한 분압 사다리에서 중간점을 두 개 꺼내 저전압과 과전압을 각각 설정합니다. UVLO 핀은 아래쪽 <b>14.99kΩ</b>를 보고, OVP 핀은 아래쪽 <b>10kΩ</b>만 봅니다.</p>
+<div class="two"><div class="divider">VIN_12V_RAW
+  │
+R100 = 110kΩ
+  ├── PWR_UVLO → U100.3
+R101 = 4.99kΩ
+  ├── PWR_OVP  → U100.5
+R102 = 10kΩ
+  │
+PWR_RTN</div><div><h3>각 값을 바꾸면</h3><p><span class="tag calc">회로식으로 해석</span><br><b>R100 증가:</b> 두 핀의 분압이 낮아져 두 입력 문턱이 올라갑니다.<br><b>R101 증가:</b> UVLO의 하단 비율은 커져 켜짐 문턱이 내려가고, OVP 문턱은 올라갑니다.<br><b>R102 증가:</b> 두 하단 비율이 커져 두 문턱이 내려갑니다.</p><p>따라서 UVLO만 바꾸려 해도 OVP가 함께 달라질 수 있습니다. 세 저항을 한 묶음으로 다시 계산해야 합니다.</p></div></div>
+<p>계산에 쓰는 IC 문턱은 상승 1.19V, 하강 1.10V의 대표값입니다. <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=7">[TI 전기적 특성 p.7]</a> 분압식은 <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=29">[p.29 식(10)·(11)]</a>과 대응합니다.</p>
+<div class="formula">R합 = 110k + 4.99k + 10k = 124.99kΩ
+VUVLO = VIN × 14.99 / 124.99
+VOVP  = VIN × 10 / 124.99
+
+UVLO 상승: 1.19 × 124.99 / 14.99 = 9.922 V → 켜짐
+UVLO 하강: 1.10 × 124.99 / 14.99 = 9.172 V → 저전압 차단
+OVP 상승 : 1.19 × 124.99 / 10    = 14.874 V → 과전압 차단
+OVP 하강 : 1.10 × 124.99 / 10    = 13.749 V → 과전압 해제</div>
+<p><span class="tag calc">12V에서 대입</span> 사다리 전류는 <b>96.01µA</b>, UVLO 핀은 <b>1.439V</b>, OVP 핀은 <b>0.960V</b>입니다. 명목상 켜질 조건이며 과전압 조건은 아닙니다. R100 소모 전력도 약 <b>1.01mW</b>여서 BOM의 0.1W 이상 요구보다 작습니다. 이 계산은 정상 12V 조건이며 서지 정격 검증을 대신하지 않습니다.</p>
+<h3>0.1% 저항을 쓴 이유는?</h3><p><span class="tag infer">설계 의도 해석</span> BOM은 세 저항에 0.1%, 온도계수 ≤25ppm/°C를 요구합니다. 작은 분압 오차로 전압 경계가 움직이는 것을 줄이려는 선택으로 해석됩니다. 하지만 <b>0.1% 저항이 전체 보호 문턱 0.1%를 뜻하지는 않습니다.</b> IC 기준전압·누설·온도도 영향을 줍니다.</p>
+<details><summary>명목값과 최악 조건은 얼마나 다른가?</summary><p>IC 상승 문턱 범위와 세 저항 ±0.1%만 조합하면 UVLO 켜짐은 약 <b>9.78~10.23V</b>, OVP 차단은 약 <b>14.60~15.34V</b>입니다. 핀 누설과 온도계수는 이 범위에서 제외했습니다. 완전한 보증 범위가 아닙니다.</p><p>예를 들어 최고 허용 입력을 “15V보다 반드시 낮게 차단”으로 요구한다면 명목 14.87V만 보고 만족한다고 결론낼 수 없습니다. 요구사항의 경계값과 전체 오차 예산을 따로 맞춰야 합니다.</p></details>
+</section>
+<section id="current"><h2>04 · R103과 R104: 숫자가 비슷해도 역할은 다르다</h2>
+<h3>R103 = 8.06kΩ · 전체 입력 경로의 전류 제한</h3>
+<p>R103은 <b>ILIM–RTN</b> 사이에 있습니다. 12채널의 측정용 션트와 다르며, 부하 전류가 R103을 통과하지 않습니다. <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=29">[TI p.29 식(9)]</a></p>
+<div class="formula">ILIMIT[A] ≈ 12 / RILIM[kΩ]
+           = 12 / 8.06 = 1.489 A
+저항 ±1%만 반영하면: 약 1.474~1.504 A
+12V × 1.489A ≈ 17.87W (전류 제한점의 입력 전력 규모)</div>
+<p><span class="tag infer">값의 의미</span> 약 1.5A 경계를 목표로 표준 저항값을 택한 것으로 읽힙니다. 위 17.87W를 DUT에 보장되는 전력으로 해석하면 안 됩니다. B2·B3 변환 손실과 보드 자체 소모가 포함되고, 정상 운전에는 제한점 아래 여유가 필요합니다. IC 자체 전류 제한 오차는 위 저항-only 범위에 포함하지 않았습니다.</p>
+<p>MODE 핀은 RTN에 연결되어 <b>전류 제한·자동 재시도</b> 구성입니다. <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=27">[TI p.27 표2]</a> 따라서 고장이 사라지지 않으면 전원을 재시도할 수 있는 구조로 검토해야 합니다.</p>
+<h3>R104 = 10kΩ · PWR_FLT_N의 풀업</h3><div class="formula">CTRL_3V3 ─ R104(10kΩ) ─ PWR_FLT_N
+                            ├─ U100.14 FLT
+                            ├─ U1100.4 PC15
+                            └─ TP1040</div>
+<p>FLT는 오픈드레인 출력입니다. <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=4">[TI p.4]</a> 이 회로에서는 R104가 신호를 3.3V로 끌어올리고, U100이 Low로 당길 때 고장을 전달합니다. Low 상태의 풀업 전류는 대략 <b>3.3/10k = 0.33mA</b>, R104 전력은 <b>1.09mW</b>입니다.</p>
+<p><span class="tag infer">10kΩ의 선택</span> Low일 때 소모를 줄이면서 MCU 입력을 정해진 레벨로 만드는 절충입니다. 배선·입력 정전용량이 커지면 상승이 느려지므로 정확한 응답시간은 실제 부하 용량을 알아야 합니다. 예시로 100pF를 가정하면 RC=1µs이며, 이는 실측된 용량이 아닙니다.</p>
+<div class="note warn"><b>입력 차단 시 MCU도 계속 살아 있을까?</b><br>풀업 전원과 MCU 전원이 함께 꺼지면 FLT를 소프트웨어로 계속 관찰할 수 없습니다. 넷 연결이 있다는 사실과 전원 상실 때 이벤트를 기록할 수 있다는 사실은 다릅니다. 전원 유지 시간과 펌웨어 처리는 후속 검토 항목입니다.</div>
+</section>
+<section id="caps"><h2>05 · C100~C104: 무엇을 저장하고, 무엇을 설정하나?</h2>
+<div class="tablewrap"><table><thead><tr><th>부품 / 현재값</th><th>실제 연결</th><th>회로에서의 역할과 선정 해석</th></tr></thead><tbody>
+<tr><td>C100<br>100nF / 50V X7R</td><td>RAW–GND</td><td>입력의 빠른 전류 변화에 대응하는 로컬 바이패스. 용량 숫자뿐 아니라 U100까지의 배선 길이가 중요하다.</td></tr>
+<tr><td>C104<br>4.7µF / 50V X7R</td><td>RAW–GND</td><td>C100과 병렬. 프로젝트는 실제 유효용량 ≥1µF를 요구한다. 큰 명목값은 DC 바이어스·공차·온도에 따른 감소 여유로 해석한다.</td></tr>
+<tr><td>C101<br>100nF / 25V X7R</td><td>dVdT–RTN</td><td>상승 속도를 정하는 타이밍 부품. C100과 같은 100nF이지만 전원 바이패스 용도가 아니다.</td></tr>
+<tr><td>C102<br>47µF / 35V, 극성</td><td>PROT(+)–GND(−)</td><td>보호 후단의 벌크 저장. 부하 변화 시 공급을 보조하지만 켜질 때 충전해야 하는 용량도 증가한다.</td></tr>
+<tr><td>C103<br>100nF / 50V X7R</td><td>PROT–GND</td><td>C102와 병렬인 출력 로컬 바이패스. 벌크 부품의 ESR/ESL만으로 대응하기 어려운 빠른 변화를 보완하려는 구성.</td></tr>
+</tbody></table></div>
+<p>TI의 입력 서지 대응 설명은 입력 용량 1µF 이상과 입력 하강 속도 제한을 함께 다룹니다. <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=38">[TI §11.1, p.38]</a> 따라서 <b>“4.7µF라고 적혀 있으니 통과”가 아닙니다.</b> C104의 정확한 구매품은 아직 미정이므로 해당 부품의 DC 바이어스 곡선으로 확인해야 합니다.</p>
+<h3>C101 100nF → 왜 약 10ms인가?</h3>
+<div class="formula">TI 식(2): tRAMP[s] = 8,000 × VIN[V] × CdVdT[F]
+12V, 100nF → 8,000 × 12 × 100×10⁻⁹ = 0.0096s = 9.6ms
+명목 평균 상승률 ≈ 12V / 9.6ms = 1.25V/ms</div>
+<p><a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=21">[TI p.21 식(1)·(2)]</a> 식(1)의 대표 전류 4.7µA와 이득 24.6으로 따로 계산하면 약 <b>10.38ms</b>가 나옵니다. 문서의 두 근사식 차이를 숨기지 않고 <b>약 10ms의 설계 추정치</b>로 취급합니다. 커패시터 공차 외에도 IC 편차와 전류 제한 진입 여부가 영향을 줍니다.</p>
+<h3>기동 전류를 C102 하나로 계산하면 부족하다</h3><p>저장된 최종 넷리스트에서 VIN_12V_PROT에는 다음 커패시터가 직접 붙어 있습니다. 다른 블록의 설계 해설은 진행하지 않고, B1이 충전해야 하는 부하 경계만 확인했습니다.</p>
+<div class="formula">B1: C102 47µF + C103 0.1µF
+B2: C200 10µF + C201 10µF + C202 0.1µF
+B3: C300 10µF + C301 10µF + C302 0.1µF
+명목 합계 = 87.3µF
+커패시터만의 기동 전류 ≈ C × ΔV/Δt
+                    = 87.3µF × 12V / 9.6ms ≈ 109mA</div>
+<p><span class="tag calc">조건부 계산</span> 109mA는 B2/B3가 소비하는 능동 부하 전류를 제외한 명목 용량 충전분입니다. 최대 기동 전류도, 전체 전원 기동 완료 시간도 아닙니다. 변환기가 시작하는 시점에 추가되는 전력까지 포함해야 실제 여유를 판단할 수 있습니다.</p>
+<details><summary>47µF가 부하 변화를 얼마나 버텨 주나?</summary><p>단순 예로 전원이 추가 전류를 공급하지 못하는 100µs 동안 0.5A를 C102 하나가 담당하면 ΔV=I×Δt/C≈<b>1.06V</b>입니다. ESR로 인한 순간 전압 강하는 별도입니다. 이 예는 “47µF가 충분하다”는 인증이 아니라, 원하는 전압 강하와 응답시간에서 용량을 역산하는 방법입니다.</p><p>C102의 ±20% 공차, 온도별 ESR, 리플 전류, 수명과 높이·풋프린트는 구매품을 정한 뒤 확인해야 합니다. 현재 BOM은 정확한 MPN을 확정하지 않았습니다.</p></details>
+</section>
+<section id="protection"><h2>06 · D100과 J100: 입력 쪽 보호의 경계</h2><h3>D100 = SMBJ18CA · 18V가 뜻하는 것</h3>
+<p>Littelfuse 공식 검색 색인의 전기적 특성 표는 <b>VRWM 18V, VBR 20.0~22.1V, VC 29.2V @ 20.6A</b>를 제시합니다. <a href="https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smbj_datasheet.pdf.pdf">[SMBJ 공식 자료 주소]</a> 현재 직접 PDF 주소는 오류 페이지로 이동하므로 전문·최신 판 확인은 남아 있습니다.</p>
+<p><span class="tag infer">현재 회로에서의 의미</span> D100은 eFuse 앞의 RAW에 병렬로 붙은 양방향 TVS입니다. 정상 ±12V에서 단방향 다이오드처럼 역입력을 순방향으로 단락시키지 않도록 한 선택입니다. “18V”를 정밀하게 유지하는 전압 조정기가 아니고, U100의 약 14.87V 과전압 차단과 역할도 다릅니다.</p>
+<div class="note warn"><b>U100이 꺼져도 입력 TVS는 연결되어 있다</b><br>D100은 U100보다 앞에 있으므로, 지속적인 잘못된 고전압에서 TVS로 흐르는 전류를 U100이 직렬로 차단하지 못합니다. B1에는 별도 직렬 퓨즈가 없습니다. 어댑터 전류 제한·지속 과전압 조건·TVS 열에너지 검토가 필요합니다. BOM의 600W는 펄스 정격이며 연속 소모 능력이 아닙니다.</div>
+<h3>J100 = PJ-102AH · 핀 번호 확인</h3><div class="tablewrap"><table><thead><tr><th>핀</th><th>실제 연결</th><th>읽는 방법</th></tr></thead><tbody><tr><td>1</td><td>VIN_12V_RAW</td><td>중심 접점. 이 보드는 중심 +12V로 사용한다.</td></tr><tr><td>2</td><td>GND</td><td>플러그 외부 접점의 귀환.</td></tr><tr><td>3</td><td>무연결</td><td>스위치 접점. 플러그 감지나 대체 전원 전환에 사용하지 않는다.</td></tr></tbody></table></div>
+<p>Same Sky 도면 p.2의 회로 기호와 위 핀 기능을 대조했습니다. 사양은 24VDC/5A, 중심 핀 2.0mm이고, 도면의 짝 플러그 외경은 5.5mm입니다. <a href="https://www.sameskydevices.com/product/resource/pj-102ah.pdf#page=2">[제조사 도면]</a> “5.5mm DC 잭”이라는 이름만으로 중심 구멍·삽입 길이까지 맞는다고 판단하지 않습니다.</p>
+<p class="small">핀 기능 대조와 PCB 패드 치수 승인은 별개입니다. 이 샘플에서는 PCB 제작도면과 실물 플러그 치수까지 승인하지 않았습니다.</p></section>
+<section id="pins"><h2>07 · U100의 모든 핀을 실제 넷으로 읽기</h2><p>PWP 16핀 패키지와 노출 패드를 기준으로 합니다. 프로젝트에서는 노출 패드를 17번으로 지정했습니다. 핀 역할의 근거는 <a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf#page=4">TI p.4~5</a>, 아래 연결은 최종 네이티브 넷리스트입니다.</p>
+<label class="noprint">핀·넷·키워드 찾기 <input id="pin-search" placeholder="예: RTN, 14, PC15, 커패시터" aria-label="핀 표 검색"></label><p id="pin-count" class="small noprint">17개 핀 표시</p>
+<div class="tablewrap"><table><thead><tr><th>핀</th><th>이름</th><th>실제 넷</th><th>연결 이유 / 이 보드에서의 의미</th></tr></thead><tbody id="pin-body">__PINS__</tbody></table></div><p class="small">unconnected-…는 KiCad가 개별 무연결 핀에 붙인 이름입니다. NC 핀들이 서로 하나의 “NC 전선”으로 연결된 것이 아닙니다. #FLG0100~0102는 전원 구동을 ERC에 알리는 가상 심볼이며 실제 부품이 아닙니다.</p></section>
+<section id="review"><h2>08 · 이 샘플에서 확인된 것과 남은 것</h2>
+<div class="tablewrap"><table><thead><tr><th>항목</th><th>판정</th><th>이유 / 다음 확인</th></tr></thead><tbody>
+<tr><td>부품 값·핀 연결</td><td><span class="tag">대조 완료</span></td><td>B1 실제 파일의 Ref/Value, 계약과 저장된 최종 넷리스트의 각 핀을 대조. 13개 실장 부품, U100 17개 패드.</td></tr>
+<tr><td>설정값 계산</td><td><span class="tag calc">명목 계산 완료</span></td><td>UVLO/OVP·ILIM·dVdT·풀업 전류와 직접 연결 용량을 계산. 동적·열적 적합성 승인은 아님.</td></tr>
+<tr><td>저항·커패시터 MPN</td><td><span class="tag pending">미확정</span></td><td>BOM의 “확인 필요”를 그대로 유지. 제조사별 DC 바이어스·정격·패키지·온도 특성 대조는 선정 후 가능.</td></tr>
+<tr><td>최악 전압 문턱</td><td><span class="tag pending">오차 예산 필요</span></td><td>저항·IC 기준·누설·온도까지 합해 입력 허용 범위와 대조. 명목 OVP가 15V 아래여도 모든 조건에서 그러하진 않음.</td></tr>
+<tr><td>기동과 과부하 발열</td><td><span class="tag pending">부하 조건 필요</span></td><td>B2/B3가 켜질 때의 전류, PCB 열저항, 주변온도, 자동 재시도 중의 열 누적을 확인.</td></tr>
+<tr><td>서지와 지속 오입력</td><td><span class="tag pending">입력 조건 필요</span></td><td>TVS 전체 자료 확보, 어댑터 제한 특성, 케이블 인덕턴스, 입력 하강 파형과 부품 정격 대조.</td></tr>
+<tr><td>FAULT 기록</td><td><span class="tag pending">전원·펌웨어 확인</span></td><td>PC15까지 연결은 확인. 차단 뒤 MCU 생존 시간과 이벤트 저장 동작은 별도 확인.</td></tr>
+</tbody></table></div>
+<p>새 회로 수정이나 새 ERC 실행은 하지 않았습니다. 이번 결과는 <b>기존 최종본의 읽기·계산·설명</b>이며, 전체 보드의 제작 승인 상태를 바꾸지 않습니다.</p></section>
+<section id="parts"><h2>09 · B1 전체 부품 목록</h2><p>아래 값·정격·MPN은 프로젝트 계약의 기록입니다. “후보”와 “확인 필요”는 확정 부품으로 바꾸어 쓰지 않았습니다.</p><div class="tablewrap"><table><thead><tr><th>Ref</th><th>Value</th><th>요구 정격</th><th>MPN / 선정 상태</th></tr></thead><tbody>__PARTS__</tbody></table></div></section>
+<section id="sources" class="sources"><h2>10 · 원본과 근거를 다시 찾기</h2>
+<h3>제조사 자료</h3><ol>
+<li><a href="https://www.ti.com/lit/ds/symlink/tps2660.pdf">TI TPS2660x · SLVSDG2G / Rev G, 2019-12</a> — p.4~5 핀, p.7 문턱, p.21 기동식, p.26 RTN, p.27 모드, p.29 설정식, p.38 서지. <a href="tps2660.pdf">다운로드해 둔 PDF</a></li>
+<li><a href="https://www.sameskydevices.com/product/resource/pj-102ah.pdf">Same Sky PJ-102AH · 2024-09-12</a> — p.1 정격, p.2 핀·기구 도면. <a href="pj-102ah.pdf">다운로드해 둔 PDF</a></li>
+<li><a href="https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smbj_datasheet.pdf.pdf">Littelfuse SMBJ 시리즈 공식 자료 주소</a> — 공식 검색 색인상의 SMBJ18CA 행만 확인. 직접 PDF는 오류 페이지로 이동하여 로컬 사본 없음. 제조사가 다른 동명 제품으로 대체 대조하지 않음.</li></ol>
+<h3>프로젝트 자료</h3><p><a href="../R2_REPAIRED_006/B1.kicad_sch">B1 실제 회로도</a> · <a href="../R2_REPAIRED_006/BOM.csv">BOM</a> · <a href="../R2_FIX_REPORTS_006/native/verified_netlist.xml">최종 네이티브 넷리스트</a> · <a href="B1_EVIDENCE.json">입력 해시·계산 기록</a></p><p class="small">본문은 인터넷 없이 열립니다. PDF·회로도 등의 상대 링크를 사용하려면 이 폴더와 저장소의 폴더 구조를 유지하세요. 페이지 번호는 PDF 첫 장을 1로 센 번호입니다.</p></section>
+<footer>작성 기준: 2026-10-20 KST · R2_REPAIRED_006 · B1 검토용 샘플<br>B1 회로도 SHA-256: __HASH__<br>작성 방식: 실제 연결 추출 + 공식 문서 확인 + 조건을 명시한 계산. B1~B15 통합 문서의 B1 해설.</footer>
+</main><script>
+const input=document.querySelector('#pin-search'), rows=[...document.querySelectorAll('#pin-body tr')];
+document.querySelector('#diagram-fit').onclick=()=>document.querySelector('#diagram-width').style.width='100%';
+document.querySelector('#diagram-zoom').onclick=()=>document.querySelector('#diagram-width').style.width='1600px';
+input.addEventListener('input',()=>{const q=input.value.trim().toLowerCase();let n=0;rows.forEach(r=>{r.hidden=!r.textContent.toLowerCase().includes(q);if(!r.hidden)n++});document.querySelector('#pin-count').textContent=n+'개 핀 표시'});
+document.querySelector('#print').onclick=()=>{document.querySelector('#diagram-width').style.width='100%';input.value='';input.dispatchEvent(new Event('input'));document.querySelectorAll('details').forEach(d=>d.open=true);window.print()};
+</script></body></html>

@@ -1,0 +1,31 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad=.25,nodesep=.2,ranksep=.7,splines=polyline,outputorder=edgesfirst,fontname="Arial"];
+node [fontname="Arial",fontsize=12,shape=plain]; edge [arrowhead=none,color="#839da8",penwidth=1.2];
+"TP1000" [id="part-TP1000",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1000 · VIN_12V_RAW</B></TD></TR></TABLE>>];
+"TP1001" [id="part-TP1001",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1001 · VIN_12V_PROT</B></TD></TR></TABLE>>];
+"TP1002" [id="part-TP1002",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1002 · PWR_RTN</B></TD></TR></TABLE>>];
+"TP1003" [id="part-TP1003",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1003 · GND</B></TD></TR></TABLE>>];
+"TP1004" [id="part-TP1004",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1004 · AUX_5V</B></TD></TR></TABLE>>];
+"TP1005" [id="part-TP1005",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1005 · VBAT</B></TD></TR></TABLE>>];
+"TP1006" [id="part-TP1006",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1006 · CTRL_3V3</B></TD></TR></TABLE>>];
+"TP1007" [id="part-TP1007",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1007 · VDDIO1V2</B></TD></TR></TABLE>>];
+"TP1008" [id="part-TP1008",class="component",tooltip="B10 / probe pad",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>TP1008 · SYS_1V8</B></TD></TR></TABLE>>];
+"n180" [id="n180",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="VIN_12V_RAW",tooltip="VIN_12V_RAW"];
+"TP1000":p1 -> "n180" [id="edge-TP1000-1",class="wire n180",tooltip="TP1000.1 = VIN_12V_RAW",style="solid"];
+"n179" [id="n179",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="VIN_12V_PROT",tooltip="VIN_12V_PROT"];
+"TP1001":p1 -> "n179" [id="edge-TP1001-1",class="wire n179",tooltip="TP1001.1 = VIN_12V_PROT",style="solid"];
+"n133" [id="n133",class="net",shape=box,style="rounded,filled",fillcolor="#d9e7f7",color="#8fa9ad",fontcolor="#28536a",label="PWR_RTN",tooltip="PWR_RTN"];
+"TP1002":p1 -> "n133" [id="edge-TP1002-1",class="wire n133",tooltip="TP1002.1 = PWR_RTN",style="solid"];
+"n105" [id="n105",class="net",shape=box,style="rounded,filled",fillcolor="#d9e7f7",color="#8fa9ad",fontcolor="#28536a",label="GND",tooltip="GND"];
+"TP1003":p1 -> "n105" [id="edge-TP1003-1",class="wire n105",tooltip="TP1003.1 = GND",style="solid"];
+"n83" [id="n83",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="AUX_5V",tooltip="AUX_5V"];
+"TP1004":p1 -> "n83" [id="edge-TP1004-1",class="wire n83",tooltip="TP1004.1 = AUX_5V",style="solid"];
+"n145" [id="n145",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="VBAT",tooltip="VBAT"];
+"TP1005":p1 -> "n145" [id="edge-TP1005-1",class="wire n145",tooltip="TP1005.1 = VBAT",style="solid"];
+"n95" [id="n95",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="CTRL_3V3",tooltip="CTRL_3V3"];
+"TP1006":p1 -> "n95" [id="edge-TP1006-1",class="wire n95",tooltip="TP1006.1 = CTRL_3V3",style="solid"];
+"n150" [id="n150",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="VDDIO1V2",tooltip="VDDIO1V2"];
+"TP1007":p1 -> "n150" [id="edge-TP1007-1",class="wire n150",tooltip="TP1007.1 = VDDIO1V2",style="solid"];
+"n137" [id="n137",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="SYS_1V8",tooltip="SYS_1V8"];
+"TP1008":p1 -> "n137" [id="edge-TP1008-1",class="wire n137",tooltip="TP1008.1 = SYS_1V8",style="solid"];
+}

@@ -1,0 +1,47 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad=.25,nodesep=.2,ranksep=.7,splines=polyline,outputorder=edgesfirst,fontname="Arial"];
+node [fontname="Arial",fontsize=12,shape=plain]; edge [arrowhead=none,color="#839da8",penwidth=1.2];
+"U1300" [id="part-U1300",class="component",tooltip="B13 / 방향 고정 레벨시프터",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e2f2f2" COLSPAN="2"><B>U1300 · SN74AXC2T45DCTR</B></TD></TR><TR><TD PORT="p1" ALIGN="LEFT">1</TD><TD ALIGN="LEFT">VCCA</TD></TR><TR><TD PORT="p2" ALIGN="LEFT">2</TD><TD ALIGN="LEFT">A1</TD></TR><TR><TD PORT="p3" ALIGN="LEFT">3</TD><TD ALIGN="LEFT">A2</TD></TR><TR><TD PORT="p4" ALIGN="LEFT">4</TD><TD ALIGN="LEFT">GND</TD></TR><TR><TD PORT="p5" ALIGN="LEFT">5</TD><TD ALIGN="LEFT">DIR</TD></TR><TR><TD PORT="p6" ALIGN="LEFT">6</TD><TD ALIGN="LEFT">B2</TD></TR><TR><TD PORT="p7" ALIGN="LEFT">7</TD><TD ALIGN="LEFT">B1</TD></TR><TR><TD PORT="p8" ALIGN="LEFT">8</TD><TD ALIGN="LEFT">VCCB</TD></TR></TABLE>>];
+"C1300" [id="part-C1300",class="component",tooltip="B13 / 커패시터",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>C1300 · 100n</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"C1301" [id="part-C1301",class="component",tooltip="B13 / 커패시터",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>C1301 · 100n</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R1300" [id="part-R1300",class="component",tooltip="B13 / 저항",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R1300 · 10k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R1301" [id="part-R1301",class="component",tooltip="B13 / 저항",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R1301 · 10k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R1302" [id="part-R1302",class="component",tooltip="B13 / 저항",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R1302 · 47R</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R1303" [id="part-R1303",class="component",tooltip="B13 / 저항",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R1303 · 47R</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R1304" [id="part-R1304",class="component",tooltip="B13 / 저항",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R1304 · 10k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"R1305" [id="part-R1305",class="component",tooltip="B13 / 저항",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD PORT="p1">1</TD><TD BGCOLOR="#f1f5f8"><B>R1305 · 10k</B></TD><TD PORT="p2">2</TD></TR></TABLE>>];
+"n95" [id="n95",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="CTRL_3V3",tooltip="CTRL_3V3"];
+"n95" -> "U1300":p1 [id="edge-U1300-1",class="wire n95",tooltip="U1300.1 = CTRL_3V3",style="solid"];
+"n95" -> "U1300":p5 [id="edge-U1300-5",class="wire n95",tooltip="U1300.5 = CTRL_3V3",style="solid"];
+"C1300":p1 -> "n95" [id="edge-C1300-1",class="wire n95",tooltip="C1300.1 = CTRL_3V3",style="solid"];
+"n122" [id="n122",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="MOSCATO_EN_3V3",tooltip="MOSCATO_EN_3V3"];
+"n122" -> "U1300":p2 [id="edge-U1300-2",class="wire n122",tooltip="U1300.2 = MOSCATO_EN_3V3",style="solid"];
+"R1300":p1 -> "n122" [id="edge-R1300-1",class="wire n122",tooltip="R1300.1 = MOSCATO_EN_3V3",style="solid"];
+"n97" [id="n97",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="DDI_RESET_N_3V3",tooltip="DDI_RESET_N_3V3"];
+"n97" -> "U1300":p3 [id="edge-U1300-3",class="wire n97",tooltip="U1300.3 = DDI_RESET_N_3V3",style="solid"];
+"R1301":p1 -> "n97" [id="edge-R1301-1",class="wire n97",tooltip="R1301.1 = DDI_RESET_N_3V3",style="solid"];
+"n105" [id="n105",class="net",shape=box,style="rounded,filled",fillcolor="#d9e7f7",color="#8fa9ad",fontcolor="#28536a",label="GND",tooltip="GND"];
+"n105" -> "U1300":p4 [id="edge-U1300-4",class="wire n105",tooltip="U1300.4 = GND",style="solid"];
+"C1300":p2 -> "n105" [id="edge-C1300-2",class="wire n105",tooltip="C1300.2 = GND",style="solid"];
+"C1301":p2 -> "n105" [id="edge-C1301-2",class="wire n105",tooltip="C1301.2 = GND",style="solid"];
+"R1300":p2 -> "n105" [id="edge-R1300-2",class="wire n105",tooltip="R1300.2 = GND",style="solid"];
+"R1301":p2 -> "n105" [id="edge-R1301-2",class="wire n105",tooltip="R1301.2 = GND",style="solid"];
+"R1304":p2 -> "n105" [id="edge-R1304-2",class="wire n105",tooltip="R1304.2 = GND",style="solid"];
+"R1305":p2 -> "n105" [id="edge-R1305-2",class="wire n105",tooltip="R1305.2 = GND",style="solid"];
+"n15" [id="n15",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="DDI_RESET_N_B",tooltip="/B13/DDI_RESET_N_B"];
+"n15" -> "U1300":p6 [id="edge-U1300-6",class="wire n15",tooltip="U1300.6 = /B13/DDI_RESET_N_B",style="solid"];
+"R1303":p1 -> "n15" [id="edge-R1303-1",class="wire n15",tooltip="R1303.1 = /B13/DDI_RESET_N_B",style="solid"];
+"n16" [id="n16",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="MOSCATO_EN_B",tooltip="/B13/MOSCATO_EN_B"];
+"n16" -> "U1300":p7 [id="edge-U1300-7",class="wire n16",tooltip="U1300.7 = /B13/MOSCATO_EN_B",style="solid"];
+"R1302":p1 -> "n16" [id="edge-R1302-1",class="wire n16",tooltip="R1302.1 = /B13/MOSCATO_EN_B",style="solid"];
+"n137" [id="n137",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="SYS_1V8",tooltip="SYS_1V8"];
+"n137" -> "U1300":p8 [id="edge-U1300-8",class="wire n137",tooltip="U1300.8 = SYS_1V8",style="solid"];
+"C1301":p1 -> "n137" [id="edge-C1301-1",class="wire n137",tooltip="C1301.1 = SYS_1V8",style="solid"];
+"n121" [id="n121",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="MOSCATO_EN_1V8",tooltip="MOSCATO_EN_1V8"];
+"R1302":p2 -> "n121" [id="edge-R1302-2",class="wire n121",tooltip="R1302.2 = MOSCATO_EN_1V8",style="solid"];
+"R1304":p1 -> "n121" [id="edge-R1304-1",class="wire n121",tooltip="R1304.1 = MOSCATO_EN_1V8",style="solid"];
+"n96" [id="n96",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="DDI_RESET_N_1V8",tooltip="DDI_RESET_N_1V8"];
+"R1303":p2 -> "n96" [id="edge-R1303-2",class="wire n96",tooltip="R1303.2 = DDI_RESET_N_1V8",style="solid"];
+"R1305":p1 -> "n96" [id="edge-R1305-1",class="wire n96",tooltip="R1305.1 = DDI_RESET_N_1V8",style="solid"];
+{rank=sink;"U1300";}
+}

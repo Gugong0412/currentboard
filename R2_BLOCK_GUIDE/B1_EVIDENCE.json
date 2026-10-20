@@ -1,0 +1,41 @@
+{
+  "created_kst": "2026-10-20",
+  "scope": "B1 explanation sample only; no circuit changes",
+  "inputs": {
+    "R2_REPAIRED_006/B1.kicad_sch": "710a05ab7a84f351ca06f1c27ebfca45602c90a3d0c229bc234904b0857b2a45",
+    "R2_REPAIRED_006/source_contract.json": "5469a1c6bf414e076d549d4e070384fe8b1006607712999f7d3204a224986deb",
+    "R2_REPAIRED_006/BOM.csv": "b7fde314432cb4e89d514f4389fe1ad2499293b68e4579272fa93fe6e2ad89aa",
+    "R2_FIX_REPORTS_006/native/verified_netlist.xml": "6277953b352ae16fc08e1d14bbc1d60509c8366e88a1a888ca5e94f911ee1803"
+  },
+  "b1_physical_components": 13,
+  "u100_pins": 17,
+  "connection_check": "B1 contract pins matched stored native netlist; references and values found in actual B1 sheet; BOM Value/MPN matched contract",
+  "native_erc_rerun": true,
+  "calculations": {
+    "uv_on_V": 9.922488325550367,
+    "uv_off_V": 9.172048032021348,
+    "ov_off_V": 14.87381,
+    "ov_recover_V": 13.7489,
+    "current_limit_A": 1.488833746898263,
+    "ramp_eq2_ms": 9.6,
+    "ramp_eq1_ms": 10.378827192527245,
+    "direct_output_cap_nominal_uF": 87.3,
+    "cap_only_inrush_eq2_mA": 109.125
+  },
+  "sources": [
+    {
+      "url": "https://www.ti.com/lit/ds/symlink/tps2660.pdf",
+      "revision": "SLVSDG2G Rev G, December 2019",
+      "local": "tps2660.pdf"
+    },
+    {
+      "url": "https://www.sameskydevices.com/product/resource/pj-102ah.pdf",
+      "revision": "2024-09-12",
+      "local": "pj-102ah.pdf"
+    },
+    {
+      "url": "https://www.littelfuse.com/~/media/electronics/datasheets/tvs_diodes/littelfuse_tvs_diode_smbj_datasheet.pdf.pdf",
+      "access": "Official indexed table consulted; direct PDF URL currently redirects to page-not-found. Full local copy not obtained."
+    }
+  ]
+}

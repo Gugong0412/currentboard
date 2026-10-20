@@ -1,0 +1,23 @@
+digraph G {
+graph [rankdir=LR,bgcolor="white",pad=.25,nodesep=.2,ranksep=.7,splines=polyline,outputorder=edgesfirst,fontname="Arial"];
+node [fontname="Arial",fontsize=12,shape=plain]; edge [arrowhead=none,color="#839da8",penwidth=1.2];
+"U900" [id="part-U900",class="component",tooltip="B9 / 사용자 PMIC",label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#e2f2f2" COLSPAN="2"><B>U900 · MOSCATO_PLACEHOLDER</B></TD></TR><TR><TD PORT="p1" ALIGN="LEFT">1</TD><TD ALIGN="LEFT">VBAT</TD></TR><TR><TD PORT="p2" ALIGN="LEFT">2</TD><TD ALIGN="LEFT">VDD1V8</TD></TR><TR><TD PORT="p3" ALIGN="LEFT">3</TD><TD ALIGN="LEFT">VDDI_B</TD></TR><TR><TD PORT="p4" ALIGN="LEFT">4</TD><TD ALIGN="LEFT">EN</TD></TR><TR><TD PORT="p5" ALIGN="LEFT">5</TD><TD ALIGN="LEFT">GND</TD></TR><TR><TD PORT="p6" ALIGN="LEFT">6</TD><TD ALIGN="LEFT">AVDDH1</TD></TR><TR><TD PORT="p7" ALIGN="LEFT">7</TD><TD ALIGN="LEFT">AVDDH2</TD></TR><TR><TD PORT="p8" ALIGN="LEFT">8</TD><TD ALIGN="LEFT">VGH</TD></TR><TR><TD PORT="p9" ALIGN="LEFT">9</TD><TD ALIGN="LEFT">VGL</TD></TR></TABLE>>];
+"n145" [id="n145",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="VBAT",tooltip="VBAT"];
+"n145" -> "U900":p1 [id="edge-U900-1",class="wire n145",tooltip="U900.1 = VBAT",style="solid"];
+"n137" [id="n137",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="SYS_1V8",tooltip="SYS_1V8"];
+"n137" -> "U900":p2 [id="edge-U900-2",class="wire n137",tooltip="U900.2 = SYS_1V8",style="solid"];
+"n137" -> "U900":p3 [id="edge-U900-3",class="wire n137",tooltip="U900.3 = SYS_1V8",style="solid"];
+"n121" [id="n121",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="MOSCATO_EN_1V8",tooltip="MOSCATO_EN_1V8"];
+"n121" -> "U900":p4 [id="edge-U900-4",class="wire n121",tooltip="U900.4 = MOSCATO_EN_1V8",style="solid"];
+"n105" [id="n105",class="net",shape=box,style="rounded,filled",fillcolor="#d9e7f7",color="#8fa9ad",fontcolor="#28536a",label="GND",tooltip="GND"];
+"n105" -> "U900":p5 [id="edge-U900-5",class="wire n105",tooltip="U900.5 = GND",style="solid"];
+"n87" [id="n87",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="AVDDH1_SRC",tooltip="AVDDH1_SRC"];
+"n87" -> "U900":p6 [id="edge-U900-6",class="wire n87",tooltip="U900.6 = AVDDH1_SRC",style="solid"];
+"n91" [id="n91",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="AVDDH2_SRC",tooltip="AVDDH2_SRC"];
+"n91" -> "U900":p7 [id="edge-U900-7",class="wire n91",tooltip="U900.7 = AVDDH2_SRC",style="solid"];
+"n171" [id="n171",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="VGH_SRC",tooltip="VGH_SRC"];
+"n171" -> "U900":p8 [id="edge-U900-8",class="wire n171",tooltip="U900.8 = VGH_SRC",style="solid"];
+"n178" [id="n178",class="net",shape=box,style="rounded,filled",fillcolor="#e7f3eb",color="#8fa9ad",fontcolor="#28536a",label="VGL_SRC",tooltip="VGL_SRC"];
+"n178" -> "U900":p9 [id="edge-U900-9",class="wire n178",tooltip="U900.9 = VGL_SRC",style="solid"];
+{rank=sink;"U900";}
+}

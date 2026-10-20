@@ -51,3 +51,11 @@ __pycache__/
 /R2_ALERT_REPORTS_005/explorer-*.png
 /prepare_branch_cleanup.py
 /.cleanup-remove-paths
+
+# Circuit guide local build dependencies and review captures.
+/R2_BLOCK_GUIDE/vendor/
+/R2_BLOCK_GUIDE/node_modules/
+/R2_BLOCK_GUIDE/*.png
+/R2_BLOCK_GUIDE/sources/*.pdf
+/R2_BLOCK_GUIDE/sources/*.txt
+/R2_FIX_REPORTS_006/explorer-*.png
