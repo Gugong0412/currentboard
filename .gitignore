@@ -56,6 +56,8 @@ __pycache__/
 /R2_BLOCK_GUIDE/vendor/
 /R2_BLOCK_GUIDE/node_modules/
 /R2_BLOCK_GUIDE/*.png
+/R2_BLOCK_GUIDE/screenshots/
+/R2_BLOCK_GUIDE/schematics/test*.svg
 /R2_BLOCK_GUIDE/sources/*.pdf
 /R2_BLOCK_GUIDE/sources/*.txt
 /R2_FIX_REPORTS_006/explorer-*.png

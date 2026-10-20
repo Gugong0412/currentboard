@@ -5,59 +5,11 @@ from guide_model import *
 from guide_content import TITLES,story,table,ref,SOURCES
 from html import escape as E
 
-DIAG=OUT/"diagrams";DIAG.mkdir(exist_ok=True)
-Q=lambda s:json.dumps(str(s),ensure_ascii=False)
+DIAG=OUT/"schematics";DIAG.mkdir(exist_ok=True)
+from guide_detail import supplement
+from draw_schematics import build as build_schematics
 NETID={n:f"n{i}" for i,n in enumerate(sorted(NETS))}
 GROUNDS={"GND","GND_F","USB_GND","PWR_RTN"}
-def diagram(name,cs):
- """Every pin-net edge is generated from the native netlist, not prose."""
- visible=[c for c in cs if c["pins"] and not c["ref"].startswith("#")]
- core=[c for c in visible if c["ref"].startswith("U")]
- if not core:core=[c for c in visible if c["ref"].startswith("J")]
- corerefs={c["ref"] for c in core}
- d=['digraph G {',
- 'graph [rankdir=LR,bgcolor="white",pad=.25,nodesep=.2,ranksep=.7,splines=polyline,outputorder=edgesfirst,fontname="Arial"];',
- 'node [fontname="Arial",fontsize=12,shape=plain]; edge [arrowhead=none,color="#839da8",penwidth=1.2];']
- nused={}
- for c in visible:
-  r=c["ref"];iscore=r in corerefs
-  col="#e2f2f2" if iscore else ("#fff0d5" if c["Population"]=="DNP" else "#f1f5f8")
-  rows=f'<TR><TD BGCOLOR="{col}" COLSPAN="2"><B>{E(r)} · {E(c["Value"])}</B></TD></TR>'
-  if c["Population"]=="DNP":rows+='<TR><TD COLSPAN="2"><FONT COLOR="#9a6412">DNP / open branch</FONT></TD></TR>'
-  if r in POP_CONFLICTS:rows+='<TR><TD COLSPAN="2"><FONT COLOR="#b42318">CONFLICT: Value / Population</FONT></TD></TR>'
-  if len(c["pins"])==4 and r.startswith("R"):rows+='<TR><TD COLSPAN="2">1↔3 / 2↔4 copper; 1–2 resistor</TD></TR>'
-  for p in c["pins"]:
-   nk=net(c,p)
-   rows+=f'<TR><TD PORT="p{p["number"]}" ALIGN="LEFT">{E(p["number"])}</TD><TD ALIGN="LEFT">{E(p["name"])}'+(" × NC" if p["net"]=="NC" else "")+'</TD></TR>'
-   if p["net"]!="NC":nused.setdefault(nk,[]).append((r,p["number"],iscore,c["Population"]))
-  if len(c["pins"])<=2 and not iscore:
-   ports=c["pins"]
-   status=" · DNP" if c["Population"]=="DNP" else ""
-   if r in POP_CONFLICTS:status=" · CONFLICT"
-   cells=[f'<TD PORT="p{p["number"]}">{E(p["number"])}</TD>' for p in ports]
-   center=f'<TD BGCOLOR="{col}"><B>{E(r)} · {E(c["Value"])}{status}</B></TD>'
-   rows="<TR>"+cells[0]+center+("".join(cells[1:]))+"</TR>"
-  d.append(f'{Q(r)} [id={Q("part-"+r)},class="component",tooltip={Q(c["block"]+" / "+c["function"])},label=<<TABLE BORDER="1" COLOR="#5f7e8b" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5">{rows}</TABLE>>];')
- for nk,ends in nused.items():
-  nid=NETID[nk];s=short(nk)
-  color="#d9e7f7" if s in GROUNDS else "#e7f3eb"
-  d.append(f'{Q(nid)} [id="{nid}",class="net",shape=box,style="rounded,filled",fillcolor="{color}",color="#8fa9ad",fontcolor="#28536a",label={Q(s)},tooltip={Q(nk)}];')
-  for r,p,iscore,pop in ends:
-   attrs=f'id={Q("edge-"+r+"-"+p)},class={Q("wire "+nid)},tooltip={Q(r+"."+p+" = "+nk)},style='+('"dashed"' if pop=="DNP" else '"solid"')
-   if iscore:d.append(f'{Q(nid)} -> {Q(r)}:p{p} [{attrs}];')
-   else:d.append(f'{Q(r)}:p{p} -> {Q(nid)} [{attrs}];')
- # Keep component sides predictable, no arrows implying current direction.
- if core:d.append('{rank=sink;'+ ';'.join(Q(c["ref"]) for c in core)+';}')
- # Explicit Kelvin copper connections are additional physical links.
- for br in MODEL["copper_bridges"]:
-  if br["ref"] in {c["ref"] for c in visible}:
-   nn=[net(C[br["ref"]],next(p for p in C[br["ref"]]["pins"] if p["number"]==x)) for x in br["pins"]]
-   if len(nn)==2 and all(n in nused for n in nn):
-    d.append(f'{Q(NETID[nn[0]])} -> {Q(NETID[nn[1]])} [constraint=false,style=dashed,color="#b37b18",label={Q(br["ref"]+" copper "+"/".join(br["pins"]))},fontsize=9];')
- d.append('}')
- (DIAG/(name+".dot")).write_text("\n".join(d),encoding="utf-8")
- return {"name":name,"components":[c["ref"] for c in visible],"pin_edges":sum(len(v) for v in nused.values()),"nets":list(nused)}
-
 def grouped(b):
  cs=[c for c in C.values() if block(c)==b and not c["ref"].startswith("#")]
  groups=collections.OrderedDict()
@@ -107,7 +59,7 @@ table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:11px 12px
 button,select,input{font:inherit;padding:8px 12px;border:1px solid #c1d5d8;border-radius:7px;background:white;color:#193744}button{cursor:pointer}input{max-width:100%;width:320px}
 .toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0}.diagram{overflow:auto;max-height:760px;border:1px solid #c4d8dd;border-radius:8px;background:white;overscroll-behavior:contain}
 .drawing{width:100%;min-width:0;margin:auto}.drawing svg{width:100%;height:auto;display:block}.drawing .edge path{cursor:pointer}.drawing .node.net{cursor:pointer}
-.diagram.is-focus .edge:not(.selected){opacity:.12}.diagram.is-focus .node:not(.selected){opacity:.35}.diagram .edge.selected path{stroke:#d04d20!important;stroke-width:3!important}
+.diagram.is-focus .wire:not(.selected){opacity:.25}.diagram .wire.selected{stroke:#d04d20!important;stroke-width:4!important}
 .netinfo{background:#f1f6f8;border:1px solid #d5e4e8;padding:12px;overflow-wrap:anywhere;font-size:13px;min-height:56px}
 .chip{font-size:11px;padding:2px 6px;border-radius:4px;background:#fff0d9;color:#885a17}
 .jump{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.jump a{font-size:13px;text-decoration:none;padding:5px 10px;background:white;border:1px solid #d4e2e5;border-radius:6px}
@@ -133,6 +85,9 @@ def channel_table(b,cs):
  return '<h3>실제 채널 설정 / 펌웨어 대조</h3>'+table(["채널","IC","션트","주소","주소 핀","ADC full scale","MCU ALERT"],rows)
 def page(b,cs,diagrams):
  ov,body,review,sources=story(b,C,FW)
+ flow,detail=supplement(b,cs)
+ ov+=flow
+ body+=detail
  # Pin table includes all physical endpoints, including passive components.
  pinrows=[]
  for c in cs:
@@ -157,7 +112,7 @@ def page(b,cs,diagrams):
  data={"diagrams":diagrammeta,"nets":{NETID[n]:{"name":n,"pins":NETS[n]} for n in NETS}}
  counts=f'<div class="metrics"><span>블록 항목 {len(cs)}개</span><span>실제 핀 {len(pinrows)}개</span><span>원본 보존 · 006 표기 수정</span></div>'
  sourceshtml="".join("<li>"+ref(k)+"</li>" for k in sources) if sources else "<li>이 블록에는 확정된 전용 IC 응용 데이터시트가 없습니다. 프로젝트 계약·BOM·저장된 네이티브 넷리스트를 근거로 설명했습니다.</li>"
- # Pre-rendered SVGs are embedded after render_diagrams.cjs has run.
+ # Embed the authored application SVGs generated during prepare().
  svgs=[]
  for label,name in diagrams:
   f=DIAG/(name+".svg")
@@ -173,10 +128,10 @@ def page(b,cs,diagrams):
 <div class="jump"><a href="#purpose">기능</a><a href="#circuit">통합 연결도</a><a href="#reasoning">값·동작 해설</a><a href="#parts">모든 부품</a><a href="#pins">모든 핀</a><a href="#review">검토 항목</a><a href="#sources">출처</a></div></header>
 <section id="purpose"><h2>01 · 이 블록의 기능과 경계</h2>{ov}{channel_table(b,cs)}</section>
 <section id="circuit"><h2>02 · 부품과 실제 넷을 합친 통합 연결도</h2>
-<p>부품의 <b>핀 번호</b>에서 중앙의 <b>넷 이름</b>으로 이어지는 선이 실제 연결입니다. 같은 넷 상자로 모인 핀은 전기적으로 연결됩니다. 선의 교차 자체는 접속이 아니며 좌우 배치는 전류 방향이 아닙니다. 주황 점선은 션트의 같은 단자 동박 연결, DNP 가지는 기본 미실장입니다.</p>
+<p>B1과 같은 회로 기호로 IC와 주변 R·C·L, 제어·피드백 경로를 함께 배치했습니다. <b>●는 접속점</b>이며 선의 교차만으로는 연결되지 않습니다. <b>같은 넷 이름은 전기적으로 연결</b>됩니다. 주황 점선 소자는 DNP, 션트의 금색 선은 같은 물리 단자의 동박 연결입니다. 핀 위치는 읽기 위한 기능 배치로 실제 패키지 방향이 아닙니다.</p>
 <div class="toolbar"><select id="diagram-choice" aria-label="회로 범위">{options}</select><button id="fit">전체 보기</button><button id="zoom">확대</button><button id="clear-net">강조 해제</button><button id="print">이 블록 인쇄/PDF</button></div>
-<p class="muted">‘통합 전체’에는 이 블록의 모든 전기 부품이 들어갑니다. 복잡한 블록은 같은 회로의 하위 범위를 골라 읽을 수 있습니다. 넷 상자를 누르면 연결선과 외부 블록의 핀 목록이 함께 강조됩니다.</p>
-<div class="diagram"><div class="drawing" id="drawing"></div></div><div class="netinfo" id="net-info">넷 이름을 클릭해 전원·접지·신호의 연결을 따라가세요.</div>{flagshtml}
+<p class="muted">‘통합 전체’에는 이 블록의 모든 전기 부품이 들어갑니다. 복잡한 블록은 같은 회로의 하위 범위를 골라 읽을 수 있습니다. 넷 이름이나 배선을 누르면 같은 넷의 연결선과 외부 블록 핀 목록을 확인할 수 있습니다.</p>
+<div class="diagram"><div class="drawing" id="drawing"></div></div><div class="netinfo" id="net-info">넷 이름 또는 배선을 클릭해 전원·접지·신호의 연결을 따라가세요.</div>{flagshtml}
 <details><summary>다른 블록으로 이어지는 넷</summary>{table(["실제 넷","외부 핀 (많으면 일부 표시)"],interfaces)}</details></section>
 <section id="reasoning"><h2>03 · 값의 근거와 동작 해설</h2><p class="muted">연결 사실은 네이티브 넷리스트, 정격 조건은 출처, 계산은 본문의 가정에 근거합니다. 기록이 없는 선정 의도는 회로에서 추정한 설명입니다.</p>{body}</section>
 <section id="parts"><h2>04 · 모든 부품의 역할과 선정 상태</h2><input class="filter noprint" data-table="parts-table" placeholder="부품 검색: 예 C203, 100n, DNP" aria-label="부품 검색"><div id="parts-table">{table(["부품 / 시트","값","실장","이 값·연결의 이유","프로젝트 요구 정격","MPN / 원 기록"],partrows)}</div></section>
@@ -192,16 +147,14 @@ const drawing=document.querySelector('#drawing'),diagram=document.querySelector(
 function showDiagram(i){drawing.innerHTML=DATA.svgs[+i];fitDiagram();diagram.classList.remove('is-focus');document.querySelector('#net-info').textContent='넷 이름을 클릭해 연결을 확인하세요.'}
 function selectNet(id){
  const net=DATA.nets[id];if(!net)return;
- diagram.classList.add('is-focus');
- drawing.querySelectorAll('.selected').forEach(e=>e.classList.remove('selected'));
- drawing.querySelectorAll('.'+id).forEach(e=>{e.classList.add('selected');const t=e.querySelector('title')?.textContent||'';drawing.querySelectorAll('.node.component').forEach(n=>{if(t.startsWith(n.querySelector('title')?.textContent+':')||t.includes(n.querySelector('title')?.textContent+'->')||t.includes('->'+n.querySelector('title')?.textContent))n.classList.add('selected')})});
- drawing.querySelector('#'+id)?.classList.add('selected');
+ diagram.classList.add('is-focus');drawing.querySelectorAll('.selected').forEach(e=>e.classList.remove('selected'));
+ drawing.querySelectorAll('[data-net]').forEach(e=>{if(e.dataset.net===net.name)e.classList.add('selected')});
  document.querySelector('#net-info').textContent=net.name+' → '+net.pins.join(' · ');
 }
-drawing.addEventListener('click',e=>{const n=e.target.closest('.node.net');if(n)selectNet(n.id)});
-document.querySelectorAll('.netbtn').forEach(x=>x.onclick=()=>{const id=x.dataset.net;if(!drawing.querySelector('#'+id)){document.querySelector('#diagram-choice').value=0;showDiagram(0)}selectNet(id);document.querySelector('#circuit').scrollIntoView({behavior:'smooth'})});
+drawing.addEventListener('click',e=>{const hit=e.target.closest('[data-net]');if(hit){const id=Object.keys(DATA.nets).find(k=>DATA.nets[k].name===hit.dataset.net);selectNet(id)}});
+document.querySelectorAll('.netbtn').forEach(x=>x.onclick=()=>{const id=x.dataset.net;const found=[...drawing.querySelectorAll('[data-net]')].some(e=>e.dataset.net===DATA.nets[id].name);if(!found){document.querySelector('#diagram-choice').value=0;showDiagram(0)}selectNet(id);document.querySelector('#circuit').scrollIntoView({behavior:'smooth'})});
 document.querySelector('#diagram-choice').onchange=e=>showDiagram(e.target.value);
-function fitDiagram(){const svg=drawing.querySelector('svg');if(!svg)return;const v=svg.viewBox.baseVal;drawing.style.width=Math.min(diagram.clientWidth,680*v.width/v.height)+'px'}
+function fitDiagram(){const svg=drawing.querySelector('svg');if(!svg)return;const v=svg.viewBox.baseVal;drawing.style.width=Math.min(diagram.clientWidth,v.width)+'px'}
 document.querySelector('#fit').onclick=fitDiagram;
 document.querySelector('#zoom').onclick=()=>drawing.style.width=Math.max(drawing.offsetWidth*1.4,1400)+'px';
 document.querySelector('#clear-net').onclick=()=>{diagram.classList.remove('is-focus');drawing.querySelectorAll('.selected').forEach(e=>e.classList.remove('selected'))};
@@ -211,16 +164,12 @@ showDiagram(0);
 """
 
 def prepare():
- checked=validate();plans={};diagram_checks=[]
- for b in range(2,16):
-  cs,groups=grouped(b);meta=[]
-  for i,(label,members) in enumerate(groups.items()):
-   name=f"B{b}_{i}";diagram_checks.append(diagram(name,members));meta.append((label,name))
-  plans[str(b)]=meta
- (OUT/"diagram_plan.json").write_text(json.dumps(plans,ensure_ascii=False),encoding="utf-8")
- evidence={"date_kst":"2026-10-20","scope":"B1–B15 circuit explanation, no design changes","validation":checked,"diagrams":diagram_checks,
+ checked=validate();plans,diagram_checks=build_schematics()
+ checked["native_export_rerun"]=False
+ checked["native_verification_reference"]="R2_FIX_REPORTS_006/native/verification_summary.json (existing report; unchanged inputs)"
+ evidence={"date_kst":"2026-10-20","scope":"B1–B15 authored application schematics and detailed explanation; design inputs unchanged","validation":checked,"diagrams":diagram_checks,
  "source_inputs":{str(f.relative_to(ROOT)).replace("\\","/"):hashlib.sha256(f.read_bytes()).hexdigest() for f in [PROJECT/"source_contract.json",PROJECT/"BOM.csv",PROJECT/"firmware_definitions.json",ROOT/"R2_FIX_REPORTS_006/native/verified_netlist.xml"]},
- "known_incomplete":["B9 actual PMIC/MPN/application missing","MCU DS9826 package table direct-PDF recheck unavailable","Unselected passive/LED MPNs cannot be qualified","No bench measurements; native ERC rerun passed"]}
+ "known_incomplete":["B9 actual PMIC/MPN/application missing","MCU DS9826 package table direct-PDF recheck unavailable","Unselected passive/LED MPNs cannot be qualified","No bench measurements; existing 006 native ERC report retained, not rerun for this documentation revision"]}
  (OUT/"ALL_BLOCKS_EVIDENCE.json").write_text(json.dumps(evidence,ensure_ascii=False,indent=2),encoding="utf-8")
  print("Prepared",len(diagram_checks),"diagrams;",checked)
 
@@ -232,7 +181,7 @@ def assemble():
   (OUT/f"B{b}_GUIDE.html").write_text(doc,encoding="utf-8");docs[f"B{b}"]=doc
  tabs="".join(f'<button role="tab" id="tab-B{b}" data-block="B{b}" aria-controls="document" aria-selected="false"><b>B{b}</b><span>{E({1:"입력 보호",**{x:TITLES[x].split(" · ")[0] for x in TITLES}}[b])}</span></button>' for b in range(1,16))
  index=[{"ref":c["ref"],"value":c["Value"],"block":"B"+str(block(c))} for c in C.values() if not c["ref"].startswith("#")]
- outer="""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 회로 해설서 · B1–B15</title><style>
+ outer="""<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="guide-revision" content="b1-style-v3"><meta name="viewport" content="width=device-width,initial-scale=1"><title>R2 회로 해설서 · B1–B15</title><style>
 *{box-sizing:border-box}body{margin:0;background:#edf3f4;font:14px 'Malgun Gothic',Arial;color:#193744;height:100vh;display:flex;flex-direction:column}
 header{background:#183845;color:white;padding:14px 22px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}h1{font-size:20px;margin:0}header small{color:#bed6dc}input{padding:8px 12px;border:1px solid #759ba6;border-radius:6px;width:240px;font:inherit}
 #tabs{display:flex;flex-wrap:wrap;gap:6px;padding:10px 16px;background:#f4f8f9;border-bottom:1px solid #c7dce0}

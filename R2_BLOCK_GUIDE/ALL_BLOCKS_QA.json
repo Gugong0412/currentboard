@@ -1,6 +1,6 @@
 {
   "tabs": 15,
-  "integrated_and_detail_graphs": 43,
-  "checks": "part/pin rows, actual SVG components/edges, net focus, zoom, filters, global search, mobile overflow, offline load",
+  "integrated_and_detail_schematics": 33,
+  "checks": "part/pin rows, every R/C application explanation, authored SVG component/terminal coverage, net focus, zoom, filters, global search, mobile overflow, offline load",
   "js_errors": []
 }
