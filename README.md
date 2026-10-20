@@ -2,6 +2,8 @@
 
 검증된 **12채널** 회로도와 전원·측정·ALERT 연결을 모은 브랜치입니다. 현재 기준은 `R2_REPAIRED_006`이며 VGL1·2는 절연 I2C2 polling을 유지합니다.
 
+웹에서 바로 보기: **[B1~B15 회로 해설서](https://gugong0412.github.io/currentboard/)**. GitHub Pages는 `main`의 `/docs`를 게시하며, 현재 작업 결과는 `main`에 반영되어 있습니다.
+
 ## 먼저 열기
 
 | 목적 | 파일 |
